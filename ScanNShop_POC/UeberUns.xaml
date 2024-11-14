@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ScanNShop_POC.UeberUns"
+             Title="Über uns"
+             Shell.BackgroundColor="#25343d">
+
+    <ScrollView Background="#303e47">
+    <VerticalStackLayout>
+        <Label
+            Text="Diese App dient zur Unterstützung / Verbesserung des Einkaufs !"
+            TextColor="White"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            Padding="10"
+            FontSize="25"
+            >
+        </Label>
+        <Label
+            Text="App gemacht von: Sami, Nathaniel und Adrian"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            Padding="20"
+            FontAttributes="Bold"
+            FontSize="15"
+            TextColor="Bisque">
+            
+
+
+        </Label>
+    </VerticalStackLayout>
+   </ScrollView>
+</ContentPage>

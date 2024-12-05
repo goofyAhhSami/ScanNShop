@@ -1,4 +1,6 @@
-﻿namespace ScanNShop_POC
+﻿using ScanNShop_POC.Database;
+
+namespace ScanNShop_POC
 {
     public partial class App : Application
     {
@@ -6,7 +8,7 @@
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            MainPage = new NavigationPage(new MainPage(new LocalDbService())); //new AppShell();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using Microsoft.Maui.Controls.PlatformConfiguration;
+using ScanNShop_POC.Database;
 
 namespace ScanNShop_POC
 {
@@ -16,8 +17,11 @@ namespace ScanNShop_POC
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
+            builder.Services.AddSingleton<LocalDbService>();
+            builder.Services.AddTransient<MainPage>();
+
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();

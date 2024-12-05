@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ScanNShop_POC.ListEdit"
+             Title="Liste bearbeiten">
+
+    <ScrollView BackgroundColor="#303e47">
+        <Grid>
+            <Image Source="lebensmittel2.png"
+                Aspect="AspectFill"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                Opacity="0.07" />
+
+            <Label Text="Liste"
+                   TextColor="White"
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   Padding="20,0,0,0"></Label>
+            <VerticalStackLayout Padding="0,30,0,0">
+
+                <Label Text="Produkt manuell eingeben oder scannen"
+                   TextColor="White"
+                   Padding="20,10,20, 0"
+                   FontSize="Body"/>
+
+                <Entry
+                x:Name="productEntryField"
+                Placeholder="Produkt"
+                TextColor="White"
+                FontAttributes="Bold"
+                FontSize="Small"
+                Margin="15,10,0,0"
+                />
+
+                <Button Text="Hinzufügen" 
+                    TextColor="White" 
+                    WidthRequest="300"
+                    Margin="0,5,70,0"
+                    BackgroundColor="#f06a6e"
+                    Clicked="AddProductButton_Clicked"
+                    />
+
+                <ImageButton 
+                Source="Resources/Images/scanner.png"
+                WidthRequest="50"
+                HeightRequest="50"
+                CornerRadius="3"
+                Margin="0,-45,-315,0"
+                BackgroundColor="#f06a6e"
+                />
+
+
+                <!-- Nicht abgehakte Produkte -->
+                <Label Text="Zu kaufen" FontSize="Large" FontAttributes="Bold" Margin="0,10,0,0" TextColor="White"/>
+                <ListView x:Name="unCheckedProductsListView" HasUnevenRows="True" ItemTapped="Product_ItemTapped">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <HorizontalStackLayout>
+                                    <Label Text="{Binding Name}" VerticalOptions="Center" TextColor="White" FontSize="Large" />
+                                    <Button Text="+" Clicked="IncreaseQuantity_Clicked" CommandParameter="{Binding .}" VerticalOptions="End" />
+                                    <Label Text="{Binding Quantity}" VerticalOptions="Center" VerticalTextAlignment="Center" />
+                                    <Button Text="-" Clicked="DecreaseQuantity_Clicked" CommandParameter="{Binding .}" VerticalOptions="End" />
+                                </HorizontalStackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <!-- Abgehakte Produkte -->
+                <Label Text="Gekauft" FontSize="Large" FontAttributes="Bold" Margin="0,10,0,0" TextColor="White"/>
+                <ListView x:Name="checkedProductsListView" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Label Text="{Binding Name}" VerticalOptions="Center" TextDecorations="Strikethrough" />
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+
+
+            </VerticalStackLayout>
+        </Grid>
+    </ScrollView>
+</ContentPage>

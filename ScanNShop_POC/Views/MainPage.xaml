@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ScanNShop_POC.MainPage">
+
+    <ScrollView BackgroundColor="#303e47">
+        <Grid>
+
+            <Image Source="lebensmittel1.png"
+                   Aspect="AspectFill"
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="FillAndExpand"
+                   Opacity="0.07" />
+
+
+            <VerticalStackLayout
+                Padding="30,0"
+                Spacing="25">
+
+                <HorizontalStackLayout
+                    HorizontalOptions="FillAndExpand" 
+                    VerticalOptions="Start">
+
+                    <Label
+                        Text="Neue Einkaufsliste erstellen"
+                        TextColor="White"
+                        FontSize="Large"
+                        VerticalTextAlignment="Center"
+                        FontAttributes="Bold"
+                        HorizontalOptions="StartAndExpand"
+                        Margin="-15,0,30,0" />
+
+                    <Button
+                        x:Name="CreateList"
+                        Text="+" 
+                        FontSize="40" 
+                        WidthRequest="100"
+                        HeightRequest="40"
+                        Padding="0,-9,0,0"
+                        Margin="-10,5,0,0"
+                        BackgroundColor="#f06a6e"
+                        VerticalOptions="Center" 
+                        Clicked="createNewList"/>
+
+
+                </HorizontalStackLayout>
+
+                <Label
+                    Text="Vorhandene Einkaufslisten"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    FontSize="Body"
+                    SemanticProperties.HeadingLevel="Level2"
+                    Margin="-15,0,0,0" />
+
+
+                <ListView x:Name="listView" 
+                 FlexLayout.Grow="1" 
+                HasUnevenRows="True" 
+                SeparatorVisibility="None">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <VerticalStackLayout Padding="10">
+                                    <Button Text="{Binding Name}" 
+                            BackgroundColor="#f06a6e" 
+                            FontSize="Large" 
+                            HeightRequest="100"
+                            Clicked="OnButtonClicked" />
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                    </Grid>
+                                </VerticalStackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+
+
+
+
+
+                <!--
+                <Button
+                    x:Name="list1"
+                    Text="Liste 1" 
+                    FontSize="20" 
+                    WidthRequest="300"
+                    HeightRequest="50"
+                    Margin="-55,0,0,0"
+                    BackgroundColor="#f06a6e"
+                    VerticalOptions="Center" 
+                    Clicked="editList"/>
+
+                <Button
+                   x:Name="list2"
+                   Text="Liste 2" 
+                   FontSize="20" 
+                   WidthRequest="300"
+                   HeightRequest="50"
+                   Margin="-60,0,0,0"
+                   BackgroundColor="#f06a6e"
+                   VerticalOptions="Center" 
+                   Clicked="editList"/>
+
+                <Button
+                   x:Name="list3"
+                   Text="Liste 3" 
+                   FontSize="20" 
+                   WidthRequest="300"
+                   HeightRequest="50"
+                   Margin="-60,0,0,0"
+                   BackgroundColor="#f06a6e"
+                   VerticalOptions="Center" 
+                   Clicked="editList"/>
+
+                <Button
+                   x:Name="list4"
+                   Text="Liste 4" 
+                   FontSize="20" 
+                   WidthRequest="300"
+                   HeightRequest="50"
+                   Margin="-60,0,0,0"
+                   BackgroundColor="#f06a6e"
+                   VerticalOptions="Center" 
+                   Clicked="editList"/>
+                <!-->
+                
+                
+                
+            </VerticalStackLayout>
+        </Grid>
+    </ScrollView>
+</ContentPage>

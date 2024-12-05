@@ -14,11 +14,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ScanNShop_POC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+b0c04b94b0c0a6aa8f022b0fc66500ada9a1bdc9")]
 [assembly: System.Reflection.AssemblyProductAttribute("ScanNShop_POC")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ScanNShop_POC")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
-[assembly: System.Runtime.Versioning.TargetPlatformAttribute("MacCatalyst17.5")]
+[assembly: System.Runtime.Versioning.TargetPlatformAttribute("MacCatalyst18.0")]
 [assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("MacCatalyst13.1")]
 
 // Von der MSBuild WriteCodeFragment-Klasse generiert.

@@ -1,44 +1,59 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<ContentPage NavigationPage.HasNavigationBar="false" 
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ScanNShop_POC.MVVM.View.NewList"
-             Title="Neue Liste erstellen">
+             Title="Neue Liste erstellen"
+             BackgroundColor="#303e47">
 
-    <ScrollView BackgroundColor="#303e47">
-        <Grid>
-            <Image Source="grape.png"
-                   Aspect="AspectFill"
-                   HorizontalOptions="FillAndExpand"
-                   VerticalOptions="FillAndExpand"
-                   Opacity="0.07" />
+    <Grid>
+        <Image Source="grape.png"
+               Aspect="AspectFill"
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="FillAndExpand"
+               Opacity="0.07" />
 
+        <ImageButton Source="Resources/Images/back_arrow.png"
+                     VerticalOptions="Start"
+                     HorizontalOptions="Start"
+                     WidthRequest="50"
+                     HeightRequest="50"
+                     Clicked="navigateBackToMainPage"
+                     Padding="15,0,0,0">
+            
+        </ImageButton>
 
-            <VerticalStackLayout>
-                <Label 
-            Text="Wie möchten Sie die Liste bennenen ?"
-            TextColor="White"
-            Padding="20,10,20,0"
-            FontSize="Body"/>
+        
+        <Grid VerticalOptions="Center" HorizontalOptions="Center">
+            <Frame CornerRadius="10" 
+                   BackgroundColor="#2a2f35"
+                   Padding="15"
+                   HasShadow="True">
+                <StackLayout>
+                    <Label 
+                        Text="Wie möchten Sie die Liste bennenen?"
+                        TextColor="White"
+                        Padding="20,10,20,0"
+                        FontSize="Body" />
 
-                <Entry
-           x:Name="nameEntryField"
-           Placeholder="Name"
-           TextColor="White"
-           Margin="15,0"/>
-          
+                    <Entry
+                        x:Name="nameEntryField"
+                        Placeholder="Name"
+                        TextColor="White"
+                        Margin="15,0" />
 
-
-                <Button
-                x:Name="saveList"
-                Text="Liste erstellen"
-                WidthRequest="360"
-                HeightRequest="40"
-                HorizontalOptions="StartAndExpand"
-                Margin="18,0,0,0"
-                BackgroundColor="#f06a6e"
-                Clicked="saveButton_Clicked"
-            />
-            </VerticalStackLayout>
+                    <Button
+                        x:Name="saveList"
+                        Text="Liste erstellen"
+                        WidthRequest="360"
+                        HeightRequest="40"
+                        HorizontalOptions="Center"
+                        Margin="0,10,0,0"
+                        BackgroundColor="#f06a6e"
+                        TextColor="White"
+                        Clicked="saveButton_Clicked" />
+                </StackLayout>
+            </Frame>
         </Grid>
-    </ScrollView>
+    </Grid>
 </ContentPage>

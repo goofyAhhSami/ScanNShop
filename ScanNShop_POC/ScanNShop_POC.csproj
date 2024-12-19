@@ -67,10 +67,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Remove="UeberUns.xaml" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <None Remove="Resources\Images\camera.png" />
 	  <None Remove="Resources\Images\camera3.png" />
 	  <None Remove="Resources\Images\lebensmittel2.webp" />

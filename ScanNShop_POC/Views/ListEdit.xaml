@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<ContentPage NavigationPage.HasNavigationBar="false" 
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ScanNShop_POC.ListEdit"
              Title="Liste bearbeiten">
@@ -12,12 +13,24 @@
                 VerticalOptions="FillAndExpand"
                 Opacity="0.07" />
 
+
+            <ImageButton Source="Resources/Images/back_arrow.png"
+                VerticalOptions="Start"
+                HorizontalOptions="Start"
+                WidthRequest="50"
+                HeightRequest="50"
+                Clicked="navigateBack"
+                Padding="15,0,0,0">
+
+            </ImageButton>
+
+
             <Label Text="Liste"
                    TextColor="White"
                    FontSize="Large"
                    FontAttributes="Bold"
-                   Padding="20,0,0,0"></Label>
-            <VerticalStackLayout Padding="0,30,0,0">
+                   Padding="20,60,0,0"></Label>
+            <VerticalStackLayout Padding="0,90,0,0">
 
                 <Label Text="Produkt manuell eingeben oder scannen"
                    TextColor="White"
@@ -51,17 +64,16 @@
                 />
 
 
-                <!-- Nicht abgehakte Produkte -->
-                <Label Text="Zu kaufen" FontSize="Large" FontAttributes="Bold" Margin="0,10,0,0" TextColor="White"/>
-                <ListView x:Name="unCheckedProductsListView" HasUnevenRows="True" ItemTapped="Product_ItemTapped">
+                <Label Text="Zu Kaufen" FontSize="Large" FontAttributes="Bold" Margin="20,10,0,0" Padding="0,0,0,10" TextColor="White"/>
+                <ListView x:Name="unCheckedProductsListView" SeparatorVisibility="None" SelectionMode="None">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <HorizontalStackLayout>
-                                    <Label Text="{Binding Name}" VerticalOptions="Center" TextColor="White" FontSize="Large" />
-                                    <Button Text="+" Clicked="IncreaseQuantity_Clicked" CommandParameter="{Binding .}" VerticalOptions="End" />
-                                    <Label Text="{Binding Quantity}" VerticalOptions="Center" VerticalTextAlignment="Center" />
-                                    <Button Text="-" Clicked="DecreaseQuantity_Clicked" CommandParameter="{Binding .}" VerticalOptions="End" />
+                                <HorizontalStackLayout Padding="0,0,0,5" Spacing="5">
+                                    <Button Text="{Binding Name}" VerticalOptions="Center" TextColor="White" FontSize="Medium" Margin="20,-2,0,0" Clicked="Product_ItemTapped" WidthRequest="150" BackgroundColor="LightSeaGreen"/>
+                                    <Button Text="+" FontAttributes="Bold" Clicked="IncreaseQuantity_Clicked" CommandParameter="{Binding .}" VerticalOptions="End" Margin="50,0,0,0" BackgroundColor="#5c615d"/>
+                                    <Button Text="-" FontAttributes="Bold" Clicked="DecreaseQuantity_Clicked" CommandParameter="{Binding .}" VerticalOptions="End" Margin="10,0,0,0" BackgroundColor="#5c615d"/>
+                                    <Label Text="{Binding Quantity}" FontAttributes="Bold" VerticalOptions="Center" VerticalTextAlignment="Center" TextColor="White" FontSize="Medium" Margin="30,0,0,0"/>
                                 </HorizontalStackLayout>
                             </ViewCell>
                         </DataTemplate>
@@ -69,12 +81,14 @@
                 </ListView>
 
                 <!-- Abgehakte Produkte -->
-                <Label Text="Gekauft" FontSize="Large" FontAttributes="Bold" Margin="0,10,0,0" TextColor="White"/>
-                <ListView x:Name="checkedProductsListView" HasUnevenRows="True">
+                <Label Text="Gekauft" FontSize="Large" FontAttributes="Bold" Margin="18,10,0,0" TextColor="White" Padding="0,0,0,10" />
+                <ListView x:Name="checkedProductsListView" HasUnevenRows="True" SeparatorVisibility="None" SelectionMode="None">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <Label Text="{Binding Name}" VerticalOptions="Center" TextDecorations="Strikethrough" />
+                                <VerticalStackLayout Padding="0,0,0,5" Spacing="5">
+                                    <Button Text="{Binding Name}" VerticalOptions="Center" Margin="-200,0,0,0" TextColor="White" FontSize="Medium" WidthRequest="150" BackgroundColor="#f06a6e"/>
+                                </VerticalStackLayout>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>

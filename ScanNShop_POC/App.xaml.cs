@@ -9,6 +9,7 @@ namespace ScanNShop_POC
             InitializeComponent();
 
             MainPage = new NavigationPage(new MainPage(new LocalDbService())); //new AppShell();
+
         }
     }
 }

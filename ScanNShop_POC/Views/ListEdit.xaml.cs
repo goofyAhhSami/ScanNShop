@@ -38,12 +38,21 @@ public partial class ListEdit : ContentPage
         }
     }
 
-    private async void Product_ItemTapped(object sender, ItemTappedEventArgs e)
+    private async void Product_ItemTapped(object sender, EventArgs e)
     {
-        var product = (Product)e.Item;
-        product.IsChecked = !product.IsChecked;
-        await _dbService.UpdateProduct(product);
-        LoadProducts();
+        if (sender is Button button && button.BindingContext is Product product)
+        {
+            product.IsChecked = !product.IsChecked;
+            await _dbService.UpdateProduct(product);
+            LoadProducts();
+        }
+            //var product = (Product)e.Item;
+      
+    }
+
+    private async void navigateBack(object sender, EventArgs e)
+    {
+        await Navigation.PopAsync();
     }
 
     private async void IncreaseQuantity_Clicked(object sender, EventArgs e)
@@ -68,4 +77,6 @@ public partial class ListEdit : ContentPage
         }
         LoadProducts();
     }
+
+    
 }

@@ -44,11 +44,6 @@ namespace ScanNShop_POC
              }*/
         }
 
-        private async void OpenProductsOfListPage(object sender, ItemTappedEventArgs e)
-        {
-            var liste = (Liste)e.Item;
-            await Navigation.PushAsync(new ListEdit(_dbService, liste.listId));
-        }
 
         public async Task UpdateListViewAsync()
         {

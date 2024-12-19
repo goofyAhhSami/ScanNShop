@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ScanNShop_POC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+b0c04b94b0c0a6aa8f022b0fc66500ada9a1bdc9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+08001f14955a924b3ee640cdc75560d6ecb17b23")]
 [assembly: System.Reflection.AssemblyProductAttribute("ScanNShop_POC")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ScanNShop_POC")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

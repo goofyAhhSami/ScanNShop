@@ -35,12 +35,21 @@ public partial class NewList : ContentPage
         nameEntryField.Text = string.Empty;
 
         await Navigation.PopAsync();
-        //listView.ItemsSource = await _dbService.GetLists();
         if (Application.Current.MainPage is NavigationPage navPage &&
          navPage.CurrentPage is MainPage mainPage)
         {
             await mainPage.UpdateListViewAsync();
         }
 
+    }
+
+    private void ContentPage_NavigatingFrom(object sender, NavigatingFromEventArgs e)
+    {
+
+    }
+
+    private async void navigateBackToMainPage(object sender, EventArgs e)
+    {
+        await Navigation.PopToRootAsync();
     }
 }

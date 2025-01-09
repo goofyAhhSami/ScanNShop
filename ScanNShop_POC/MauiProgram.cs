@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using Microsoft.Maui.Controls.PlatformConfiguration;
 using ScanNShop_POC.Database;
+using ZXing.Net.Maui.Controls;
 
 namespace ScanNShop_POC
 {
@@ -15,7 +16,7 @@ namespace ScanNShop_POC
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-                });
+                }).UseBarcodeReader();
 
             builder.Services.AddSingleton<LocalDbService>();
             builder.Services.AddTransient<MainPage>();

@@ -9,7 +9,7 @@ namespace ScanNShop_POC.Database
 {
     public class LocalDbService
     {
-        private const string DB_NAME = "local_db.db3";
+        private const string DB_NAME = "local_database.db3";
         private readonly SQLiteAsyncConnection _connection;
 
         public LocalDbService()
@@ -59,7 +59,6 @@ namespace ScanNShop_POC.Database
         {
             await _connection.InsertAsync(product);
         }
-
         public async Task UpdateProduct(Product product)
         {
             await _connection.UpdateAsync(product);
@@ -69,5 +68,7 @@ namespace ScanNShop_POC.Database
         {
             await _connection.DeleteAsync(product);
         }
+
+
     }
 }

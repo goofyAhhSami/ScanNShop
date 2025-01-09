@@ -61,6 +61,7 @@
                 CornerRadius="3"
                 Margin="0,-45,-315,0"
                 BackgroundColor="#f06a6e"
+                    Clicked="OpenScannerPage"
                 />
 
 
@@ -87,7 +88,7 @@
                         <DataTemplate>
                             <ViewCell>
                                 <VerticalStackLayout Padding="0,0,0,5" Spacing="5">
-                                    <Button Text="{Binding Name}" VerticalOptions="Center" Margin="-200,0,0,0" TextColor="White" FontSize="Medium" WidthRequest="150" BackgroundColor="#f06a6e"/>
+                                    <Button Text="{Binding Name}" VerticalOptions="Center" Margin="-200,0,0,0" TextColor="White" FontSize="Medium" WidthRequest="150" HeightRequest="60" BackgroundColor="#f06a6e"/>
                                 </VerticalStackLayout>
                             </ViewCell>
                         </DataTemplate>

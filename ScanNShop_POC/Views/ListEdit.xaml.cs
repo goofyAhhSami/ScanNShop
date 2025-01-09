@@ -1,4 +1,5 @@
 using ScanNShop_POC.Database;
+using ScanNShop_POC.Views;
 
 namespace ScanNShop_POC;
 
@@ -78,5 +79,10 @@ public partial class ListEdit : ContentPage
         LoadProducts();
     }
 
-    
+    private async void OpenScannerPage(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new ScannerPage(_dbService, _listId));
+    }
+
+
 }

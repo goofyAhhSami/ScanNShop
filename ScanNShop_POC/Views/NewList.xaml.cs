@@ -34,7 +34,10 @@ public partial class NewList : ContentPage
 
         nameEntryField.Text = string.Empty;
 
+        
         await Navigation.PopAsync();
+        await saveList.ScaleTo(1.1, 150, Easing.CubicInOut);
+        await saveList.ScaleTo(1, 150, Easing.CubicInOut);
         if (Application.Current.MainPage is NavigationPage navPage &&
          navPage.CurrentPage is MainPage mainPage)
         {

@@ -7,19 +7,15 @@ public partial class ListEdit : ContentPage
 {
     private readonly LocalDbService _dbService;
     private readonly int _listId;
+    private ShoppingView shoppingView;
 
     public ListEdit(LocalDbService dbService, int listId)
     {
         InitializeComponent();
         _dbService = dbService;
         _listId = listId;
-        LoadProducts();
-    }
 
-    private async void LoadProducts()
-    {
-        unCheckedProductsListView.ItemsSource = await _dbService.GetProductsByListId(_listId);
-        checkedProductsListView.ItemsSource = await _dbService.GetCheckedProductsByListId(_listId);
+        shoppingView = new ShoppingView(dbService, _listId);
     }
 
     private async void AddProductButton_Clicked(object sender, EventArgs e)
@@ -35,54 +31,48 @@ public partial class ListEdit : ContentPage
             };
             await _dbService.CreateProduct(product);
             productEntryField.Text = string.Empty;
-            LoadProducts();
+            shoppingView.LoadProducts();
         }
     }
 
-    private async void Product_ItemTapped(object sender, EventArgs e)
-    {
-        if (sender is Button button && button.BindingContext is Product product)
-        {
-            product.IsChecked = !product.IsChecked;
-            await _dbService.UpdateProduct(product);
-            LoadProducts();
-        }
-            //var product = (Product)e.Item;
-      
-    }
+   
 
     private async void navigateBack(object sender, EventArgs e)
     {
-        await Navigation.PopAsync();
+        await Navigation.PopAsync(true);
     }
 
-    private async void IncreaseQuantity_Clicked(object sender, EventArgs e)
-    {
-        var product = (Product)((Button)sender).CommandParameter;
-        product.Quantity++;
-        await _dbService.UpdateProduct(product);
-        LoadProducts();
-    }
-
-    private async void DecreaseQuantity_Clicked(object sender, EventArgs e)
-    {
-        var product = (Product)((Button)sender).CommandParameter;
-        if (product.Quantity > 1)
-        {
-            product.Quantity--;
-            await _dbService.UpdateProduct(product);
-        }
-        else
-        {
-            await _dbService.DeleteProduct(product);
-        }
-        LoadProducts();
-    }
+   
 
     private async void OpenScannerPage(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new ScannerPage(_dbService, _listId));
+        await Navigation.PushAsync(new ScannerPage(_dbService, _listId), true);
     }
 
+    private async void startShopping(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(shoppingView);
+    }
+
+    // Methode zum Löschen der Liste
+    private async void DeleteListButton_Clicked(object sender, EventArgs e)
+    {
+        bool confirm = await DisplayAlert("Bestätigung", "Möchten Sie diese Liste wirklich löschen?", "Ja", "Abbrechen");
+        if (confirm)
+        {
+            var listToDelete = await _dbService.GetListByIdAsync(_listId);
+            if (listToDelete != null)
+            {
+                await _dbService.DeleteListAsync(listToDelete);
+                // Nachricht senden, um die ListView auf der MainPage zu aktualisieren
+                MessagingCenter.Send(this, "ListDeleted");
+                await Navigation.PopAsync(true); // Zurück zur vorherigen Seite
+            }
+            else
+            {
+                await DisplayAlert("Fehler", "Liste nicht gefunden.", "OK");
+            }
+        }
+    }
 
 }

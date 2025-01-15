@@ -13,12 +13,24 @@ namespace ScanNShop_POC
         {
             InitializeComponent();
             _dbService = dbService;
-            Task.Run(async () => listView.ItemsSource = await _dbService.GetLists());
+            Task.Run(UpdateListViewAsync); // Liste initialisieren
+
+            MessagingCenter.Subscribe<ListEdit>(this, "ListDeleted", async (sender) =>
+            {
+                // Aktualisiere die ListView, wenn eine Liste gelöscht wird
+                await UpdateListViewAsync();
+            });
+
         }
 
-        private void createNewList(object sender, EventArgs e)
+        private async void createNewList(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new NewList(_dbService, _editListId));
+            Navigation.PushAsync(new NewList(_dbService, _editListId), true);
+
+            // Skalierung
+            await CreateList.ScaleTo(1.1, 150, Easing.CubicInOut);
+            await CreateList.ScaleTo(1, 150, Easing.CubicInOut);
+
         }
 
 
@@ -47,8 +59,7 @@ namespace ScanNShop_POC
 
         public async Task UpdateListViewAsync()
         {
-             listView.ItemsSource = await _dbService.GetLists();
-        }
+            listView.ItemsSource = await _dbService.GetLists();        }
 
         private async void OnButtonClicked(object sender, EventArgs e)
         {
@@ -56,9 +67,24 @@ namespace ScanNShop_POC
             if (sender is Button button && button.BindingContext is Liste liste)
             {
                 // Die Methode mit dem Element aufrufen
-                await Navigation.PushAsync(new ListEdit(_dbService, liste.listId));
+                await Navigation.PushAsync(new ListEdit(_dbService, liste.listId), true);
             }
         }
+
+
+     
+
+        // Methode: Alle Listen löschen
+        private async void DeleteAllLists(object sender, EventArgs e)
+        {
+            var confirm = await DisplayAlert("Bestätigung", "Möchten Sie wirklich alle Listen löschen?", "Ja", "Abbrechen");
+            if (confirm)
+            {
+                await _dbService.DeleteAllListsAsync(); // Alle Listen löschen
+                await UpdateListViewAsync(); // ListView leeren
+            }
+        }
+
 
 
 

@@ -5,7 +5,7 @@
              x:Class="ScanNShop_POC.MainPage"
              >
 
-    <ScrollView BackgroundColor="#303e47">
+    <ScrollView BackgroundColor="#F0F8FF">
         <Grid>
 
             <Image Source="lebensmittel1.png"
@@ -19,69 +19,76 @@
                 Padding="30,0"
                 Spacing="25">
 
-                <HorizontalStackLayout
-                    HorizontalOptions="FillAndExpand" 
-                    VerticalOptions="Start">
+                <Label
+                    Text="Willkommen bei ScanNShop!"
+                    TextColor="#333333"
+                    FontSize="24"
+                    FontAttributes="Bold"
+                    HorizontalTextAlignment="Center"
+                    Margin="0,0,0,10" />
 
-                    <Label
-                        Text="Neue Einkaufsliste erstellen"
-                        TextColor="White"
-                        FontSize="Large"
-                        VerticalTextAlignment="Center"
-                        FontAttributes="Bold"
-                        HorizontalOptions="StartAndExpand"
-                        Margin="-15,0,30,0" />
 
+                <!-- Zentrales Button Layout -->
+                <Grid VerticalOptions="Center" HorizontalOptions="Center">
                     <Button
                         x:Name="CreateList"
-                        Text="+" 
-                        FontSize="40" 
-                        WidthRequest="100"
-                        HeightRequest="40"
-                        Padding="0,-9,0,0"
-                        Margin="-10,5,0,0"
-                        BackgroundColor="#f06a6e"
-                        VerticalOptions="Center" 
-                        Clicked="createNewList"/>
+                        Text="Neue Liste ➕"
+                        FontSize="18"
+                        HeightRequest="50"
+                        WidthRequest="250"
+                        BackgroundColor="Transparent"
+                        TextColor="#4CAF50"
+                        BorderColor="#4CAF50"
+                        BorderWidth="2"
+                        FontAttributes="Bold"
+                        CornerRadius="15"
+                        Clicked="createNewList" />
+                </Grid>
 
-
-                </HorizontalStackLayout>
+                <Button Text="Alle Listen löschen"
+        Clicked="DeleteAllLists"
+        BackgroundColor="Red"
+        TextColor="White"
+        Margin="10" />
 
                 <Label
                     Text="Vorhandene Einkaufslisten"
-                    TextColor="White"
+                    TextColor="#333333"
+                    FontSize="23"
                     FontAttributes="Bold"
-                    FontSize="Body"
-                    SemanticProperties.HeadingLevel="Level2"
-                    Margin="-15,0,0,0" />
+                    Margin="0,0,0,10"
+                    HorizontalOptions="Center"/>
 
 
                 <ListView x:Name="listView" 
-                FlexLayout.Grow="1" 
-                HasUnevenRows="True" 
-                SeparatorVisibility="None"
-                SelectionMode="None">
+          FlexLayout.Grow="1" 
+          HasUnevenRows="True" 
+          SeparatorVisibility="None"
+          SelectionMode="None">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <VerticalStackLayout Padding="10">
+                                <VerticalStackLayout Padding="5">
                                     <Button Text="{Binding Name}" 
-                            BackgroundColor="#f06a6e" 
-                            FontSize="Large" 
-                            HeightRequest="75"
-                            Clicked="OnButtonClicked" />
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="Auto" />
-                                            <ColumnDefinition Width="*" />
-                                            <ColumnDefinition Width="Auto" />
-                                        </Grid.ColumnDefinitions>
-                                    </Grid>
+                            Clicked="OnButtonClicked"
+                            FontSize="Medium" 
+                            HeightRequest="50"
+                            TextColor="White"
+                            BackgroundColor="#4CAF50" 
+                            CornerRadius="15"
+                            Padding="15,0"
+                            BorderColor="#333333" 
+                            BorderWidth="2"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="Center"
+                            FontFamily="Anton"/>
+
                                 </VerticalStackLayout>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
+
             </VerticalStackLayout>
         </Grid>
     </ScrollView>

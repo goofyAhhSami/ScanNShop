@@ -34,6 +34,12 @@ namespace ScanNShop_POC.Database
             await _connection.InsertAsync(liste);
         }
 
+        public async Task DeleteAllListsAsync()
+        {
+            await _connection.DeleteAllAsync<Liste>(); // SQLite-Befehl, um alle Einträge zu löschen
+        }
+
+
         public async Task Update(Liste liste)
         {
             await _connection.UpdateAsync(liste);
@@ -69,6 +75,15 @@ namespace ScanNShop_POC.Database
             await _connection.DeleteAsync(product);
         }
 
+        public async Task<Liste> GetListByIdAsync(int listId)
+        {
+            return await _connection.Table<Liste>().FirstOrDefaultAsync(l => l.listId == listId);
+        }
+
+        public async Task DeleteListAsync(Liste list)
+        {
+            await _connection.DeleteAsync(list);
+        }
 
     }
 }

@@ -1,10 +1,9 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage NavigationPage.HasNavigationBar="false" 
              xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ScanNShop_POC.MVVM.View.NewList"
              Title="Neue Liste erstellen"
-             BackgroundColor="#303e47">
+             BackgroundColor="#F0F8FF">
 
     <Grid>
         <Image Source="grape.png"
@@ -20,37 +19,39 @@
                      HeightRequest="50"
                      Clicked="navigateBackToMainPage"
                      Padding="15,0,0,0">
-            
         </ImageButton>
 
-        
         <Grid VerticalOptions="Center" HorizontalOptions="Center">
             <Frame CornerRadius="10" 
-                   BackgroundColor="#2a2f35"
+                   BackgroundColor="#FFFFFF"
                    Padding="15"
                    HasShadow="True">
                 <StackLayout>
                     <Label 
-                        Text="Wie möchten Sie die Liste bennenen?"
-                        TextColor="White"
+                        Text="Wie möchten Sie die Liste benennen?"
+                        TextColor="#333333"
                         Padding="20,10,20,0"
                         FontSize="Body" />
 
                     <Entry
                         x:Name="nameEntryField"
                         Placeholder="Name"
-                        TextColor="White"
-                        Margin="15,0" />
+                        TextColor="#333333"
+                        Margin="15,0" 
+                        BackgroundColor="#FFFFFF" />
 
                     <Button
                         x:Name="saveList"
                         Text="Liste erstellen"
                         WidthRequest="360"
-                        HeightRequest="40"
+                        HeightRequest="50"
                         HorizontalOptions="Center"
                         Margin="0,10,0,0"
-                        BackgroundColor="#f06a6e"
+                        BackgroundColor="#4CAF50"
                         TextColor="White"
+                        BorderColor="#388E3C" 
+                        BorderWidth="2"
+                        CornerRadius="15"
                         Clicked="saveButton_Clicked" />
                 </StackLayout>
             </Frame>

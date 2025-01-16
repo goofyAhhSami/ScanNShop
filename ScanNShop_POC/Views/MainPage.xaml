@@ -27,8 +27,8 @@
                 FontAttributes="Bold"
                 HorizontalTextAlignment="Center"
                 Margin="0,0,0,10" />
-
-
+                
+                
                 <!-- Zentrales Button Layout -->
                 <Grid VerticalOptions="Center" HorizontalOptions="Center">
                     <Button
@@ -41,67 +41,81 @@
                         TextColor="#4CAF50"
                         BorderColor="#4CAF50"
                         BorderWidth="2"
-                        FontAttributes="Bold"
                         CornerRadius="15"
-                        Clicked="createNewList" />
+                        Clicked="createNewList"
+                        FontFamily="Varela"
+                        FontAttributes="Bold">
+                        <Button.Shadow>
+                            <Shadow Brush="Black" Opacity="0.4" Offset="5,5" Radius="9" />
+                        </Button.Shadow>
+                    </Button>
                 </Grid>
 
-                <!--<Button Text="Alle Listen löschen"
-                Clicked="DeleteAllLists"
-                BackgroundColor="Red"
-                TextColor="White"
-                Margin="10" /> -->
-
-
                 <Button Text="Chat with AI"
-                Clicked="openKochPage"
-                WidthRequest="250"
-                BorderWidth="2"
-                CornerRadius="15"
-                BorderColor="#4CAF50"
-                FontAttributes="Bold"
-                FontSize="18"
-                BackgroundColor="Transparent"
-                TextColor="#4CAF50"
-                Margin="10" />
+                        Clicked="openKochPage"
+                        WidthRequest="250"
+                        BorderWidth="2"
+                        CornerRadius="15"
+                        BorderColor="#4CAF50"
+                        FontFamily="Varela"
+                        FontAttributes="Bold"
+                        FontSize="18"
+                        BackgroundColor="Transparent"
+                        TextColor="#4CAF50"
+                        Margin="10">
+                    <Button.Shadow>
+                        <Shadow Brush="Black" Opacity="0.4" Offset="5,5" Radius="9"/>
+                    </Button.Shadow>
+                </Button>
 
                 <Label
                     Text="Vorhandene Einkaufslisten"
                     TextColor="#333333"
                     FontSize="23"
-                    FontAttributes="Bold"
                     Margin="0,0,0,10"
-                    HorizontalOptions="Center"/>
+                    HorizontalOptions="Center"
+                    FontFamily="Varela"
+                    FontAttributes="Bold"/>
 
-
-                <ListView x:Name="listView" 
-          FlexLayout.Grow="1" 
-          HasUnevenRows="True" 
-          SeparatorVisibility="None"
-          SelectionMode="None">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <VerticalStackLayout Padding="5">
-                                    <Button Text="{Binding Name}" 
-                            Clicked="OnButtonClicked"
-                            FontSize="Medium" 
-                            HeightRequest="50"
-                            TextColor="White"
-                            BackgroundColor="#4CAF50" 
-                            CornerRadius="15"
-                            Padding="15,0"
-                            BorderColor="#333333" 
-                            BorderWidth="2"
-                            HorizontalOptions="FillAndExpand"
-                            VerticalOptions="Center"
-                            FontFamily="Anton"/>
-
-                                </VerticalStackLayout>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
+                <!-- Rahmen um die gesamte Liste -->
+                <Frame BackgroundColor="LightGrey"
+                       CornerRadius="15"
+                       HasShadow="true"
+                       Padding="10"
+                       Margin="0,0,0,10">
+                    <ListView x:Name="listView" 
+                              FlexLayout.Grow="1" 
+                              HasUnevenRows="True" 
+                              SeparatorVisibility="None"
+                              SelectionMode="None">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <VerticalStackLayout Padding="5">
+                                        <Button Text="{Binding Name}" 
+                                                Clicked="OnButtonClicked"
+                                                FontSize="Medium" 
+                                                HeightRequest="50"
+                                                TextColor="White"
+                                                BackgroundColor="#4CAF50" 
+                                                CornerRadius="15"
+                                                Padding="15,0"
+                                                 
+                                                BorderWidth="2"
+                                                HorizontalOptions="FillAndExpand"
+                                                VerticalOptions="Center"
+                                                FontFamily="Varela"
+                                                FontAttributes="Bold">
+                                            <Button.Shadow>
+                                                <Shadow Brush="Black" Opacity="0.4" Offset="5,8" Radius="9" />
+                                            </Button.Shadow>
+                                        </Button>
+                                    </VerticalStackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Frame>
 
             </VerticalStackLayout>
         </Grid>

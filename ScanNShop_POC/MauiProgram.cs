@@ -19,6 +19,8 @@ namespace ScanNShop_POC
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                     fonts.AddFont("Anton-Regular.ttf", "Anton");
                     fonts.AddFont("Pacifico-Regular.ttf", "Pacifico");
+                    fonts.AddFont("Nunito-VariableFont_wght.ttf", "Nunito");
+                    fonts.AddFont("VarelaRound-Regular.ttf", "Varela");
                 }).UseBarcodeReader();
             builder.ConfigureSyncfusionCore();
             builder.Services.AddSingleton<LocalDbService>();

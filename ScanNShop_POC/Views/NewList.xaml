@@ -31,14 +31,18 @@
                         Text="Wie möchten Sie die Liste benennen?"
                         TextColor="#333333"
                         Padding="20,10,20,0"
-                        FontSize="Body" />
+                        FontSize="Body"
+                        FontFamily="Varela"
+                        FontAttributes="Bold"/>
 
                     <Entry
                         x:Name="nameEntryField"
                         Placeholder="Name"
                         TextColor="#333333"
                         Margin="15,0" 
-                        BackgroundColor="#FFFFFF" />
+                        BackgroundColor="#FFFFFF"
+                        FontFamily="Varela"
+                        FontAttributes="Bold"/>
 
                     <Button
                         x:Name="saveList"
@@ -52,7 +56,9 @@
                         BorderColor="#388E3C" 
                         BorderWidth="2"
                         CornerRadius="15"
-                        Clicked="saveButton_Clicked" />
+                        Clicked="saveButton_Clicked"
+                        FontFamily="Varela"
+                        FontAttributes="Bold"/>
                 </StackLayout>
             </Frame>
         </Grid>

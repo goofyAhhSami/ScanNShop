@@ -20,11 +20,17 @@ public partial class ScannerPage : ContentPage
         InitializeComponent();
         _dbService = dbService;
         _listId = listId;
-        barcodeReader.Options = new ZXing.Net.Maui.BarcodeReaderOptions { AutoRotate = true, Formats = ZXing.Net.Maui.BarcodeFormat.Ean8};
+        /* barcodeReader.Options = new ZXing.Net.Maui.BarcodeReaderOptions
+         {
+             AutoRotate = true,
+             Formats = ZXing.Net.Maui.BarcodeFormat.Ean8 | ZXing.Net.Maui.BarcodeFormat.Ean13
+         };*/
+        barcodeReader.Options = new ZXing.Net.Maui.BarcodeReaderOptions { AutoRotate = true, Formats = ZXing.Net.Maui.BarcodeFormat.Ean13 };
+
 
     }
 
-    
+
 
     private void barcodeReader_BarcodesDetected(object sender, ZXing.Net.Maui.BarcodeDetectionEventArgs e)
     {   
@@ -47,7 +53,7 @@ public partial class ScannerPage : ContentPage
     {
         using (WebClient webClient = new WebClient())
         {
-            string api_key = "bhf8t9ik8apeq9w60ysh5oqj0gsq6n";
+            string api_key = "s5wtuv6da6knartsd7fiug1owr05i8";
             string url = $"https://api.barcodelookup.com/v3/products?barcode={barcodeValue}&formatted=y&key={api_key}";
 
             try

@@ -34,7 +34,7 @@ namespace ScanNShop_POC.Services
             .SetStop("NONE");
 
             var response = await groqClient.CreateChatCompletionAsync(
-                new Message { Role = MessageRoleType.System, Content = "Du bist ein hilfreicher, intelligenter, freundlicher und effizienter KI-Assistent. Du erfüllst die Wünsche der Benutzer stets nach bestem Können." },
+                new Message { Role = MessageRoleType.System, Content = "Du bist ein hilfreicher, intelligenter, freundlicher und effizienter KI-Assistent. Du erfüllst die Wünsche der Benutzer stets nach bestem Können. Antworte mir auf deutscher Spracher. Du bist ein Chefkoch der jedes Rezept kennt." },
                 new Message { Role = MessageRoleType.User, Content = prompt });
 
             Console.WriteLine(response);

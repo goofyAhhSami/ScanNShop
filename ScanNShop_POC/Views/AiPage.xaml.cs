@@ -58,4 +58,10 @@ public partial class AiPage : ContentPage
         this.queryView.IsEnabled = true;
         this.busyIndicator.IsRunning = false;
     }
+
+
+    private async void navigateBackToMainPage(object sender, EventArgs e)
+    {
+        await Navigation.PopToRootAsync();
+    }
 }

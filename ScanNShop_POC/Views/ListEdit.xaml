@@ -38,11 +38,12 @@
 
             <AbsoluteLayout>
                 <BoxView 
-        Color="Black" 
-        HeightRequest="1" 
-        HorizontalOptions="FillAndExpand"
-        AbsoluteLayout.LayoutBounds="0, 0.1, 1, 1"
-        AbsoluteLayout.LayoutFlags="WidthProportional, XProportional, YProportional"/>
+                Color="Black" 
+                Margin="0,15,0,0"
+                HeightRequest="1" 
+                HorizontalOptions="FillAndExpand"
+                AbsoluteLayout.LayoutBounds="0, 0.1, 1, 1"
+                AbsoluteLayout.LayoutFlags="WidthProportional, XProportional, YProportional"/>
             </AbsoluteLayout>
 
 
@@ -94,6 +95,28 @@
                 BorderWidth="2"
                 FontAttributes="Bold"
                 CornerRadius="15" WidthRequest="300" Margin="-70,20,0,0" Clicked="startShopping"></Button>
+
+                <Frame x:Name="productAddedNotificationFrame"
+                BackgroundColor="#a8f18a"
+                CornerRadius="17"
+                HasShadow="True"
+                Padding="0"
+                HorizontalOptions="Center"
+                VerticalOptions="End"
+                WidthRequest="375"
+                Margin="0,70,0,0"
+                Opacity="0">
+
+                    <Label x:Name="productAddedNotification"
+                    Text="Produkt erfolgreich hinzugefügt !"
+                    FontAttributes="Bold"
+                    FontSize="Medium"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    TextColor="Black"
+                    Padding="10,5" />
+
+                </Frame>
 
 
 

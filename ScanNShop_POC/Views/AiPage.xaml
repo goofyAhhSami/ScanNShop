@@ -1,9 +1,12 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasNavigationBar="false" 
              xmlns:local="clr-namespace:ScanNShop_POC.Views"
              xmlns:listView="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView"
              xmlns:core="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
              x:Class="ScanNShop_POC.Views.AiPage" Background="Blue">
+
+  
     <ContentPage.Resources>
         <DataTemplate x:Key="botTemplate">
             <Grid ColumnDefinitions="40,*" VerticalOptions="Center" Margin="5,5,40,5" >
@@ -29,10 +32,12 @@
     </ContentPage.Resources>
 
 
-    <Grid RowDefinitions="40,*,Auto" WidthRequest="300" Background="White">
+    <Grid RowDefinitions="40,*,Auto" Background="White">
+     
 
         <Grid BackgroundColor="#00CA50">
-            <Label Text="AI Chatbot (OpenAI)" Margin="20,0,0,0" FontSize="14" TextColor="White" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center"/>
+            
+            <Label Text="AI Chatbot" Margin="20,0,0,0" FontSize="14" TextColor="White" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center"/>
         </Grid>
 
         <listView:SfListView Grid.Row="1" x:Name="listView"  AutoFitMode="DynamicHeight" ItemsSource="{Binding Messages}" ItemTemplate="{StaticResource  messageDataTemplateSelector}" />

@@ -30,7 +30,10 @@ public partial class ListEdit : ContentPage
             };
             await _dbService.CreateProduct(product);
             productEntryField.Text = string.Empty;
-          
+
+            await productAddedNotificationFrame.FadeTo(1, 500); // Blendet die Benachrichtigung ein
+            await Task.Delay(2000); // Wartezeit
+            await productAddedNotificationFrame.FadeTo(0, 500); // Blendet die Benachrichtigung aus
         }
     }
 

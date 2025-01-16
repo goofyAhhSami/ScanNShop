@@ -20,12 +20,13 @@
                 Spacing="25">
 
                 <Label
-                    Text="Willkommen bei ScanNShop!"
-                    TextColor="#333333"
-                    FontSize="24"
-                    FontAttributes="Bold"
-                    HorizontalTextAlignment="Center"
-                    Margin="0,0,0,10" />
+                x:Name="animatedLabel"
+                TextColor="#333333"
+                FontSize="24"
+                FontFamily="Pacifico"
+                FontAttributes="Bold"
+                HorizontalTextAlignment="Center"
+                Margin="0,0,0,10" />
 
 
                 <!-- Zentrales Button Layout -->
@@ -45,18 +46,24 @@
                         Clicked="createNewList" />
                 </Grid>
 
-                <Button Text="Alle Listen löschen"
-        Clicked="DeleteAllLists"
-        BackgroundColor="Red"
-        TextColor="White"
-        Margin="10" />
+                <!--<Button Text="Alle Listen löschen"
+                Clicked="DeleteAllLists"
+                BackgroundColor="Red"
+                TextColor="White"
+                Margin="10" /> -->
 
 
-                <Button Text="Kochliste"
-        Clicked="openKochPage"
-        BackgroundColor="blue"
-        TextColor="White"
-        Margin="10" />
+                <Button Text="Chat with AI"
+                Clicked="openKochPage"
+                WidthRequest="250"
+                BorderWidth="2"
+                CornerRadius="15"
+                BorderColor="#4CAF50"
+                FontAttributes="Bold"
+                FontSize="18"
+                BackgroundColor="Transparent"
+                TextColor="#4CAF50"
+                Margin="10" />
 
                 <Label
                     Text="Vorhandene Einkaufslisten"

@@ -8,10 +8,14 @@ namespace ScanNShop_POC
 
         private readonly LocalDbService _dbService;
         private int _editListId;
+        private string _fullText = "Willkommen bei ScanNShop !";
+        private int _currentIndex = 0;
+        private bool _isAnimating = false;
 
         public MainPage(LocalDbService dbService)
         {
             InitializeComponent();
+            StartTextAnimation();
             _dbService = dbService;
             Task.Run(UpdateListViewAsync); // Liste initialisieren
 
@@ -88,6 +92,32 @@ namespace ScanNShop_POC
             {
                 await _dbService.DeleteAllListsAsync(); // Alle Listen löschen
                 await UpdateListViewAsync(); // ListView leeren
+            }
+        }
+
+        private async void StartTextAnimation()
+        {
+            if (_isAnimating)
+                return;
+
+            _isAnimating = true;
+            animatedLabel.Text = string.Empty;
+
+            while (true)
+            {
+                if (_currentIndex < _fullText.Length)
+                {
+                    animatedLabel.Text += _fullText[_currentIndex];
+                    _currentIndex++;
+                }
+                else
+                {
+                    _currentIndex = 0;
+                    animatedLabel.Text = string.Empty;
+                    await Task.Delay(1000); // Verzögerung zwischen den Wiederholungen
+                }
+
+                await Task.Delay(210); // Wartezeit zwischen den Buchstaben in Millisekunden
             }
         }
 

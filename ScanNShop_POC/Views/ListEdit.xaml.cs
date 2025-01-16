@@ -1,13 +1,12 @@
 using ScanNShop_POC.Database;
 using ScanNShop_POC.Views;
 
-namespace ScanNShop_POC;
+namespace ScanNShop_POC.Views;
 
 public partial class ListEdit : ContentPage
 {
     private readonly LocalDbService _dbService;
     private readonly int _listId;
-    private ShoppingView shoppingView;
 
     public ListEdit(LocalDbService dbService, int listId)
     {
@@ -15,7 +14,7 @@ public partial class ListEdit : ContentPage
         _dbService = dbService;
         _listId = listId;
 
-        shoppingView = new ShoppingView(dbService, _listId);
+        //shoppingView = new ShoppingView(dbService, _listId);
     }
 
     private async void AddProductButton_Clicked(object sender, EventArgs e)
@@ -31,7 +30,7 @@ public partial class ListEdit : ContentPage
             };
             await _dbService.CreateProduct(product);
             productEntryField.Text = string.Empty;
-            shoppingView.LoadProducts();
+          
         }
     }
 
@@ -51,7 +50,7 @@ public partial class ListEdit : ContentPage
 
     private async void startShopping(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(shoppingView);
+        await Navigation.PushAsync(new ShoppingView(_dbService, _listId));
     }
 
     // Methode zum Löschen der Liste

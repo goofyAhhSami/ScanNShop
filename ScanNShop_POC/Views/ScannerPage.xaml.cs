@@ -20,7 +20,7 @@ public partial class ScannerPage : ContentPage
         InitializeComponent();
         _dbService = dbService;
         _listId = listId;
-        barcodeReader.Options = new ZXing.Net.Maui.BarcodeReaderOptions { AutoRotate = true, Formats = ZXing.Net.Maui.BarcodeFormat.Ean13};
+        barcodeReader.Options = new ZXing.Net.Maui.BarcodeReaderOptions { AutoRotate = true, Formats = ZXing.Net.Maui.BarcodeFormat.Ean8};
 
     }
 
@@ -47,7 +47,7 @@ public partial class ScannerPage : ContentPage
     {
         using (WebClient webClient = new WebClient())
         {
-            string api_key = "n6vjb2ewur5ancxeq59bqd614x7e9d";
+            string api_key = "bhf8t9ik8apeq9w60ysh5oqj0gsq6n";
             string url = $"https://api.barcodelookup.com/v3/products?barcode={barcodeValue}&formatted=y&key={api_key}";
 
             try
@@ -96,7 +96,7 @@ public partial class ScannerPage : ContentPage
             IsChecked = false
         };
 
-        await _dbService.CreateProduct(product); 
+        await _dbService.CreateProduct(product);
         await DisplayAlert("Erfolgreich", $"Das Produkt '{name}' wurde zur Liste hinzugefügt.", "OK");
     }
 }

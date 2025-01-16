@@ -15,6 +15,15 @@
           }
         }
       },
+      "GroqSharp/1.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/GroqSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/GroqSharp.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -526,6 +535,78 @@
         },
         "runtime": {
           "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
+        }
+      },
+      "Syncfusion.Licensing/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Core/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Syncfusion.Maui.Core.props": {}
+        }
+      },
+      "Syncfusion.Maui.DataSource/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.GridCommon/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.ListView/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "28.1.39",
+          "Syncfusion.Maui.DataSource": "28.1.39",
+          "Syncfusion.Maui.GridCommon": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.Buffers/4.4.0": {
@@ -2506,6 +2587,15 @@
           }
         }
       },
+      "GroqSharp/1.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/GroqSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/GroqSharp.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -3017,6 +3107,78 @@
         },
         "runtime": {
           "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
+        }
+      },
+      "Syncfusion.Licensing/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Core/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Syncfusion.Maui.Core.props": {}
+        }
+      },
+      "Syncfusion.Maui.DataSource/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.GridCommon/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.ListView/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "28.1.39",
+          "Syncfusion.Maui.DataSource": "28.1.39",
+          "Syncfusion.Maui.GridCommon": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.Buffers/4.4.0": {
@@ -4997,6 +5159,15 @@
           }
         }
       },
+      "GroqSharp/1.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/GroqSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/GroqSharp.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -5508,6 +5679,78 @@
         },
         "runtime": {
           "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
+        }
+      },
+      "Syncfusion.Licensing/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Core/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Syncfusion.Maui.Core.props": {}
+        }
+      },
+      "Syncfusion.Maui.DataSource/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.GridCommon/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.ListView/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "28.1.39",
+          "Syncfusion.Maui.DataSource": "28.1.39",
+          "Syncfusion.Maui.GridCommon": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.Buffers/4.4.0": {
@@ -7488,6 +7731,15 @@
           }
         }
       },
+      "GroqSharp/1.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/GroqSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/GroqSharp.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -7999,6 +8251,78 @@
         },
         "runtime": {
           "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
+        }
+      },
+      "Syncfusion.Licensing/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Core/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Syncfusion.Maui.Core.props": {}
+        }
+      },
+      "Syncfusion.Maui.DataSource/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.GridCommon/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.ListView/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "28.1.39",
+          "Syncfusion.Maui.DataSource": "28.1.39",
+          "Syncfusion.Maui.GridCommon": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.Buffers/4.4.0": {
@@ -9979,6 +10303,15 @@
           }
         }
       },
+      "GroqSharp/1.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/GroqSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/GroqSharp.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -10490,6 +10823,78 @@
         },
         "runtime": {
           "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
+        }
+      },
+      "Syncfusion.Licensing/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Core/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Syncfusion.Maui.Core.props": {}
+        }
+      },
+      "Syncfusion.Maui.DataSource/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.GridCommon/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.ListView/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "28.1.39",
+          "Syncfusion.Maui.DataSource": "28.1.39",
+          "Syncfusion.Maui.GridCommon": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.Buffers/4.4.0": {
@@ -12470,6 +12875,15 @@
           }
         }
       },
+      "GroqSharp/1.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/GroqSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/GroqSharp.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -12981,6 +13395,78 @@
         },
         "runtime": {
           "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
+        }
+      },
+      "Syncfusion.Licensing/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Core/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Syncfusion.Maui.Core.props": {}
+        }
+      },
+      "Syncfusion.Maui.DataSource/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.GridCommon/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.ListView/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "28.1.39",
+          "Syncfusion.Maui.DataSource": "28.1.39",
+          "Syncfusion.Maui.GridCommon": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.Buffers/4.4.0": {
@@ -14961,6 +15447,15 @@
           }
         }
       },
+      "GroqSharp/1.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/GroqSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/GroqSharp.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -15472,6 +15967,78 @@
         },
         "runtime": {
           "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
+        }
+      },
+      "Syncfusion.Licensing/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Core/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Syncfusion.Maui.Core.props": {}
+        }
+      },
+      "Syncfusion.Maui.DataSource/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.GridCommon/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.ListView/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "28.1.39",
+          "Syncfusion.Maui.DataSource": "28.1.39",
+          "Syncfusion.Maui.GridCommon": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.Buffers/4.4.0": {
@@ -17452,6 +18019,15 @@
           }
         }
       },
+      "GroqSharp/1.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/GroqSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/GroqSharp.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -17963,6 +18539,78 @@
         },
         "runtime": {
           "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
+        }
+      },
+      "Syncfusion.Licensing/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Core/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Syncfusion.Maui.Core.props": {}
+        }
+      },
+      "Syncfusion.Maui.DataSource/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.GridCommon/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.ListView/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "28.1.39",
+          "Syncfusion.Maui.DataSource": "28.1.39",
+          "Syncfusion.Maui.GridCommon": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.Buffers/4.4.0": {
@@ -19930,6 +20578,15 @@
       }
     },
     "net8.0-ios18.0": {
+      "GroqSharp/1.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/GroqSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/GroqSharp.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -20413,6 +21070,78 @@
         },
         "runtime": {
           "lib/net6.0/SQLitePCLRaw.provider.sqlite3.dll": {}
+        }
+      },
+      "Syncfusion.Licensing/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Core/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Syncfusion.Maui.Core.props": {}
+        }
+      },
+      "Syncfusion.Maui.DataSource/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.GridCommon/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.ListView/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "28.1.39",
+          "Syncfusion.Maui.DataSource": "28.1.39",
+          "Syncfusion.Maui.GridCommon": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.Memory/4.5.3": {
@@ -20472,6 +21201,15 @@
       }
     },
     "net8.0-ios18.0/android-arm": {
+      "GroqSharp/1.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/GroqSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/GroqSharp.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -20955,6 +21693,78 @@
         },
         "runtime": {
           "lib/net6.0/SQLitePCLRaw.provider.sqlite3.dll": {}
+        }
+      },
+      "Syncfusion.Licensing/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Core/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Syncfusion.Maui.Core.props": {}
+        }
+      },
+      "Syncfusion.Maui.DataSource/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.GridCommon/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.ListView/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "28.1.39",
+          "Syncfusion.Maui.DataSource": "28.1.39",
+          "Syncfusion.Maui.GridCommon": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.Memory/4.5.3": {
@@ -21014,6 +21824,15 @@
       }
     },
     "net8.0-ios18.0/android-arm64": {
+      "GroqSharp/1.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/GroqSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/GroqSharp.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -21497,6 +22316,78 @@
         },
         "runtime": {
           "lib/net6.0/SQLitePCLRaw.provider.sqlite3.dll": {}
+        }
+      },
+      "Syncfusion.Licensing/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Core/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Syncfusion.Maui.Core.props": {}
+        }
+      },
+      "Syncfusion.Maui.DataSource/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.GridCommon/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.ListView/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "28.1.39",
+          "Syncfusion.Maui.DataSource": "28.1.39",
+          "Syncfusion.Maui.GridCommon": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.Memory/4.5.3": {
@@ -21556,6 +22447,15 @@
       }
     },
     "net8.0-ios18.0/android-x64": {
+      "GroqSharp/1.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/GroqSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/GroqSharp.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -22039,6 +22939,78 @@
         },
         "runtime": {
           "lib/net6.0/SQLitePCLRaw.provider.sqlite3.dll": {}
+        }
+      },
+      "Syncfusion.Licensing/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Core/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Syncfusion.Maui.Core.props": {}
+        }
+      },
+      "Syncfusion.Maui.DataSource/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.GridCommon/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.ListView/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "28.1.39",
+          "Syncfusion.Maui.DataSource": "28.1.39",
+          "Syncfusion.Maui.GridCommon": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.Memory/4.5.3": {
@@ -22098,6 +23070,15 @@
       }
     },
     "net8.0-ios18.0/android-x86": {
+      "GroqSharp/1.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/GroqSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/GroqSharp.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -22581,6 +23562,78 @@
         },
         "runtime": {
           "lib/net6.0/SQLitePCLRaw.provider.sqlite3.dll": {}
+        }
+      },
+      "Syncfusion.Licensing/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Core/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Syncfusion.Maui.Core.props": {}
+        }
+      },
+      "Syncfusion.Maui.DataSource/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.GridCommon/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.ListView/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "28.1.39",
+          "Syncfusion.Maui.DataSource": "28.1.39",
+          "Syncfusion.Maui.GridCommon": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.Memory/4.5.3": {
@@ -22640,6 +23693,15 @@
       }
     },
     "net8.0-ios18.0/ios-arm64": {
+      "GroqSharp/1.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/GroqSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/GroqSharp.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -23123,6 +24185,78 @@
         },
         "runtime": {
           "lib/net6.0/SQLitePCLRaw.provider.sqlite3.dll": {}
+        }
+      },
+      "Syncfusion.Licensing/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Core/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Syncfusion.Maui.Core.props": {}
+        }
+      },
+      "Syncfusion.Maui.DataSource/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.GridCommon/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.ListView/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "28.1.39",
+          "Syncfusion.Maui.DataSource": "28.1.39",
+          "Syncfusion.Maui.GridCommon": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.Memory/4.5.3": {
@@ -23182,6 +24316,15 @@
       }
     },
     "net8.0-ios18.0/maccatalyst-x64": {
+      "GroqSharp/1.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/GroqSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/GroqSharp.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -23665,6 +24808,78 @@
         },
         "runtime": {
           "lib/net6.0/SQLitePCLRaw.provider.sqlite3.dll": {}
+        }
+      },
+      "Syncfusion.Licensing/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Core/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Syncfusion.Maui.Core.props": {}
+        }
+      },
+      "Syncfusion.Maui.DataSource/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.GridCommon/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.ListView/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "28.1.39",
+          "Syncfusion.Maui.DataSource": "28.1.39",
+          "Syncfusion.Maui.GridCommon": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.Memory/4.5.3": {
@@ -23724,6 +24939,15 @@
       }
     },
     "net8.0-ios18.0/win10-x64": {
+      "GroqSharp/1.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/GroqSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/GroqSharp.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -24209,6 +25433,78 @@
           "lib/net6.0/SQLitePCLRaw.provider.sqlite3.dll": {}
         }
       },
+      "Syncfusion.Licensing/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Core/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Syncfusion.Maui.Core.props": {}
+        }
+      },
+      "Syncfusion.Maui.DataSource/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.GridCommon/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.ListView/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "28.1.39",
+          "Syncfusion.Maui.DataSource": "28.1.39",
+          "Syncfusion.Maui.GridCommon": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "System.Memory/4.5.3": {
         "type": "package",
         "compile": {
@@ -24266,6 +25562,15 @@
       }
     },
     "net8.0-maccatalyst18.0": {
+      "GroqSharp/1.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/GroqSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/GroqSharp.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -24849,6 +26154,78 @@
           "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
         }
       },
+      "Syncfusion.Licensing/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Core/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Syncfusion.Maui.Core.props": {}
+        }
+      },
+      "Syncfusion.Maui.DataSource/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.GridCommon/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.ListView/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "28.1.39",
+          "Syncfusion.Maui.DataSource": "28.1.39",
+          "Syncfusion.Maui.GridCommon": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "System.Memory/4.5.3": {
         "type": "package",
         "compile": {
@@ -24898,6 +26275,15 @@
       }
     },
     "net8.0-maccatalyst18.0/android-arm": {
+      "GroqSharp/1.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/GroqSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/GroqSharp.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -25398,6 +26784,78 @@
           "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
         }
       },
+      "Syncfusion.Licensing/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Core/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Syncfusion.Maui.Core.props": {}
+        }
+      },
+      "Syncfusion.Maui.DataSource/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.GridCommon/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.ListView/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "28.1.39",
+          "Syncfusion.Maui.DataSource": "28.1.39",
+          "Syncfusion.Maui.GridCommon": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "System.Memory/4.5.3": {
         "type": "package",
         "compile": {
@@ -25447,6 +26905,15 @@
       }
     },
     "net8.0-maccatalyst18.0/android-arm64": {
+      "GroqSharp/1.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/GroqSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/GroqSharp.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -25947,6 +27414,78 @@
           "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
         }
       },
+      "Syncfusion.Licensing/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Core/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Syncfusion.Maui.Core.props": {}
+        }
+      },
+      "Syncfusion.Maui.DataSource/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.GridCommon/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.ListView/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "28.1.39",
+          "Syncfusion.Maui.DataSource": "28.1.39",
+          "Syncfusion.Maui.GridCommon": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "System.Memory/4.5.3": {
         "type": "package",
         "compile": {
@@ -25996,6 +27535,15 @@
       }
     },
     "net8.0-maccatalyst18.0/android-x64": {
+      "GroqSharp/1.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/GroqSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/GroqSharp.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -26496,6 +28044,78 @@
           "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
         }
       },
+      "Syncfusion.Licensing/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Core/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Syncfusion.Maui.Core.props": {}
+        }
+      },
+      "Syncfusion.Maui.DataSource/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.GridCommon/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.ListView/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "28.1.39",
+          "Syncfusion.Maui.DataSource": "28.1.39",
+          "Syncfusion.Maui.GridCommon": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "System.Memory/4.5.3": {
         "type": "package",
         "compile": {
@@ -26545,6 +28165,15 @@
       }
     },
     "net8.0-maccatalyst18.0/android-x86": {
+      "GroqSharp/1.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/GroqSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/GroqSharp.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -27045,6 +28674,78 @@
           "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
         }
       },
+      "Syncfusion.Licensing/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Core/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Syncfusion.Maui.Core.props": {}
+        }
+      },
+      "Syncfusion.Maui.DataSource/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.GridCommon/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.ListView/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "28.1.39",
+          "Syncfusion.Maui.DataSource": "28.1.39",
+          "Syncfusion.Maui.GridCommon": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "System.Memory/4.5.3": {
         "type": "package",
         "compile": {
@@ -27094,6 +28795,15 @@
       }
     },
     "net8.0-maccatalyst18.0/ios-arm64": {
+      "GroqSharp/1.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/GroqSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/GroqSharp.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -27591,6 +29301,78 @@
           "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
         }
       },
+      "Syncfusion.Licensing/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Core/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Syncfusion.Maui.Core.props": {}
+        }
+      },
+      "Syncfusion.Maui.DataSource/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.GridCommon/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.ListView/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "28.1.39",
+          "Syncfusion.Maui.DataSource": "28.1.39",
+          "Syncfusion.Maui.GridCommon": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "System.Memory/4.5.3": {
         "type": "package",
         "compile": {
@@ -27640,6 +29422,15 @@
       }
     },
     "net8.0-maccatalyst18.0/maccatalyst-x64": {
+      "GroqSharp/1.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/GroqSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/GroqSharp.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -28140,6 +29931,78 @@
           "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
         }
       },
+      "Syncfusion.Licensing/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Core/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Syncfusion.Maui.Core.props": {}
+        }
+      },
+      "Syncfusion.Maui.DataSource/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.GridCommon/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.ListView/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "28.1.39",
+          "Syncfusion.Maui.DataSource": "28.1.39",
+          "Syncfusion.Maui.GridCommon": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "System.Memory/4.5.3": {
         "type": "package",
         "compile": {
@@ -28189,6 +30052,15 @@
       }
     },
     "net8.0-maccatalyst18.0/win10-x64": {
+      "GroqSharp/1.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/GroqSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/GroqSharp.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -28686,6 +30558,78 @@
           "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
         }
       },
+      "Syncfusion.Licensing/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Core/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Syncfusion.Maui.Core.props": {}
+        }
+      },
+      "Syncfusion.Maui.DataSource/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.GridCommon/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.ListView/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "28.1.39",
+          "Syncfusion.Maui.DataSource": "28.1.39",
+          "Syncfusion.Maui.GridCommon": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "System.Memory/4.5.3": {
         "type": "package",
         "compile": {
@@ -28735,6 +30679,15 @@
       }
     },
     "net8.0-windows10.0.19041": {
+      "GroqSharp/1.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/GroqSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/GroqSharp.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -29487,6 +31440,78 @@
           "lib/net6.0-windows7.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
         }
       },
+      "Syncfusion.Licensing/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Core/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core.dll": {
+            "related": ".deps.json;.pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core.dll": {
+            "related": ".deps.json;.pri;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Syncfusion.Maui.Core.props": {}
+        }
+      },
+      "Syncfusion.Maui.DataSource/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".deps.json;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".deps.json;.xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.GridCommon/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".deps.json;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".deps.json;.xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.ListView/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "28.1.39",
+          "Syncfusion.Maui.DataSource": "28.1.39",
+          "Syncfusion.Maui.GridCommon": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".deps.json;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".deps.json;.xml"
+          }
+        }
+      },
       "System.Memory/4.5.3": {
         "type": "package",
         "compile": {
@@ -29536,6 +31561,15 @@
       }
     },
     "net8.0-windows10.0.19041/android-arm": {
+      "GroqSharp/1.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/GroqSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/GroqSharp.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -30165,6 +32199,78 @@
           "lib/net6.0-windows7.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
         }
       },
+      "Syncfusion.Licensing/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Core/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core.dll": {
+            "related": ".deps.json;.pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core.dll": {
+            "related": ".deps.json;.pri;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Syncfusion.Maui.Core.props": {}
+        }
+      },
+      "Syncfusion.Maui.DataSource/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".deps.json;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".deps.json;.xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.GridCommon/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".deps.json;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".deps.json;.xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.ListView/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "28.1.39",
+          "Syncfusion.Maui.DataSource": "28.1.39",
+          "Syncfusion.Maui.GridCommon": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".deps.json;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".deps.json;.xml"
+          }
+        }
+      },
       "System.Memory/4.5.3": {
         "type": "package",
         "compile": {
@@ -30214,6 +32320,15 @@
       }
     },
     "net8.0-windows10.0.19041/android-arm64": {
+      "GroqSharp/1.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/GroqSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/GroqSharp.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -30843,6 +32958,78 @@
           "lib/net6.0-windows7.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
         }
       },
+      "Syncfusion.Licensing/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Core/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core.dll": {
+            "related": ".deps.json;.pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core.dll": {
+            "related": ".deps.json;.pri;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Syncfusion.Maui.Core.props": {}
+        }
+      },
+      "Syncfusion.Maui.DataSource/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".deps.json;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".deps.json;.xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.GridCommon/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".deps.json;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".deps.json;.xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.ListView/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "28.1.39",
+          "Syncfusion.Maui.DataSource": "28.1.39",
+          "Syncfusion.Maui.GridCommon": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".deps.json;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".deps.json;.xml"
+          }
+        }
+      },
       "System.Memory/4.5.3": {
         "type": "package",
         "compile": {
@@ -30892,6 +33079,15 @@
       }
     },
     "net8.0-windows10.0.19041/android-x64": {
+      "GroqSharp/1.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/GroqSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/GroqSharp.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -31521,6 +33717,78 @@
           "lib/net6.0-windows7.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
         }
       },
+      "Syncfusion.Licensing/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Core/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core.dll": {
+            "related": ".deps.json;.pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core.dll": {
+            "related": ".deps.json;.pri;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Syncfusion.Maui.Core.props": {}
+        }
+      },
+      "Syncfusion.Maui.DataSource/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".deps.json;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".deps.json;.xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.GridCommon/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".deps.json;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".deps.json;.xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.ListView/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "28.1.39",
+          "Syncfusion.Maui.DataSource": "28.1.39",
+          "Syncfusion.Maui.GridCommon": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".deps.json;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".deps.json;.xml"
+          }
+        }
+      },
       "System.Memory/4.5.3": {
         "type": "package",
         "compile": {
@@ -31570,6 +33838,15 @@
       }
     },
     "net8.0-windows10.0.19041/android-x86": {
+      "GroqSharp/1.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/GroqSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/GroqSharp.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -32199,6 +34476,78 @@
           "lib/net6.0-windows7.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
         }
       },
+      "Syncfusion.Licensing/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Core/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core.dll": {
+            "related": ".deps.json;.pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core.dll": {
+            "related": ".deps.json;.pri;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Syncfusion.Maui.Core.props": {}
+        }
+      },
+      "Syncfusion.Maui.DataSource/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".deps.json;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".deps.json;.xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.GridCommon/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".deps.json;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".deps.json;.xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.ListView/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "28.1.39",
+          "Syncfusion.Maui.DataSource": "28.1.39",
+          "Syncfusion.Maui.GridCommon": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".deps.json;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".deps.json;.xml"
+          }
+        }
+      },
       "System.Memory/4.5.3": {
         "type": "package",
         "compile": {
@@ -32248,6 +34597,15 @@
       }
     },
     "net8.0-windows10.0.19041/ios-arm64": {
+      "GroqSharp/1.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/GroqSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/GroqSharp.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -32874,6 +35232,78 @@
           "lib/net6.0-windows7.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
         }
       },
+      "Syncfusion.Licensing/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Core/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core.dll": {
+            "related": ".deps.json;.pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core.dll": {
+            "related": ".deps.json;.pri;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Syncfusion.Maui.Core.props": {}
+        }
+      },
+      "Syncfusion.Maui.DataSource/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".deps.json;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".deps.json;.xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.GridCommon/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".deps.json;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".deps.json;.xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.ListView/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "28.1.39",
+          "Syncfusion.Maui.DataSource": "28.1.39",
+          "Syncfusion.Maui.GridCommon": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".deps.json;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".deps.json;.xml"
+          }
+        }
+      },
       "System.Memory/4.5.3": {
         "type": "package",
         "compile": {
@@ -32923,6 +35353,15 @@
       }
     },
     "net8.0-windows10.0.19041/maccatalyst-x64": {
+      "GroqSharp/1.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/GroqSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/GroqSharp.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -33552,6 +35991,78 @@
           "lib/net6.0-windows7.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
         }
       },
+      "Syncfusion.Licensing/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Core/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core.dll": {
+            "related": ".deps.json;.pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core.dll": {
+            "related": ".deps.json;.pri;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Syncfusion.Maui.Core.props": {}
+        }
+      },
+      "Syncfusion.Maui.DataSource/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".deps.json;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".deps.json;.xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.GridCommon/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".deps.json;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".deps.json;.xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.ListView/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "28.1.39",
+          "Syncfusion.Maui.DataSource": "28.1.39",
+          "Syncfusion.Maui.GridCommon": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".deps.json;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".deps.json;.xml"
+          }
+        }
+      },
       "System.Memory/4.5.3": {
         "type": "package",
         "compile": {
@@ -33601,6 +36112,15 @@
       }
     },
     "net8.0-windows10.0.19041/win10-x64": {
+      "GroqSharp/1.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/GroqSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/GroqSharp.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -34236,6 +36756,78 @@
           "lib/net6.0-windows7.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
         }
       },
+      "Syncfusion.Licensing/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Core/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core.dll": {
+            "related": ".deps.json;.pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core.dll": {
+            "related": ".deps.json;.pri;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Syncfusion.Maui.Core.props": {}
+        }
+      },
+      "Syncfusion.Maui.DataSource/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".deps.json;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.DataSource.dll": {
+            "related": ".deps.json;.xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.GridCommon/28.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".deps.json;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.GridCommon.dll": {
+            "related": ".deps.json;.xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.ListView/28.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "28.1.39",
+          "Syncfusion.Maui.DataSource": "28.1.39",
+          "Syncfusion.Maui.GridCommon": "28.1.39"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".deps.json;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.ListView.dll": {
+            "related": ".deps.json;.xml"
+          }
+        }
+      },
       "System.Memory/4.5.3": {
         "type": "package",
         "compile": {
@@ -34302,6 +36894,21 @@
         "lib/net6.0-android31.0/GoogleGson.aar",
         "lib/net6.0-android31.0/GoogleGson.dll",
         "lib/net6.0-android31.0/GoogleGson.xml"
+      ]
+    },
+    "GroqSharp/1.1.2": {
+      "sha512": "fqPhqbr2nz7TKx8jOaw0G9oRNianQbILyuGHz3RGdkWE3xbtU1blZVUL4M7I+s4XSfQsu0ERjIA/n6O/c1fP3Q==",
+      "type": "package",
+      "path": "groqsharp/1.1.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "Logo.png",
+        "README.md",
+        "groqsharp.1.1.2.nupkg.sha512",
+        "groqsharp.nuspec",
+        "lib/net8.0/GroqSharp.dll"
       ]
     },
     "Microsoft.Extensions.Configuration/8.0.0": {
@@ -36594,6 +39201,198 @@
         "lib/netstandard2.0/SQLitePCLRaw.provider.sqlite3.dll",
         "sqlitepclraw.provider.sqlite3.2.1.10.nupkg.sha512",
         "sqlitepclraw.provider.sqlite3.nuspec"
+      ]
+    },
+    "Syncfusion.Licensing/28.1.39": {
+      "sha512": "14JnqjXuS7YLn9HICC+wSg7E7CUH1cJVaEk55O+N1Dub7iB/8YuyPFlqFDGV6StQ4i7AMZJOYVn45aba+0E8YA==",
+      "type": "package",
+      "path": "syncfusion.licensing/28.1.39",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/MonoAndroid90/Syncfusion.Licensing.dll",
+        "lib/Xamarin.Mac/Syncfusion.Licensing.dll",
+        "lib/Xamarin.iOS10/Syncfusion.Licensing.dll",
+        "lib/net462/Syncfusion.Licensing.dll",
+        "lib/net6.0/Syncfusion.Licensing.dll",
+        "lib/net7.0/Syncfusion.Licensing.dll",
+        "lib/net8.0/Syncfusion.Licensing.dll",
+        "lib/net9.0/Syncfusion.Licensing.dll",
+        "lib/netstandard2.0/Syncfusion.Licensing.dll",
+        "lib/uap10.0/Syncfusion.Licensing.dll",
+        "syncfusion.licensing.28.1.39.nupkg.sha512",
+        "syncfusion.licensing.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.Maui.Core/28.1.39": {
+      "sha512": "ctZPY9qBPPwmR+f04giuH+sCs5E5hrjCXpcPd6qn4Hxjqdad49tawKHbGBqZMlZqIAFXhxQREqk3bVnhUm0YoA==",
+      "type": "package",
+      "path": "syncfusion.maui.core/28.1.39",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "buildTransitive/Resources/Fonts/MauiMaterialAssets.ttf",
+        "buildTransitive/Syncfusion.Maui.Core.props",
+        "lib/net8.0-android34.0/Syncfusion.Maui.Core.dll",
+        "lib/net8.0-android34.0/Syncfusion.Maui.Core.xml",
+        "lib/net8.0-ios17.0/Syncfusion.Maui.Core.dll",
+        "lib/net8.0-ios17.0/Syncfusion.Maui.Core.xml",
+        "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.Core.dll",
+        "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.Core.xml",
+        "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core.deps.json",
+        "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core.dll",
+        "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core.pri",
+        "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core.xml",
+        "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core/Platform/Windows/Styles/CarouselStyles.xaml",
+        "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core/Platform/Windows/Styles/CarouselStyles.xbf",
+        "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core/Platform/Windows/Styles/Resources.xaml",
+        "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core/Platform/Windows/Styles/Resources.xbf",
+        "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core/Platform/Windows/Styles/RotatorStyles.xaml",
+        "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core/Platform/Windows/Styles/RotatorStyles.xbf",
+        "lib/net8.0/Syncfusion.Maui.Core.deps.json",
+        "lib/net8.0/Syncfusion.Maui.Core.dll",
+        "lib/net8.0/Syncfusion.Maui.Core.xml",
+        "lib/net9.0-android35.0/Syncfusion.Maui.Core.dll",
+        "lib/net9.0-android35.0/Syncfusion.Maui.Core.xml",
+        "lib/net9.0-ios18.0/Syncfusion.Maui.Core.dll",
+        "lib/net9.0-ios18.0/Syncfusion.Maui.Core.xml",
+        "lib/net9.0-maccatalyst18.0/Syncfusion.Maui.Core.dll",
+        "lib/net9.0-maccatalyst18.0/Syncfusion.Maui.Core.xml",
+        "lib/net9.0-windows10.0.19041.0/Syncfusion.Maui.Core.deps.json",
+        "lib/net9.0-windows10.0.19041.0/Syncfusion.Maui.Core.dll",
+        "lib/net9.0-windows10.0.19041.0/Syncfusion.Maui.Core.pri",
+        "lib/net9.0-windows10.0.19041.0/Syncfusion.Maui.Core.xml",
+        "lib/net9.0-windows10.0.19041.0/Syncfusion.Maui.Core/Platform/Windows/Styles/CarouselStyles.xaml",
+        "lib/net9.0-windows10.0.19041.0/Syncfusion.Maui.Core/Platform/Windows/Styles/CarouselStyles.xbf",
+        "lib/net9.0-windows10.0.19041.0/Syncfusion.Maui.Core/Platform/Windows/Styles/Resources.xaml",
+        "lib/net9.0-windows10.0.19041.0/Syncfusion.Maui.Core/Platform/Windows/Styles/Resources.xbf",
+        "lib/net9.0-windows10.0.19041.0/Syncfusion.Maui.Core/Platform/Windows/Styles/RotatorStyles.xaml",
+        "lib/net9.0-windows10.0.19041.0/Syncfusion.Maui.Core/Platform/Windows/Styles/RotatorStyles.xbf",
+        "lib/net9.0/Syncfusion.Maui.Core.deps.json",
+        "lib/net9.0/Syncfusion.Maui.Core.dll",
+        "lib/net9.0/Syncfusion.Maui.Core.xml",
+        "syncfusion.maui.core.28.1.39.nupkg.sha512",
+        "syncfusion.maui.core.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.Maui.DataSource/28.1.39": {
+      "sha512": "dD1dmFTxFnhqbVoNGiyvyk49s1i87q10uw1D7+P7HezklgJKzV4Stou6HM0kTaX8VexwP421lkkScNsuoOAKDA==",
+      "type": "package",
+      "path": "syncfusion.maui.datasource/28.1.39",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net8.0-android34.0/Syncfusion.Maui.DataSource.dll",
+        "lib/net8.0-android34.0/Syncfusion.Maui.DataSource.xml",
+        "lib/net8.0-ios17.0/Syncfusion.Maui.DataSource.dll",
+        "lib/net8.0-ios17.0/Syncfusion.Maui.DataSource.xml",
+        "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.DataSource.dll",
+        "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.DataSource.xml",
+        "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.DataSource.deps.json",
+        "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.DataSource.dll",
+        "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.DataSource.xml",
+        "lib/net8.0/Syncfusion.Maui.DataSource.deps.json",
+        "lib/net8.0/Syncfusion.Maui.DataSource.dll",
+        "lib/net8.0/Syncfusion.Maui.DataSource.xml",
+        "lib/net9.0-android35.0/Syncfusion.Maui.DataSource.dll",
+        "lib/net9.0-android35.0/Syncfusion.Maui.DataSource.xml",
+        "lib/net9.0-ios18.0/Syncfusion.Maui.DataSource.dll",
+        "lib/net9.0-ios18.0/Syncfusion.Maui.DataSource.xml",
+        "lib/net9.0-maccatalyst18.0/Syncfusion.Maui.DataSource.dll",
+        "lib/net9.0-maccatalyst18.0/Syncfusion.Maui.DataSource.xml",
+        "lib/net9.0-windows10.0.19041.0/Syncfusion.Maui.DataSource.deps.json",
+        "lib/net9.0-windows10.0.19041.0/Syncfusion.Maui.DataSource.dll",
+        "lib/net9.0-windows10.0.19041.0/Syncfusion.Maui.DataSource.xml",
+        "lib/net9.0/Syncfusion.Maui.DataSource.deps.json",
+        "lib/net9.0/Syncfusion.Maui.DataSource.dll",
+        "lib/net9.0/Syncfusion.Maui.DataSource.xml",
+        "syncfusion.maui.datasource.28.1.39.nupkg.sha512",
+        "syncfusion.maui.datasource.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.Maui.GridCommon/28.1.39": {
+      "sha512": "6axuq7/9CNLZlJqZzR2HkdOT1YQDca7mIj+BD+dW1QXMnxIbisfeIT5IRPw3dA+RIs5cypFtlg3aYCApl5TEQg==",
+      "type": "package",
+      "path": "syncfusion.maui.gridcommon/28.1.39",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net8.0-android34.0/Syncfusion.Maui.GridCommon.dll",
+        "lib/net8.0-android34.0/Syncfusion.Maui.GridCommon.xml",
+        "lib/net8.0-ios17.0/Syncfusion.Maui.GridCommon.dll",
+        "lib/net8.0-ios17.0/Syncfusion.Maui.GridCommon.xml",
+        "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.GridCommon.dll",
+        "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.GridCommon.xml",
+        "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.GridCommon.deps.json",
+        "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.GridCommon.dll",
+        "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.GridCommon.xml",
+        "lib/net8.0/Syncfusion.Maui.GridCommon.deps.json",
+        "lib/net8.0/Syncfusion.Maui.GridCommon.dll",
+        "lib/net8.0/Syncfusion.Maui.GridCommon.xml",
+        "lib/net9.0-android35.0/Syncfusion.Maui.GridCommon.dll",
+        "lib/net9.0-android35.0/Syncfusion.Maui.GridCommon.xml",
+        "lib/net9.0-ios18.0/Syncfusion.Maui.GridCommon.dll",
+        "lib/net9.0-ios18.0/Syncfusion.Maui.GridCommon.xml",
+        "lib/net9.0-maccatalyst18.0/Syncfusion.Maui.GridCommon.dll",
+        "lib/net9.0-maccatalyst18.0/Syncfusion.Maui.GridCommon.xml",
+        "lib/net9.0-windows10.0.19041.0/Syncfusion.Maui.GridCommon.deps.json",
+        "lib/net9.0-windows10.0.19041.0/Syncfusion.Maui.GridCommon.dll",
+        "lib/net9.0-windows10.0.19041.0/Syncfusion.Maui.GridCommon.xml",
+        "lib/net9.0/Syncfusion.Maui.GridCommon.deps.json",
+        "lib/net9.0/Syncfusion.Maui.GridCommon.dll",
+        "lib/net9.0/Syncfusion.Maui.GridCommon.xml",
+        "syncfusion.maui.gridcommon.28.1.39.nupkg.sha512",
+        "syncfusion.maui.gridcommon.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.Maui.ListView/28.1.39": {
+      "sha512": "NivFPaeOM70Rjh0Svjgp0aT66znhtigKAe6D+k4mFK22B/epU2els4dWjfU0Hk/71X5TwZbP0UzHBIurPhjvpw==",
+      "type": "package",
+      "path": "syncfusion.maui.listview/28.1.39",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net8.0-android34.0/Syncfusion.Maui.ListView.dll",
+        "lib/net8.0-android34.0/Syncfusion.Maui.ListView.xml",
+        "lib/net8.0-ios17.0/Syncfusion.Maui.ListView.dll",
+        "lib/net8.0-ios17.0/Syncfusion.Maui.ListView.xml",
+        "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.ListView.dll",
+        "lib/net8.0-maccatalyst17.0/Syncfusion.Maui.ListView.xml",
+        "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.ListView.deps.json",
+        "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.ListView.dll",
+        "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.ListView.xml",
+        "lib/net8.0/Syncfusion.Maui.ListView.deps.json",
+        "lib/net8.0/Syncfusion.Maui.ListView.dll",
+        "lib/net8.0/Syncfusion.Maui.ListView.xml",
+        "lib/net9.0-android35.0/Syncfusion.Maui.ListView.dll",
+        "lib/net9.0-android35.0/Syncfusion.Maui.ListView.xml",
+        "lib/net9.0-ios18.0/Syncfusion.Maui.ListView.dll",
+        "lib/net9.0-ios18.0/Syncfusion.Maui.ListView.xml",
+        "lib/net9.0-maccatalyst18.0/Syncfusion.Maui.ListView.dll",
+        "lib/net9.0-maccatalyst18.0/Syncfusion.Maui.ListView.xml",
+        "lib/net9.0-windows10.0.19041.0/Syncfusion.Maui.ListView.deps.json",
+        "lib/net9.0-windows10.0.19041.0/Syncfusion.Maui.ListView.dll",
+        "lib/net9.0-windows10.0.19041.0/Syncfusion.Maui.ListView.xml",
+        "lib/net9.0/Syncfusion.Maui.ListView.deps.json",
+        "lib/net9.0/Syncfusion.Maui.ListView.dll",
+        "lib/net9.0/Syncfusion.Maui.ListView.xml",
+        "syncfusion.maui.listview.28.1.39.nupkg.sha512",
+        "syncfusion.maui.listview.nuspec",
+        "syncfusion_logo.png"
       ]
     },
     "System.Buffers/4.4.0": {
@@ -38962,64 +41761,76 @@
   },
   "projectFileDependencyGroups": {
     "net8.0-android34.0": [
+      "GroqSharp >= 1.1.2",
       "Microsoft.Extensions.Logging.Debug >= 8.0.0",
       "Microsoft.Maui.Controls >= 8.0.83",
       "Microsoft.Maui.Controls.Compatibility >= 8.0.83",
       "Microsoft.NET.ILLink.Tasks >= 8.0.11",
       "Newtonsoft.Json >= 13.0.3",
       "SQLitePCLRaw.bundle_green >= 2.1.10",
+      "Syncfusion.Maui.Core >= 28.1.39",
+      "Syncfusion.Maui.ListView >= 28.1.39",
       "ZXing.Net.Maui.Controls >= 0.4.0",
       "sqlite-net-pcl >= 1.9.172"
     ],
     "net8.0-ios18.0": [
+      "GroqSharp >= 1.1.2",
       "Microsoft.Extensions.Logging.Debug >= 8.0.0",
       "Microsoft.Maui.Controls >= 8.0.83",
       "Microsoft.Maui.Controls.Compatibility >= 8.0.83",
       "Microsoft.NET.ILLink.Tasks >= 8.0.11",
       "Newtonsoft.Json >= 13.0.3",
       "SQLitePCLRaw.bundle_green >= 2.1.10",
+      "Syncfusion.Maui.Core >= 28.1.39",
+      "Syncfusion.Maui.ListView >= 28.1.39",
       "ZXing.Net.Maui.Controls >= 0.4.0",
       "sqlite-net-pcl >= 1.9.172"
     ],
     "net8.0-maccatalyst18.0": [
+      "GroqSharp >= 1.1.2",
       "Microsoft.Extensions.Logging.Debug >= 8.0.0",
       "Microsoft.Maui.Controls >= 8.0.83",
       "Microsoft.Maui.Controls.Compatibility >= 8.0.83",
       "Microsoft.NET.ILLink.Tasks >= 8.0.11",
       "Newtonsoft.Json >= 13.0.3",
       "SQLitePCLRaw.bundle_green >= 2.1.10",
+      "Syncfusion.Maui.Core >= 28.1.39",
+      "Syncfusion.Maui.ListView >= 28.1.39",
       "ZXing.Net.Maui.Controls >= 0.4.0",
       "sqlite-net-pcl >= 1.9.172"
     ],
     "net8.0-windows10.0.19041": [
+      "GroqSharp >= 1.1.2",
       "Microsoft.Extensions.Logging.Debug >= 8.0.0",
       "Microsoft.Maui.Controls >= 8.0.83",
       "Microsoft.Maui.Controls.Compatibility >= 8.0.83",
       "Newtonsoft.Json >= 13.0.3",
       "SQLitePCLRaw.bundle_green >= 2.1.10",
+      "Syncfusion.Maui.Core >= 28.1.39",
+      "Syncfusion.Maui.ListView >= 28.1.39",
       "ZXing.Net.Maui.Controls >= 0.4.0",
       "sqlite-net-pcl >= 1.9.172"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {},
+    "C:\\Users\\raguz\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Source\\Repos\\ScanNShop_Final\\ScanNShop_POC\\ScanNShop_POC.csproj",
+      "projectUniqueName": "C:\\SCHULE\\5AHIT\\ITP\\ScanNShop\\ScanNShop_POC\\ScanNShop_POC.csproj",
       "projectName": "ScanNShop_POC",
-      "projectPath": "C:\\Users\\User\\Source\\Repos\\ScanNShop_Final\\ScanNShop_POC\\ScanNShop_POC.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Source\\Repos\\ScanNShop_Final\\ScanNShop_POC\\obj\\",
+      "projectPath": "C:\\SCHULE\\5AHIT\\ITP\\ScanNShop\\ScanNShop_POC\\ScanNShop_POC.csproj",
+      "packagesPath": "C:\\Users\\raguz\\.nuget\\packages\\",
+      "outputPath": "C:\\SCHULE\\5AHIT\\ITP\\ScanNShop\\ScanNShop_POC\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\raguz\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -39060,7 +41871,7 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "direct"
+        "auditMode": "all"
       },
       "SdkAnalysisLevel": "9.0.100"
     },
@@ -39068,6 +41879,10 @@
       "net8.0-android34.0": {
         "targetAlias": "net8.0-android",
         "dependencies": {
+          "GroqSharp": {
+            "target": "Package",
+            "version": "[1.1.2, )"
+          },
           "Microsoft.Extensions.Logging.Debug": {
             "target": "Package",
             "version": "[8.0.0, )"
@@ -39093,6 +41908,14 @@
           "SQLitePCLRaw.bundle_green": {
             "target": "Package",
             "version": "[2.1.10, )"
+          },
+          "Syncfusion.Maui.Core": {
+            "target": "Package",
+            "version": "[28.1.39, )"
+          },
+          "Syncfusion.Maui.ListView": {
+            "target": "Package",
+            "version": "[28.1.39, )"
           },
           "ZXing.Net.Maui.Controls": {
             "target": "Package",
@@ -39144,11 +41967,15 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
       },
       "net8.0-ios18.0": {
         "targetAlias": "net8.0-ios",
         "dependencies": {
+          "GroqSharp": {
+            "target": "Package",
+            "version": "[1.1.2, )"
+          },
           "Microsoft.Extensions.Logging.Debug": {
             "target": "Package",
             "version": "[8.0.0, )"
@@ -39174,6 +42001,14 @@
           "SQLitePCLRaw.bundle_green": {
             "target": "Package",
             "version": "[2.1.10, )"
+          },
+          "Syncfusion.Maui.Core": {
+            "target": "Package",
+            "version": "[28.1.39, )"
+          },
+          "Syncfusion.Maui.ListView": {
+            "target": "Package",
+            "version": "[28.1.39, )"
           },
           "ZXing.Net.Maui.Controls": {
             "target": "Package",
@@ -39198,11 +42033,11 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.iOS.Ref.net8.0_18.0",
-            "version": "[18.0.8316, 18.0.8316]"
+            "version": "[18.0.8314, 18.0.8314]"
           },
           {
             "name": "Microsoft.iOS.Runtime.ios-arm64.net8.0_18.0",
-            "version": "[18.0.8316, 18.0.8316]"
+            "version": "[18.0.8314, 18.0.8314]"
           }
         ],
         "frameworkReferences": {
@@ -39213,11 +42048,15 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
       },
       "net8.0-maccatalyst18.0": {
         "targetAlias": "net8.0-maccatalyst",
         "dependencies": {
+          "GroqSharp": {
+            "target": "Package",
+            "version": "[1.1.2, )"
+          },
           "Microsoft.Extensions.Logging.Debug": {
             "target": "Package",
             "version": "[8.0.0, )"
@@ -39243,6 +42082,14 @@
           "SQLitePCLRaw.bundle_green": {
             "target": "Package",
             "version": "[2.1.10, )"
+          },
+          "Syncfusion.Maui.Core": {
+            "target": "Package",
+            "version": "[28.1.39, )"
+          },
+          "Syncfusion.Maui.ListView": {
+            "target": "Package",
+            "version": "[28.1.39, )"
           },
           "ZXing.Net.Maui.Controls": {
             "target": "Package",
@@ -39268,11 +42115,11 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.MacCatalyst.Ref.net8.0_18.0",
-            "version": "[18.0.8316, 18.0.8316]"
+            "version": "[18.0.8314, 18.0.8314]"
           },
           {
             "name": "Microsoft.MacCatalyst.Runtime.maccatalyst-x64.net8.0_18.0",
-            "version": "[18.0.8316, 18.0.8316]"
+            "version": "[18.0.8314, 18.0.8314]"
           }
         ],
         "frameworkReferences": {
@@ -39283,11 +42130,15 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
       },
       "net8.0-windows10.0.19041": {
         "targetAlias": "net8.0-windows10.0.19041.0",
         "dependencies": {
+          "GroqSharp": {
+            "target": "Package",
+            "version": "[1.1.2, )"
+          },
           "Microsoft.Extensions.Logging.Debug": {
             "target": "Package",
             "version": "[8.0.0, )"
@@ -39307,6 +42158,14 @@
           "SQLitePCLRaw.bundle_green": {
             "target": "Package",
             "version": "[2.1.10, )"
+          },
+          "Syncfusion.Maui.Core": {
+            "target": "Package",
+            "version": "[28.1.39, )"
+          },
+          "Syncfusion.Maui.ListView": {
+            "target": "Package",
+            "version": "[28.1.39, )"
           },
           "ZXing.Net.Maui.Controls": {
             "target": "Package",
@@ -39342,7 +42201,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100\\RuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {

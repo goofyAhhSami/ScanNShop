@@ -2,6 +2,7 @@
 using Microsoft.Maui.Controls.PlatformConfiguration;
 using ScanNShop_POC.Database;
 using ZXing.Net.Maui.Controls;
+using Syncfusion.Maui.Core.Hosting;
 
 namespace ScanNShop_POC
 {
@@ -18,7 +19,7 @@ namespace ScanNShop_POC
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                     fonts.AddFont("Anton-Regular.ttf", "Anton");
                 }).UseBarcodeReader();
-
+            builder.ConfigureSyncfusionCore();
             builder.Services.AddSingleton<LocalDbService>();
             builder.Services.AddTransient<MainPage>();
 

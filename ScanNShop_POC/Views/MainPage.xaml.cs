@@ -1,5 +1,5 @@
 ﻿using ScanNShop_POC.Database;
-using ScanNShop_POC.MVVM.View;
+using ScanNShop_POC.Views;
 
 namespace ScanNShop_POC
 {
@@ -25,11 +25,17 @@ namespace ScanNShop_POC
 
         private async void createNewList(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new NewList(_dbService, _editListId), true);
+            await Navigation.PushAsync(new Views.NewList(_dbService, _editListId), true);
 
             // Skalierung
             await CreateList.ScaleTo(1.1, 150, Easing.CubicInOut);
             await CreateList.ScaleTo(1, 150, Easing.CubicInOut);
+
+        }
+
+        private async void openKochPage(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AiPage());
 
         }
 

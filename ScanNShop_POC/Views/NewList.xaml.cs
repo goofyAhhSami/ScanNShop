@@ -1,6 +1,6 @@
 using ScanNShop_POC.Database;
 
-namespace ScanNShop_POC.MVVM.View;
+namespace ScanNShop_POC.Views;
 
 public partial class NewList : ContentPage
 {

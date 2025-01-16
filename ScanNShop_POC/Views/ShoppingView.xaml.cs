@@ -14,6 +14,8 @@ public partial class ShoppingView : ContentPage
         _dbService = dbService;
         _listId = listId;
         LoadProducts();
+
+      
     }
 
     public async void LoadProducts()
@@ -87,4 +89,5 @@ public partial class ShoppingView : ContentPage
     {
         await Navigation.PopAsync(true);
     }
+
 }

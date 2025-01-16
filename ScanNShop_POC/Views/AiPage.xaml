@@ -1,0 +1,52 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ScanNShop_POC.Views"
+             xmlns:listView="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView"
+             xmlns:core="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
+             x:Class="ScanNShop_POC.Views.AiPage" Background="Blue">
+    <ContentPage.Resources>
+        <DataTemplate x:Key="botTemplate">
+            <Grid ColumnDefinitions="40,*" VerticalOptions="Center" Margin="5,5,40,5" >
+                <core:SfAvatarView VerticalOptions="End" StrokeThickness="0"  AvatarShape="Circle" AvatarSize="Small"  ContentType="AvatarCharacter" AvatarCharacter="Avatar1" BackgroundColor="LightGray"/>
+                <Grid  Grid.Column="1" >
+                    <BoxView CornerRadius="10,10,0,10" Color="#EEEEEE"/>
+                    <Label Text="{Binding Text}" VerticalOptions="Start" Margin="10,5"/>
+                </Grid>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="userTemplate">
+            <Grid ColumnDefinitions="*,40" Margin="40,5,5,5" HorizontalOptions="End" >
+                <Grid>
+                    <BoxView CornerRadius="10,10,10,0" Color="LightGreen" Opacity="0.7"/>
+                    <Label Text="{Binding Text}" VerticalOptions="Start" Margin="10,5"/>
+                </Grid>
+                <core:SfAvatarView Grid.Column="1" VerticalOptions="End" StrokeThickness="0"  AvatarShape="Circle" AvatarSize="Small"  ContentType="Custom" ImageSource="selva.png" BackgroundColor="LightGray"/>
+            </Grid>
+        </DataTemplate>
+        <local:MessageDataTemplateSelector x:Key="messageDataTemplateSelector"
+                                     BotTemplate="{StaticResource botTemplate}"
+                                     UserTemplate="{StaticResource userTemplate}" />
+    </ContentPage.Resources>
+
+
+    <Grid RowDefinitions="40,*,Auto" WidthRequest="300" Background="White">
+
+        <Grid BackgroundColor="#00CA50">
+            <Label Text="AI Chatbot (OpenAI)" Margin="20,0,0,0" FontSize="14" TextColor="White" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center"/>
+        </Grid>
+
+        <listView:SfListView Grid.Row="1" x:Name="listView"  AutoFitMode="DynamicHeight" ItemsSource="{Binding Messages}" ItemTemplate="{StaticResource  messageDataTemplateSelector}" />
+
+        <Grid  ColumnDefinitions="*,50" Padding="0,10" Grid.Row="2">
+            <Editor x:Name="queryView" BackgroundColor="#CCFFFFFF" Margin="10,0,0,0"/>
+            <core:SfBusyIndicator Grid.Column="1"  x:Name="busyIndicator" AnimationType="DoubleCircle" IndicatorColor="#00CA49" SizeFactor="0.4">
+                <Image x:Name="sendImage" Source="send.png" WidthRequest="40" HeightRequest="40">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </core:SfBusyIndicator>
+        </Grid>
+
+    </Grid>
+</ContentPage>

@@ -1,7 +1,7 @@
 <ContentPage NavigationPage.HasNavigationBar="false" 
              xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ScanNShop_POC.MVVM.View.NewList"
+             x:Class="ScanNShop_POC.Views.NewList"
              Title="Neue Liste erstellen"
              BackgroundColor="#F0F8FF">
 

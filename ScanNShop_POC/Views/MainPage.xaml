@@ -1,113 +1,95 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage NavigationPage.HasNavigationBar="false" 
+<ContentPage NavigationPage.HasNavigationBar="False"
              xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ScanNShop_POC.MainPage"
+             xmlns:controls ="clr-namespace:ScanNShop_POC.Views"
              >
 
-    <ScrollView BackgroundColor="#F0F8FF">
+    <ScrollView BackgroundColor="#EDF6F9">
         <Grid>
-
             <Image Source="lebensmittel1.png"
-                   Aspect="AspectFill"
-                   HorizontalOptions="FillAndExpand"
-                   VerticalOptions="FillAndExpand"
-                   Opacity="0.07" />
-
+               Aspect="AspectFill"
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="FillAndExpand"
+               Opacity="0.05" />
 
             <VerticalStackLayout
-                Padding="30,0"
-                Spacing="25">
+            Padding="30,20"
+            Spacing="25">
 
                 <Label
                 x:Name="animatedLabel"
-                TextColor="#333333"
+                TextColor="Black"
                 FontSize="24"
                 FontFamily="Pacifico"
                 FontAttributes="Bold"
                 HorizontalTextAlignment="Center"
-                Margin="0,0,0,10" />
-                
-                
-                <!-- Zentrales Button Layout -->
+                Margin="0,0,0,20" />
+
                 <Grid VerticalOptions="Center" HorizontalOptions="Center">
                     <Button
-                        x:Name="CreateList"
-                        Text="Neue Liste ➕"
-                        FontSize="18"
-                        HeightRequest="50"
-                        WidthRequest="250"
-                        BackgroundColor="Transparent"
-                        TextColor="#4CAF50"
-                        BorderColor="#4CAF50"
-                        BorderWidth="2"
-                        CornerRadius="15"
-                        Clicked="createNewList"
-                        FontFamily="Varela"
-                        FontAttributes="Bold">
+                    x:Name="CreateList"
+                    Text="Neue Liste ➕"
+                    FontSize="18"
+                    HeightRequest="50"
+                    WidthRequest="250"
+                    BackgroundColor="#7FB7BE"
+                    TextColor="Black"
+                    BorderColor="#7FB7BE"
+                    BorderWidth="2"
+                    CornerRadius="15"
+                    Clicked="createNewList"
+                    FontFamily="Varela"
+                    FontAttributes="Bold"
+                    HorizontalOptions="FillAndExpand">
                         <Button.Shadow>
-                            <Shadow Brush="Black" Opacity="0.4" Offset="5,5" Radius="9" />
+                            <Shadow Brush="Black" Opacity="0.5" Offset="5,8" Radius="8" />
                         </Button.Shadow>
                     </Button>
                 </Grid>
 
-                <Button Text="Chat with AI"
-                        Clicked="openKochPage"
-                        WidthRequest="250"
-                        BorderWidth="2"
-                        CornerRadius="15"
-                        BorderColor="#4CAF50"
-                        FontFamily="Varela"
-                        FontAttributes="Bold"
-                        FontSize="18"
-                        BackgroundColor="Transparent"
-                        TextColor="#4CAF50"
-                        Margin="10">
-                    <Button.Shadow>
-                        <Shadow Brush="Black" Opacity="0.4" Offset="5,5" Radius="9"/>
-                    </Button.Shadow>
-                </Button>
 
                 <Label
-                    Text="Vorhandene Einkaufslisten"
-                    TextColor="#333333"
-                    FontSize="23"
-                    Margin="0,0,0,10"
-                    HorizontalOptions="Center"
-                    FontFamily="Varela"
-                    FontAttributes="Bold"/>
+                Text="Schnellzugriff"
+                TextColor="Black"
+                FontSize="25"
+                Margin="0,0,0,20"
+                HorizontalOptions="Start"
+                FontFamily="Varela"
+                FontAttributes="Bold"
+                Padding="0,215,0,0"/>
 
-                <!-- Rahmen um die gesamte Liste -->
-                <Frame BackgroundColor="LightGrey"
-                       CornerRadius="15"
-                       HasShadow="true"
-                       Padding="10"
-                       Margin="0,0,0,10">
+                <Frame BackgroundColor="#7FB7BE"
+                   CornerRadius="15"
+                   HeightRequest="210"
+                   HasShadow="true"
+                   Padding="10"
+                   Margin="0,0,0,20">
                     <ListView x:Name="listView" 
-                              FlexLayout.Grow="1" 
-                              HasUnevenRows="True" 
-                              SeparatorVisibility="None"
-                              SelectionMode="None">
+                          FlexLayout.Grow="1" 
+                          HasUnevenRows="True" 
+                          SeparatorVisibility="None"
+                          SelectionMode="None">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
                                     <VerticalStackLayout Padding="5">
                                         <Button Text="{Binding Name}" 
-                                                Clicked="OnButtonClicked"
-                                                FontSize="Medium" 
-                                                HeightRequest="50"
-                                                TextColor="White"
-                                                BackgroundColor="#4CAF50" 
-                                                CornerRadius="15"
-                                                Padding="15,0"
-                                                 
-                                                BorderWidth="2"
-                                                HorizontalOptions="FillAndExpand"
-                                                VerticalOptions="Center"
-                                                FontFamily="Varela"
-                                                FontAttributes="Bold">
+                                            Clicked="OnButtonClicked"
+                                            FontSize="Medium" 
+                                            HeightRequest="50"
+                                            TextColor="Black"
+                                            BackgroundColor="#EBEBEB" 
+                                            CornerRadius="15"
+                                            Padding="15,0"
+                                            BorderWidth="2"
+                                            HorizontalOptions="FillAndExpand"
+                                            VerticalOptions="Center"
+                                            FontFamily="Varela"
+                                            FontAttributes="Bold">
                                             <Button.Shadow>
-                                                <Shadow Brush="Black" Opacity="0.4" Offset="5,8" Radius="9" />
+                                                <Shadow Brush="Black" Opacity="0.4" Offset="5,8" Radius="8" />
                                             </Button.Shadow>
                                         </Button>
                                     </VerticalStackLayout>
@@ -115,9 +97,92 @@
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
+                    <Frame.Shadow>
+                        <Shadow Brush="Black" Opacity="0.2" Offset="5,8" Radius="8"/>
+                    </Frame.Shadow>
                 </Frame>
-
             </VerticalStackLayout>
+
+         
+            <AbsoluteLayout x:Name="PopupContainer" 
+                           IsVisible="False" 
+                           BackgroundColor="#80000000" 
+                           AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+                <Frame x:Name="PopupFrame"
+                       CornerRadius="10"
+                       BackgroundColor="#FFFFFF"
+                       Padding="20"
+                       HasShadow="True"
+                       AbsoluteLayout.LayoutFlags="PositionProportional"
+                       >
+                    <StackLayout>
+                        <Label 
+                            Text="Wie möchten Sie die Liste benennen?"
+                            TextColor="Black"
+                            Padding="20,10,20,0"
+                            FontSize="Body"
+                            FontFamily="Varela"
+                            FontAttributes="Bold"/>
+
+                        <Entry
+                            x:Name="nameEntryField"
+                            Placeholder="Name"
+                            TextColor="#333333"
+                            Margin="15,0" 
+                            BackgroundColor="#FFFFFF"
+                            FontFamily="Varela"
+                            FontAttributes="Bold"/>
+
+                        <Button
+                            x:Name="saveList"
+                            Text="Liste erstellen"
+                            HeightRequest="50"
+                            WidthRequest="350"
+                            HorizontalOptions="Center"
+                            Margin="0,10,0,0"
+                            Padding="15"
+                            BackgroundColor="#7FB7BE"
+                            TextColor="Black"
+                            BorderColor="#7FB7BE" 
+                            BorderWidth="2"
+                            CornerRadius="15"
+                            FontSize="18"
+                            Clicked="saveButton_Clicked"
+                            FontFamily="Varela"
+                            FontAttributes="Bold">
+                            <Button.Shadow>
+                                <Shadow Brush="White" Opacity="0.75" Offset="5,9" Radius="9" />
+                            </Button.Shadow>
+                        </Button>
+
+                        <Button
+                            Text="Abbrechen"
+                            HeightRequest="50"
+                            WidthRequest="350"
+                            HorizontalOptions="Center"
+                            Margin="0,10,0,0"
+                            Padding="15"
+                            BackgroundColor="#FF6B6B"
+                            TextColor="Black"
+                            BorderColor="#FF6B6B" 
+                            BorderWidth="2"
+                            CornerRadius="15"
+                            FontSize="18"
+                            Clicked="ClosePopup"
+                            FontFamily="Varela"
+                            FontAttributes="Bold">
+                            <Button.Shadow>
+                                <Shadow Brush="White" Opacity="0.75" Offset="5,9" Radius="9" />
+                            </Button.Shadow>
+                        </Button>
+                    </StackLayout>
+                </Frame>
+                
+                
+            </AbsoluteLayout>
+
+            <controls:CustomTabbar VerticalOptions="End" />
+
         </Grid>
     </ScrollView>
 </ContentPage>

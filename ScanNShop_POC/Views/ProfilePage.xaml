@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:ScanNShop_POC.Views"
+             x:Class="ScanNShop_POC.Views.ProfilePage">
+
+    <Grid>
+        <ScrollView>
+            <VerticalStackLayout Padding="20" Spacing="20">
+                <Image Source="profile.png" WidthRequest="120" HeightRequest="120"
+                       HorizontalOptions="Center" />
+
+                <Label Text="Benutzername" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" />
+                <Label Text="E-Mail: user@example.com" FontSize="16" HorizontalOptions="Center" />
+
+                <Button Text="Einstellungen" BackgroundColor="#7FB7BE" TextColor="Black" CornerRadius="15"
+                        WidthRequest="250" HeightRequest="50" Clicked="OpenSettings"/>
+
+                <Button Text="Abmelden" BackgroundColor="#FF6B6B" TextColor="Black" CornerRadius="15"
+                        WidthRequest="250" HeightRequest="50" Clicked="Logout"/>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- Custom TabBar am Ende -->
+        <controls:CustomTabbar VerticalOptions="End" />
+    </Grid>
+
+</ContentPage>

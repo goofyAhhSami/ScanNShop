@@ -48,6 +48,18 @@
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
 		<MauiImage Update="Resources\Images\dotnet_bot.png" Resize="True" BaseSize="300,185" />
+		<MauiImage Update="Resources\Images\home.png">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\list.png">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\profile.png">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\roboter.png">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</MauiImage>
 
 		<!-- Custom Fonts -->
 		<MauiFont Include="Resources\Fonts\*" />
@@ -63,13 +75,26 @@
 	<ItemGroup>
 	  <MauiImage Remove="Resources\Images\camera.png" />
 	  <MauiImage Remove="Resources\Images\camera3.png" />
+	  <MauiImage Remove="Resources\Images\home-fill.png" />
+	  <MauiImage Remove="Resources\Images\home-line.png" />
 	  <MauiImage Remove="Resources\Images\lebensmittel2.webp" />
+	  <MauiImage Remove="Resources\Images\logo_s.webp" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <None Remove="Resources\Images\camera.png" />
 	  <None Remove="Resources\Images\camera3.png" />
 	  <None Remove="Resources\Images\lebensmittel2.webp" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="Resources\Images\home-fill.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Resources\Images\home-line.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Resources\Images\logo_s.webp" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -89,13 +114,25 @@
 	  <MauiXaml Update="Views\AiPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\CustomTabbar.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\ListEdit.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ListsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\LogInPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\NewList.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\NewPage1.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ProfilePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\ScannerPage.xaml">

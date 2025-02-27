@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:ScanNShop_POC.Views"
+             x:Class="ScanNShop_POC.Views.ListsPage"
+             Title="Listen">
+
+    <Grid>
+        <ScrollView>
+            <VerticalStackLayout Padding="20" Spacing="15">
+                <Label Text="Deine Listen" FontSize="24" FontAttributes="Bold" TextColor="Black" />
+
+                <ListView x:Name="listView"
+                          HasUnevenRows="True"
+                          SeparatorVisibility="None"
+                          SelectionMode="None"
+                          ItemTapped="OnListTapped">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame BackgroundColor="#7FB7BE" Padding="10" CornerRadius="15" HasShadow="True">
+                                    <Grid>
+                                        <Label Text="{Binding Name}" FontSize="18" TextColor="Black" />
+                                        <Button Text="🗑" Clicked="DeleteList" BackgroundColor="Transparent"
+                                                HorizontalOptions="End" TextColor="Red" />
+                                    </Grid>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <controls:CustomTabbar VerticalOptions="End" />
+    </Grid>
+
+</ContentPage>

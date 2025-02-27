@@ -57,7 +57,7 @@ public partial class ShoppingView : ContentPage
     private async void ClosePopup(object sender, EventArgs e)
     {
         PopupOverlay.IsVisible = false; // Popup ausblenden
-        await Navigation.PopToRootAsync(true);
+        await Navigation.PopAsync(true);
       
     }
 

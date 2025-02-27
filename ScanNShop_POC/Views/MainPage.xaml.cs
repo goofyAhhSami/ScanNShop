@@ -8,7 +8,7 @@ namespace ScanNShop_POC
 
         private readonly LocalDbService _dbService;
         private int _editListId;
-        private string _fullText = "Willkommen bei ScanNShop !";
+        private string _fullText = "ScanNShop";
         private int _currentIndex = 0;
         private bool _isAnimating = false;
 
@@ -29,12 +29,37 @@ namespace ScanNShop_POC
 
         private async void createNewList(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Views.NewList(_dbService, _editListId), true);
+            // Zeige das Popup an
+            PopupContainer.IsVisible = true;
 
-            // Skalierung
+            // Skalierungseffekt für den Button
             await CreateList.ScaleTo(1.1, 150, Easing.CubicInOut);
             await CreateList.ScaleTo(1, 150, Easing.CubicInOut);
+        }
 
+        private void ClosePopup(object sender, EventArgs e)
+        {
+            // Verstecke das Popup
+            PopupContainer.IsVisible = false;
+        }
+
+        private void saveButton_Clicked(object sender, EventArgs e)
+        {
+            // Logik zum Speichern der Liste
+            string listName = nameEntryField.Text;
+            if (!string.IsNullOrEmpty(listName))
+            {
+                // Hier kannst du die Liste speichern
+                // Zum Beispiel: _dbService.SaveList(listName);
+
+                // Popup schließen
+                PopupContainer.IsVisible = false;
+            }
+            else
+            {
+                // Fehlermeldung anzeigen, wenn das Feld leer ist
+                DisplayAlert("Fehler", "Bitte geben Sie einen Namen für die Liste ein.", "OK");
+            }
         }
 
         private async void openKochPage(object sender, EventArgs e)
@@ -70,19 +95,16 @@ namespace ScanNShop_POC
         public async Task UpdateListViewAsync()
         {
             listView.ItemsSource = await _dbService.GetLists();        }
-
         private async void OnButtonClicked(object sender, EventArgs e)
         {
-            // Sicherstellen, dass der Button das richtige BindingContext enthält
             if (sender is Button button && button.BindingContext is Liste liste)
             {
-                // Die Methode mit dem Element aufrufen
-                await Navigation.PushAsync(new ListEdit(_dbService, liste.listId), true);
+                await Shell.Current.GoToAsync($"{nameof(ListEdit)}?listId={liste.listId}");
             }
         }
 
 
-     
+
 
         // Methode: Alle Listen löschen
         private async void DeleteAllLists(object sender, EventArgs e)

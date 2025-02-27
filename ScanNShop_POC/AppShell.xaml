@@ -4,18 +4,19 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:ScanNShop_POC"
-   Title="ScanNShop_POC">
+    xmlns:views ="clr-namespace:ScanNShop_POC.Views"
+    Title="ScanNShop_POC"
+    Shell.FlyoutBehavior="Disabled">
 
 
-    <TabBar>
-        <ShellContent
-        Title="Home" 
-        Shell.BackgroundColor="#303e47"
-        Shell.TitleColor="White"
-        Shell.TabBarTitleColor="White"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
-    </TabBar>
+    <ShellContent Route="MainPage" ContentTemplate="{DataTemplate local:MainPage}" />
+    <ShellContent Route="AiPage" ContentTemplate="{DataTemplate views:AiPage}" />
+    <ShellContent Route="ListsPage" ContentTemplate="{DataTemplate views:ListsPage}" />
+    <ShellContent Route="ProfilePage" ContentTemplate="{DataTemplate views:ProfilePage}" />
+    
+    
+    
+ 
 </Shell>
 
 

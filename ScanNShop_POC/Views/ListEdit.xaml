@@ -5,7 +5,7 @@
              x:Class="ScanNShop_POC.Views.ListEdit"
              Title="Liste bearbeiten">
 
-    <VerticalStackLayout BackgroundColor="#F0F8FF">
+    <VerticalStackLayout BackgroundColor="#EDF6F9">
         <Grid>
             <Image Source="lebensmittel2.png"
                 Aspect="AspectFill"
@@ -33,7 +33,8 @@
                 HorizontalOptions="End"
                 CornerRadius="15"
                 Margin="5,5,0,0"
-                Clicked="DeleteListButton_Clicked" />
+                Clicked="DeleteListButton_Clicked">
+            </Button>
 
 
             <AbsoluteLayout>
@@ -72,14 +73,19 @@
                 />
 
                 <Button Text="Hinzufügen" 
-                    TextColor="White" 
+                    TextColor="Black"
+                    FontAttributes="Bold"
                     WidthRequest="300"
-                    FontSize="14"
+                    FontSize="18"
                     Margin="0,5,70,0"
-                    BackgroundColor="#4CAF50"
+                    BackgroundColor="#7FB7BE"
                     CornerRadius="15"
                     Clicked="AddProductButton_Clicked"
-                    />
+                    >
+                    <Button.Shadow>
+                        <Shadow Brush="Black" Opacity="0.25" Offset="5,9" Radius="9" />
+                    </Button.Shadow>
+                </Button>
 
                 <ImageButton 
                 Source="Resources/Images/scanner.png"
@@ -87,17 +93,21 @@
                 HeightRequest="50"
                 CornerRadius="3"
                 Margin="0,-45,-315,0"
-                BackgroundColor="#4CAF50"
+                BackgroundColor="#7FB7BE"
                     Clicked="OpenScannerPage"
                 />
 
-                <Button Text="Einkauf starten" TextColor="#4CAF50" BackgroundColor="Transparent" FontSize="17" BorderColor="#4CAF50"
+                <Button Text="Einkauf starten" TextColor="Black" BackgroundColor="Transparent" FontSize="17" BorderColor="#7FB7BE"
                 BorderWidth="2"
                 FontAttributes="Bold"
-                CornerRadius="15" WidthRequest="300" Margin="-70,20,0,0" Clicked="startShopping"></Button>
+                CornerRadius="15" WidthRequest="300" Margin="-70,20,0,0" Clicked="startShopping">
+                    <Button.Shadow>
+                        <Shadow Brush="Black" Opacity="0.25" Offset="5,9" Radius="9" />
+                    </Button.Shadow>
+                </Button>
 
                 <Frame x:Name="productAddedNotificationFrame"
-                BackgroundColor="#a8f18a"
+                BackgroundColor="#8FB7C1"
                 CornerRadius="17"
                 HasShadow="True"
                 Padding="0"

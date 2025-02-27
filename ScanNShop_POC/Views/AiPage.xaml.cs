@@ -62,6 +62,6 @@ public partial class AiPage : ContentPage
 
     private async void navigateBackToMainPage(object sender, EventArgs e)
     {
-        await Navigation.PopToRootAsync();
+        await Navigation.PopAsync();
     }
 }

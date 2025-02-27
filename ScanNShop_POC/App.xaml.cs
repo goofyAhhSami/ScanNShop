@@ -1,4 +1,5 @@
 ﻿using ScanNShop_POC.Database;
+using ScanNShop_POC.Views;
 
 namespace ScanNShop_POC
 {
@@ -12,8 +13,7 @@ namespace ScanNShop_POC
   
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage(new LocalDbService())); //new AppShell();
-
+            MainPage = new NavigationPage(new LogInPage());
         }
     }
 }

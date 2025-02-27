@@ -1,8 +1,13 @@
 ﻿obj\Debug\net8.0-android\resizetizer\r\drawable\back_arrow.png
 obj\Debug\net8.0-android\resizetizer\r\drawable\grape.png
+obj\Debug\net8.0-android\resizetizer\r\drawable\home.png
 obj\Debug\net8.0-android\resizetizer\r\drawable\lebensmittel1.png
 obj\Debug\net8.0-android\resizetizer\r\drawable\lebensmittel2.png
 obj\Debug\net8.0-android\resizetizer\r\drawable\lebensmittel3.png
+obj\Debug\net8.0-android\resizetizer\r\drawable\list.png
+obj\Debug\net8.0-android\resizetizer\r\drawable\logo_s.png
+obj\Debug\net8.0-android\resizetizer\r\drawable\profile.png
+obj\Debug\net8.0-android\resizetizer\r\drawable\roboter.png
 obj\Debug\net8.0-android\resizetizer\r\drawable\scanner.png
 obj\Debug\net8.0-android\resizetizer\r\drawable\send.png
 obj\Debug\net8.0-android\resizetizer\r\drawable\shopping.jpg

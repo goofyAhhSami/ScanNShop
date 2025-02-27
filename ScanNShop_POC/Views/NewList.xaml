@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ScanNShop_POC.Views.NewList"
              Title="Neue Liste erstellen"
-             BackgroundColor="#F0F8FF">
+             BackgroundColor="#EDF6F9">
 
     <Grid>
         <Image Source="grape.png"
@@ -29,7 +29,7 @@
                 <StackLayout>
                     <Label 
                         Text="Wie möchten Sie die Liste benennen?"
-                        TextColor="#333333"
+                        TextColor="Black"
                         Padding="20,10,20,0"
                         FontSize="Body"
                         FontFamily="Varela"
@@ -47,18 +47,24 @@
                     <Button
                         x:Name="saveList"
                         Text="Liste erstellen"
-                        WidthRequest="360"
                         HeightRequest="50"
+                        WidthRequest="350"
                         HorizontalOptions="Center"
                         Margin="0,10,0,0"
-                        BackgroundColor="#4CAF50"
-                        TextColor="White"
-                        BorderColor="#388E3C" 
+                        Padding="15"
+                        BackgroundColor="#7FB7BE"
+                        TextColor="Black"
+                        BorderColor="#7FB7BE" 
                         BorderWidth="2"
                         CornerRadius="15"
+                        FontSize="18"
                         Clicked="saveButton_Clicked"
                         FontFamily="Varela"
-                        FontAttributes="Bold"/>
+                        FontAttributes="Bold">
+                        <Button.Shadow>
+                            <Shadow Brush="White" Opacity="0.75" Offset="5,9" Radius="9" />
+                        </Button.Shadow>
+                    </Button>
                 </StackLayout>
             </Frame>
         </Grid>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ScanNShop_POC.Views.LogInPage"
+             BackgroundColor="#EDF6F9"
+             NavigationPage.HasNavigationBar="false">
+
+    <VerticalStackLayout Spacing="30" Padding="40" VerticalOptions="Center">
+
+        <Frame BackgroundColor="Transparent" HasShadow="False" Padding="10" BorderColor="Transparent" Margin="0,0,0,10">
+            <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                <Image Source="logo_s.png" HeightRequest="100" WidthRequest="100" />
+                <Label Text="ScanNShop"
+               TextColor="DarkSlateBlue"
+               FontSize="32"
+               FontAttributes="Bold"
+               VerticalOptions="Center"
+                       Margin="15,0,0,0"/>
+            </HorizontalStackLayout>
+        </Frame>
+
+
+        <Label Text="Login" FontSize="28" FontAttributes="Bold" HorizontalOptions="Center"
+               TextColor="Black" Opacity="0.7" WidthRequest="400" Margin="75,0,0,0"/>
+
+        <!-- Benutzername -->
+        <Frame Padding="10" CornerRadius="15" HasShadow="True" BackgroundColor="White">
+            <Entry x:Name="UsernameEntry" Placeholder="Benutzername" PlaceholderColor="#B0BEC5"
+                   TextColor="#37474F" BackgroundColor="White" HeightRequest="50" />
+        </Frame>
+
+        <!-- Passwort -->
+        <Frame Padding="10" CornerRadius="15" HasShadow="True" BackgroundColor="White">
+            <Entry x:Name="PasswordEntry" Placeholder="Passwort" PlaceholderColor="#B0BEC5"
+                   TextColor="#37474F" IsPassword="True" BackgroundColor="White" HeightRequest="50"/>
+        </Frame>
+
+        <Frame CornerRadius="15" HasShadow="True" Padding="0" BackgroundColor="Transparent">
+            <Button Text="Anmelden" BackgroundColor="DarkSlateBlue" TextColor="White" FontAttributes="Bold"
+                    HeightRequest="50" CornerRadius="15"
+                    Clicked="OnLoginClicked"/>
+        </Frame>
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Label Text="Noch kein Konto?" TextColor="#B0BEC5" FontSize="14"/>
+            <Label Text=" Registrieren" TextColor="DarkSlateBlue" FontAttributes="Bold" FontSize="14">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnRegisterTapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+
+    </VerticalStackLayout>
+</ContentPage>

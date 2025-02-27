@@ -21,8 +21,26 @@ namespace ScanNShop_POC.Database
 
         public async Task<List<Liste>> GetLists()
         {
-            return await _connection.Table<Liste>().ToListAsync();
+            try
+            {
+                var lists = await _connection.Table<Liste>().ToListAsync();
+                Console.WriteLine($"📋 Anzahl der Listen geladen: {lists.Count}");
+
+                foreach (var list in lists)
+                {
+                    Console.WriteLine($"✅ Liste: {list.listId} - {list.Name}");
+                }
+
+                return lists;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"❌ Fehler beim Abrufen der Listen: {ex.Message}");
+                return new List<Liste>(); // Gibt eine leere Liste zurück, falls ein Fehler auftritt
+            }
         }
+
+
 
         public async Task<Liste> GetById(int id)
         {
@@ -84,6 +102,20 @@ namespace ScanNShop_POC.Database
         {
             await _connection.DeleteAsync(list);
         }
+
+        public async Task DebugDatabase()
+        {
+            var tables = await _connection.QueryAsync<dynamic>("PRAGMA table_info(Liste)");
+            if (tables.Count == 0)
+            {
+                Console.WriteLine("❌ FEHLER: Die Tabelle 'Liste' existiert NICHT!");
+            }
+            else
+            {
+                Console.WriteLine("✅ Tabelle 'Liste' existiert mit " + tables.Count + " Spalten.");
+            }
+        }
+
 
     }
 }

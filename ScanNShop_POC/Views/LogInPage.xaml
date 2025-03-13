@@ -5,50 +5,81 @@
              BackgroundColor="#EDF6F9"
              NavigationPage.HasNavigationBar="false">
 
-    <VerticalStackLayout Spacing="30" Padding="40" VerticalOptions="Center">
+    <Grid>
+        <VerticalStackLayout Spacing="30" Padding="40" VerticalOptions="Center">
 
-        <Frame BackgroundColor="Transparent" HasShadow="False" Padding="10" BorderColor="Transparent" Margin="0,0,0,10">
-            <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
-                <Image Source="logo_s.png" HeightRequest="100" WidthRequest="100" />
-                <Label Text="ScanNShop"
-               TextColor="DarkSlateBlue"
-               FontSize="32"
-               FontAttributes="Bold"
-               VerticalOptions="Center"
-                       Margin="15,0,0,0"/>
-            </HorizontalStackLayout>
+            <Frame BackgroundColor="Transparent" HasShadow="False" Padding="10" BorderColor="Transparent" Margin="0,0,0,10">
+                <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                    <Image Source="logo_s.png" HeightRequest="100" WidthRequest="100" />
+                    <Label Text="ScanNShop"
+                           TextColor="DarkSlateBlue"
+                           FontSize="32"
+                           FontAttributes="Bold"
+                           VerticalOptions="Center"
+                           Margin="15,0,0,0"/>
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Label Text="Login" FontSize="28" FontAttributes="Bold" HorizontalOptions="Center"
+                   TextColor="Black" Opacity="0.7" WidthRequest="400" Margin="75,0,0,0"/>
+
+            <Frame Padding="10" CornerRadius="15" HasShadow="True" BackgroundColor="White">
+                <Entry x:Name="UsernameEntry" Placeholder="Benutzername" PlaceholderColor="#B0BEC5"
+                       TextColor="#37474F" BackgroundColor="White" HeightRequest="50" />
+            </Frame>
+
+            <Frame Padding="10" CornerRadius="15" HasShadow="True" BackgroundColor="White">
+                <Entry x:Name="PasswordEntry" Placeholder="Passwort" PlaceholderColor="#B0BEC5"
+                       TextColor="#37474F" IsPassword="True" BackgroundColor="White" HeightRequest="50"/>
+            </Frame>
+
+            <Frame CornerRadius="15" HasShadow="True" Padding="0" BackgroundColor="Transparent">
+                <Button Text="Anmelden" BackgroundColor="DarkSlateBlue" TextColor="White" FontAttributes="Bold"
+                        HeightRequest="50" CornerRadius="15"
+                        Clicked="OnLoginClicked"/>
+            </Frame>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="Noch kein Konto?" TextColor="#B0BEC5" FontSize="14"/>
+                <Label Text=" Registrieren" TextColor="DarkSlateBlue" FontAttributes="Bold" FontSize="14">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnRegisterTapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+        </VerticalStackLayout>
+
+        <BoxView x:Name="Overlay" Color="Black" Opacity="0" IsVisible="False"
+                 AbsoluteLayout.LayoutFlags="All"
+                 AbsoluteLayout.LayoutBounds="0, 0, 1, 1"/>
+
+        <Frame x:Name="RegisterPopup" BackgroundColor="White" Padding="20" CornerRadius="20" HasShadow="True"
+               IsVisible="False" HorizontalOptions="Center" VerticalOptions="Center"
+               WidthRequest="350" HeightRequest="450">
+            <VerticalStackLayout Spacing="15">
+                <Label Text="Registrieren" FontSize="28" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,0,0,25"/>
+
+                <Entry x:Name="PopupEmailEntry" Placeholder="Email" PlaceholderColor="#B0BEC5"
+                       TextColor="#37474F" BackgroundColor="White" HeightRequest="40" />
+
+                <Entry x:Name="PopupUsernameEntry" Placeholder="Benutzername" PlaceholderColor="#B0BEC5"
+                       TextColor="#37474F" BackgroundColor="White" HeightRequest="40" />
+
+                <Entry x:Name="PopupPasswordEntry" Placeholder="Passwort" PlaceholderColor="#B0BEC5"
+                       TextColor="#37474F" IsPassword="True" BackgroundColor="White" HeightRequest="40"/>
+
+                <Button Text="Registrieren" BackgroundColor="DarkSlateBlue" TextColor="White" FontAttributes="Bold"
+                        HeightRequest="40" CornerRadius="10" Clicked="OnPopupRegisterClicked" Margin="0,30,0,0"/>
+
+                <Button Text="Schließen" BackgroundColor="LightGray" TextColor="Black" FontAttributes="Bold"
+                        HeightRequest="40" CornerRadius="10" Clicked="OnPopupCloseClicked"/>
+            </VerticalStackLayout>
         </Frame>
 
-
-        <Label Text="Login" FontSize="28" FontAttributes="Bold" HorizontalOptions="Center"
-               TextColor="Black" Opacity="0.7" WidthRequest="400" Margin="75,0,0,0"/>
-
-        <!-- Benutzername -->
-        <Frame Padding="10" CornerRadius="15" HasShadow="True" BackgroundColor="White">
-            <Entry x:Name="UsernameEntry" Placeholder="Benutzername" PlaceholderColor="#B0BEC5"
-                   TextColor="#37474F" BackgroundColor="White" HeightRequest="50" />
-        </Frame>
-
-        <!-- Passwort -->
-        <Frame Padding="10" CornerRadius="15" HasShadow="True" BackgroundColor="White">
-            <Entry x:Name="PasswordEntry" Placeholder="Passwort" PlaceholderColor="#B0BEC5"
-                   TextColor="#37474F" IsPassword="True" BackgroundColor="White" HeightRequest="50"/>
-        </Frame>
-
-        <Frame CornerRadius="15" HasShadow="True" Padding="0" BackgroundColor="Transparent">
-            <Button Text="Anmelden" BackgroundColor="DarkSlateBlue" TextColor="White" FontAttributes="Bold"
-                    HeightRequest="50" CornerRadius="15"
-                    Clicked="OnLoginClicked"/>
-        </Frame>
-
-        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-            <Label Text="Noch kein Konto?" TextColor="#B0BEC5" FontSize="14"/>
-            <Label Text=" Registrieren" TextColor="DarkSlateBlue" FontAttributes="Bold" FontSize="14">
-                <Label.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="OnRegisterTapped"/>
-                </Label.GestureRecognizers>
-            </Label>
-        </StackLayout>
-
-    </VerticalStackLayout>
+        <Grid x:Name="PopupSuccess" Background="Wheat" Padding="20" IsVisible="False" HorizontalOptions="Center" VerticalOptions="Center"
+               WidthRequest="400" HeightRequest="300">
+            <Label Text="Erfolgreich registiert !"/>
+            <Button Text="Schließen" BackgroundColor="LightGray" TextColor="Black" FontAttributes="Bold" Clicked="OnSuccessPopupCloseClicked"/>
+        </Grid>
+    </Grid>
 </ContentPage>

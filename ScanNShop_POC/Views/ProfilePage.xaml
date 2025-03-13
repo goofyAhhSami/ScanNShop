@@ -11,7 +11,7 @@
                        HorizontalOptions="Center" />
 
                 <Label Text="Benutzername" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" />
-                <Label Text="E-Mail: user@example.com" FontSize="16" HorizontalOptions="Center" />
+                <Label Text="E-Mail: test@gmail.com" FontSize="16" HorizontalOptions="Center" />
 
                 <Button Text="Einstellungen" BackgroundColor="#7FB7BE" TextColor="Black" CornerRadius="15"
                         WidthRequest="250" HeightRequest="50" Clicked="OpenSettings"/>
@@ -21,7 +21,6 @@
             </VerticalStackLayout>
         </ScrollView>
 
-        <!-- Custom TabBar am Ende -->
         <controls:CustomTabbar VerticalOptions="End" />
     </Grid>
 

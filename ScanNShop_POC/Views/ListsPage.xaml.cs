@@ -8,17 +8,24 @@ public partial class ListsPage : ContentPage
     private bool _isPageActive = false;
 
 
-    public ListsPage(LocalDbService dbService)
+    public ListsPage()
     {
         InitializeComponent();
-        SetDbService(dbService);
+        _dbService = new LocalDbService(); 
     }
+
 
     protected override async void OnAppearing()
     {
         base.OnAppearing();
+
+        if (_dbService == null)
+        {
+            Console.WriteLine("_dbService ist NULL in ListsPage!");
+            return;
+        }
+
         await _dbService.DebugDatabase();
-        _isPageActive = true;
         await UpdateListViewAsync();
     }
 
@@ -28,13 +35,24 @@ public partial class ListsPage : ContentPage
         _isPageActive = false;
     }
 
-    private async Task UpdateListViewAsync()
+    public async Task UpdateListViewAsync()
     {
+        if (_dbService == null)
+        {
+            Console.WriteLine("FEHLER: _dbService ist NULL in UpdateListViewAsync!");
+            return;
+        }
+
         var lists = await _dbService.GetLists();
-        Console.WriteLine($"UI Update: {lists.Count} Listen gefunden.");
-        listView.ItemsSource = null;
-        listView.ItemsSource = lists;
+        Console.WriteLine($"Anzahl der Listen geladen: {lists.Count}");
+
+        // Wichtig: UI-Elemente müssen im Main-Thread aktualisiert werden
+        MainThread.BeginInvokeOnMainThread(() =>
+        {
+            listView.ItemsSource = lists;
+        });
     }
+
 
 
     private async void OnListTapped(object sender, ItemTappedEventArgs e)

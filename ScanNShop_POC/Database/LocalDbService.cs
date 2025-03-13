@@ -49,7 +49,21 @@ namespace ScanNShop_POC.Database
 
         public async Task Create(Liste liste)
         {
-            await _connection.InsertAsync(liste);
+            try
+            {
+                if (_connection == null)
+                {
+                    Console.WriteLine("❌ SQLite-Verbindung ist NULL!");
+                    return;
+                }
+
+                await _connection.InsertAsync(liste);
+                Console.WriteLine($"✅ Liste '{liste.Name}' wurde erfolgreich gespeichert.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"❌ FEHLER in Create: {ex.Message}");
+            }
         }
 
         public async Task DeleteAllListsAsync()
@@ -115,6 +129,9 @@ namespace ScanNShop_POC.Database
                 Console.WriteLine("✅ Tabelle 'Liste' existiert mit " + tables.Count + " Spalten.");
             }
         }
+
+        
+
 
 
     }

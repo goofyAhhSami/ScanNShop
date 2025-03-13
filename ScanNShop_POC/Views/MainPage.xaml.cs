@@ -17,7 +17,7 @@ namespace ScanNShop_POC
             InitializeComponent();
             StartTextAnimation();
             _dbService = dbService;
-            Task.Run(UpdateListViewAsync); // Liste initialisieren
+            UpdateListViewAsync().ConfigureAwait(false);
 
             MessagingCenter.Subscribe<ListEdit>(this, "ListDeleted", async (sender) =>
             {
@@ -43,30 +43,33 @@ namespace ScanNShop_POC
             PopupContainer.IsVisible = false;
         }
 
-        private void saveButton_Clicked(object sender, EventArgs e)
+        private async void saveButton_Clicked(object sender, EventArgs e)
         {
-            // Logik zum Speichern der Liste
             string listName = nameEntryField.Text;
-            if (!string.IsNullOrEmpty(listName))
+            if (string.IsNullOrEmpty(listName))
             {
-                // Hier kannst du die Liste speichern
-                // Zum Beispiel: _dbService.SaveList(listName);
+                await DisplayAlert("Fehler", "Bitte geben Sie einen Namen für die Liste ein.", "OK");
+                return;
+            }
 
-                // Popup schließen
-                PopupContainer.IsVisible = false;
-            }
-            else
+            try
             {
-                // Fehlermeldung anzeigen, wenn das Feld leer ist
-                DisplayAlert("Fehler", "Bitte geben Sie einen Namen für die Liste ein.", "OK");
+                var neueListe = new Liste { Name = listName };
+                await _dbService.Create(neueListe);
+
+                Console.WriteLine($"✅ Liste '{listName}' wurde erfolgreich erstellt.");
+                await UpdateListViewAsync();
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"❌ Fehler beim Erstellen der Liste: {ex.Message}");
+                await DisplayAlert("Fehler", $"Die Liste konnte nicht gespeichert werden: {ex.Message}", "OK");
+            }
+
+            // Popup schließen
+            PopupContainer.IsVisible = false;
         }
 
-        private async void openKochPage(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new AiPage());
-
-        }
 
 
         private async void listView_ItemTapped(object sender, ItemTappedEventArgs e)
@@ -142,6 +145,8 @@ namespace ScanNShop_POC
                 await Task.Delay(210); // Wartezeit zwischen den Buchstaben in Millisekunden
             }
         }
+
+
 
 
 

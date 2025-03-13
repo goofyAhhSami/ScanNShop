@@ -50624,11 +50624,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\source\\repos\\ScanNShop_ITP - Kopie\\ScanNShop_POC\\ScanNShop_POC.csproj",
+      "projectUniqueName": "C:\\Users\\User\\source\\repos\\ScanNShop_Sprint_5\\ScanNShop\\ScanNShop_POC\\ScanNShop_POC.csproj",
       "projectName": "ScanNShop_POC",
-      "projectPath": "C:\\Users\\User\\source\\repos\\ScanNShop_ITP - Kopie\\ScanNShop_POC\\ScanNShop_POC.csproj",
+      "projectPath": "C:\\Users\\User\\source\\repos\\ScanNShop_Sprint_5\\ScanNShop\\ScanNShop_POC\\ScanNShop_POC.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\source\\repos\\ScanNShop_ITP - Kopie\\ScanNShop_POC\\obj\\",
+      "outputPath": "C:\\Users\\User\\source\\repos\\ScanNShop_Sprint_5\\ScanNShop\\ScanNShop_POC\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [

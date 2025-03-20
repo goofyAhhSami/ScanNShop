@@ -29,7 +29,7 @@ namespace ScanNShop_POC.Views
             if (token != null)
             {
                 // Hier den Token speichern und den Nutzer weiterleiten
-                var dbService = new LocalDbService();
+                var dbService = LocalDbService.Instance;
                 Application.Current.MainPage = new AppShell(dbService);
             }
             else

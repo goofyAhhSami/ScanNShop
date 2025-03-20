@@ -23,7 +23,9 @@ namespace ScanNShop_POC
                     fonts.AddFont("VarelaRound-Regular.ttf", "Varela");
                 }).UseBarcodeReader();
             builder.ConfigureSyncfusionCore();
-            builder.Services.AddSingleton<LocalDbService>();
+            //builder.Services.AddSingleton<LocalDbService>();
+            // LocalDbService als Singleton registrieren
+            builder.Services.AddSingleton(LocalDbService.Instance);
             builder.Services.AddTransient<MainPage>();
 
 #if DEBUG

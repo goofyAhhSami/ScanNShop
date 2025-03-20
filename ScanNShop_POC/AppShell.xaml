@@ -14,9 +14,11 @@
     <ShellContent Route="ListsPage" ContentTemplate="{DataTemplate views:ListsPage}" />
     <ShellContent Route="ProfilePage" ContentTemplate="{DataTemplate views:ProfilePage}" />
     
-    
-    
- 
+
+
+
+
+
 </Shell>
 
 

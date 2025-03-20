@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ScanNShop_POC.Views.ShoppingView"
              Title="ShoppingView"
-             NavigationPage.HasNavigationBar="false">
+             NavigationPage.HasNavigationBar="false"
+             Shell.NavBarIsVisible="false">
     <VerticalStackLayout BackgroundColor="#F0F8FF">
 
 

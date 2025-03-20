@@ -5,7 +5,6 @@ namespace ScanNShop_POC
 {
     public partial class MainPage : ContentPage
     {
-
         private readonly LocalDbService _dbService;
         private int _editListId;
         private string _fullText = "ScanNShop";
@@ -15,31 +14,26 @@ namespace ScanNShop_POC
         public MainPage(LocalDbService dbService)
         {
             InitializeComponent();
-            StartTextAnimation();
             _dbService = dbService;
-            UpdateListViewAsync().ConfigureAwait(false);
+            StartTextAnimation();
+            UpdateListViewAsync(); // Stelle sicher, dass die Listen geladen werden
 
             MessagingCenter.Subscribe<ListEdit>(this, "ListDeleted", async (sender) =>
             {
-                // Aktualisiere die ListView, wenn eine Liste gelöscht wird
                 await UpdateListViewAsync();
             });
-
         }
 
         private async void createNewList(object sender, EventArgs e)
         {
-            // Zeige das Popup an
             PopupContainer.IsVisible = true;
 
-            // Skalierungseffekt für den Button
             await CreateList.ScaleTo(1.1, 150, Easing.CubicInOut);
             await CreateList.ScaleTo(1, 150, Easing.CubicInOut);
         }
 
         private void ClosePopup(object sender, EventArgs e)
         {
-            // Verstecke das Popup
             PopupContainer.IsVisible = false;
         }
 
@@ -66,38 +60,34 @@ namespace ScanNShop_POC
                 await DisplayAlert("Fehler", $"Die Liste konnte nicht gespeichert werden: {ex.Message}", "OK");
             }
 
-            // Popup schließen
             PopupContainer.IsVisible = false;
         }
 
-
-
         private async void listView_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-
             var liste = (Liste)e.Item;
-            var action = await DisplayActionSheet("Action", "Cancel", null, "Edit", "Delete");
+            var action = await DisplayActionSheet("Aktion auswählen", "Abbrechen", null, "Bearbeiten", "Löschen");
 
-            /* switch (action)
-             {
-                  case "Edit":
-                      _editListId = liste.listId;
-                      nameEntryField.Text = liste.Name;
+            switch (action)
+            {
+                case "Bearbeiten":
+                    _editListId = liste.listId;
+                    nameEntryField.Text = liste.Name;
+                    break;
 
-
-                      break;
-
-                  case "Delete":
-                      await _dbService.Delete(liste);
-                      listView.ItemsSource = await _dbService.GetLists();
-                      break; 
-             }*/
+                case "Löschen":
+                    await _dbService.Delete(liste);
+                    await UpdateListViewAsync();
+                    break;
+            }
         }
-
 
         public async Task UpdateListViewAsync()
         {
-            listView.ItemsSource = await _dbService.GetLists();        }
+            listView.ItemsSource = await _dbService.GetLists();
+        }
+
+        // ✅ KORREKTE NAVIGATION ZUR LISTEDIT SEITE
         private async void OnButtonClicked(object sender, EventArgs e)
         {
             if (sender is Button button && button.BindingContext is Liste liste)
@@ -106,17 +96,13 @@ namespace ScanNShop_POC
             }
         }
 
-
-
-
-        // Methode: Alle Listen löschen
         private async void DeleteAllLists(object sender, EventArgs e)
         {
             var confirm = await DisplayAlert("Bestätigung", "Möchten Sie wirklich alle Listen löschen?", "Ja", "Abbrechen");
             if (confirm)
             {
-                await _dbService.DeleteAllListsAsync(); // Alle Listen löschen
-                await UpdateListViewAsync(); // ListView leeren
+                await _dbService.DeleteAllListsAsync();
+                await UpdateListViewAsync();
             }
         }
 
@@ -139,18 +125,11 @@ namespace ScanNShop_POC
                 {
                     _currentIndex = 0;
                     animatedLabel.Text = string.Empty;
-                    await Task.Delay(1000); // Verzögerung zwischen den Wiederholungen
+                    await Task.Delay(1000);
                 }
 
-                await Task.Delay(210); // Wartezeit zwischen den Buchstaben in Millisekunden
+                await Task.Delay(210);
             }
         }
-
-
-
-
-
-
     }
-
 }

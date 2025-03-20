@@ -11,7 +11,7 @@ public partial class ListsPage : ContentPage
     public ListsPage()
     {
         InitializeComponent();
-        _dbService = new LocalDbService(); 
+        _dbService = LocalDbService.Instance;  
     }
 
 
@@ -25,7 +25,7 @@ public partial class ListsPage : ContentPage
             return;
         }
 
-        await _dbService.DebugDatabase();
+     
         await UpdateListViewAsync();
     }
 

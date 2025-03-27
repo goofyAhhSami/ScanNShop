@@ -6,133 +6,208 @@
              Title="Liste bearbeiten"
              Shell.NavBarIsVisible="false">
 
-    <VerticalStackLayout BackgroundColor="#EDF6F9">
-        <Grid>
-            <Image Source="lebensmittel2.png"
-                Aspect="AspectFill"
-                HorizontalOptions="FillAndExpand"
-                VerticalOptions="FillAndExpand"
-                Opacity="0.07" />
+    <VerticalStackLayout BackgroundColor="#F8FAFC">
 
+        <Grid HeightRequest="60" VerticalOptions="Start" Margin="15,10,15,10" WidthRequest="410">
+            <Border Background="White"
+            Stroke="#2C3E50"
+            StrokeShape="RoundRectangle 20,20,20,20"
+            StrokeThickness="2"
+            Padding="5">
 
-            <ImageButton Source="Resources/Images/back_arrow.png"
-                VerticalOptions="Start"
-                HorizontalOptions="Start"
-                WidthRequest="50"
-                HeightRequest="50"
-                Clicked="navigateBack"
-                Padding="15,0,0,0">
+                <Grid ColumnDefinitions="50,*,50" RowDefinitions="Auto" VerticalOptions="Center">
 
-            </ImageButton>
+                    <!-- Zurück-Button -->
+                    <ImageButton Grid.Column="0"
+                         Source="Resources/Images/back_arrow.png"
+                         VerticalOptions="Center"
+                         HorizontalOptions="Start"
+                         WidthRequest="40"
+                         HeightRequest="40"
+                         Clicked="navigateBack"
+                         Margin="10,0,0,0"/>
 
-            <Button Text="🗑️"
-                FontSize="20"
-                WidthRequest="50"
-                TextColor="White"
-                BackgroundColor="Transparent"
-                VerticalOptions="Start"
-                HorizontalOptions="End"
-                CornerRadius="15"
-                Margin="5,5,0,0"
-                Clicked="DeleteListButton_Clicked">
-            </Button>
-
-
-            <AbsoluteLayout>
-                <BoxView 
-                Color="Black" 
-                Margin="0,15,0,0"
-                HeightRequest="1" 
-                HorizontalOptions="FillAndExpand"
-                AbsoluteLayout.LayoutBounds="0, 0.1, 1, 1"
-                AbsoluteLayout.LayoutFlags="WidthProportional, XProportional, YProportional"/>
-            </AbsoluteLayout>
-
-
-
-
-            <Label Text="Liste"
-                   TextColor="Black"
-                   FontSize="Large"
+                    <!-- Platzhalter für den Titel oder für mittige Ausrichtung -->
+                    <Label Grid.Column="1"
+                   Text="Liste bearbeiten"
+                   FontSize="18"
                    FontAttributes="Bold"
-                   Padding="20,60,0,0"></Label>
-            <VerticalStackLayout Padding="0,90,0,0">
-
-                <Label Text="Produkt manuell eingeben oder scannen"
                    TextColor="Black"
-                   Padding="20,10,20, 0"
-                   FontSize="Body"/>
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"/>
 
-                <Entry
-                x:Name="productEntryField"
-                Placeholder="Produkt"
-                PlaceholderColor="Black"
-                TextColor="Black"
-                FontAttributes="Bold"
-                FontSize="Small"
-                Margin="15,10,0,0"
-                />
+                    <!-- Löschen-Button -->
+                    <Button Grid.Column="2"
+                    Text="🗑️"
+                    FontSize="20"
+                    WidthRequest="50"
+                    TextColor="Black"
+                    BackgroundColor="Transparent"
+                    VerticalOptions="Center"
+                    HorizontalOptions="End"
+                    CornerRadius="15"
+                    Margin="0,0,10,0"
+                    Clicked="DeleteListButton_Clicked"/>
 
-                <Button Text="Hinzufügen" 
+                </Grid>
+            </Border>
+        </Grid>
+
+
+        <Frame x:Name="listInfoFrame"
+               BackgroundColor="White"
+               CornerRadius="25"
+               HasShadow="True"
+               Padding="25"
+               Margin="15,20,15,10"
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="Start"
+               HeightRequest="350"
+               WidthRequest="380">
+
+            <VerticalStackLayout Spacing="10">
+
+                <Label x:Name="listNameLabel"
+                       Text="📝 Liste: -"
+                       FontAttributes="Bold"
+                       FontSize="20"
+                       TextColor="Black" />
+
+                <BoxView HeightRequest="2" BackgroundColor="#D3D3D3" Margin="0,0,0,30"/>
+
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="🛒 Gesamtprodukte:"
+                           FontAttributes="Bold"
+                           FontSize="16"
+                           TextColor="#4A4A4A"/>
+                    <Label x:Name="productCountLabel"
+                           Text="-"
+                           FontSize="16"
+                           TextColor="Black"/>
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="✅ Gekauft:"
+                           FontAttributes="Bold"
+                           FontSize="16"
+                           TextColor="Green"/>
+                    <Label x:Name="purchasedCountLabel"
+                           Text="-"
+                           FontSize="16"
+                           TextColor="Black"/>
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="⏳ Noch zu kaufen:"
+                           FontAttributes="Bold"
+                           FontSize="16"
+                           TextColor="#FF5733"/>
+                    <Label x:Name="remainingCountLabel"
+                           Text="-"
+                           FontSize="16"
+                           TextColor="Black"/>
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="📅 Erstellt am:"
+                           FontAttributes="Bold"
+                           FontSize="16"
+                           TextColor="#4A4A4A"/>
+                    <Label x:Name="creationDateLabel"
+                           Text="-"
+                           FontSize="16"
+                           TextColor="Black"/>
+                </HorizontalStackLayout>
+
+                <Button Text="Einkauf starten"
+                        TextColor="Black"
+                        BackgroundColor="#BCCCDC"
+                        FontSize="17"
+                        BorderColor="#BCCCDC"
+                        BorderWidth="2"
+                        FontAttributes="Bold"
+                        CornerRadius="10"
+                        WidthRequest="305"
+                        Margin="0,30,0,0"
+                        Clicked="startShopping"
+                        HorizontalOptions="Start">
+                    <Button.Shadow>
+                        <Shadow Brush="Black" Opacity="0.2" Offset="3,5" Radius="9"/>
+                    </Button.Shadow>
+                </Button>
+
+            </VerticalStackLayout>
+        </Frame>
+
+        <VerticalStackLayout Padding="10,50,10,0">
+
+            <Label Text="Manuell hinzufügen oder scannen"
+                   TextColor="Black"
+                   FontSize="Medium"
+                   FontAttributes="Bold"
+                   FontFamily="Varela"
+                   HorizontalOptions="Start"
+                   VerticalOptions="Start"/>
+
+            <Entry x:Name="productEntryField"
+                   Placeholder="Produkt"
+                   PlaceholderColor="Black"
+                   TextColor="Black"
+                   FontSize="Small"
+                   VerticalOptions="Center"
+                   />
+
+
+            <Grid>
+            <Button Text="Hinzufügen" 
                     TextColor="Black"
                     FontAttributes="Bold"
                     WidthRequest="300"
                     FontSize="18"
-                    Margin="0,5,70,0"
-                    BackgroundColor="#7FB7BE"
-                    CornerRadius="15"
-                    Clicked="AddProductButton_Clicked"
-                    >
-                    <Button.Shadow>
-                        <Shadow Brush="Black" Opacity="0.25" Offset="5,9" Radius="9" />
-                    </Button.Shadow>
-                </Button>
+                    BackgroundColor="#BCCCDC"
+                    CornerRadius="10"
+                    HorizontalOptions="Start"
+                    VerticalOptions="End"
+                    Margin="0,10,0,0"
+                    Clicked="AddProductButton_Clicked">
+                <Button.Shadow>
+                    <Shadow Brush="Black" Opacity="0.25" Offset="5,9" Radius="9"/>
+                </Button.Shadow>
+            </Button>
 
-                <ImageButton 
-                Source="Resources/Images/scanner.png"
-                WidthRequest="50"
-                HeightRequest="50"
-                CornerRadius="3"
-                Margin="0,-45,-315,0"
-                BackgroundColor="#7FB7BE"
-                    Clicked="OpenScannerPage"
-                />
+            <ImageButton Source="Resources/Images/scanner.png"
+                         WidthRequest="50"
+                         HeightRequest="50"
+                         CornerRadius="3"
+                         BackgroundColor="#BCCCDC"
+                         VerticalOptions="End"
+                         HorizontalOptions="End"
+                         Margin="0,10,0,0"
+                         Clicked="OpenScannerPage"/>
+            </Grid>
 
-                <Button Text="Einkauf starten" TextColor="Black" BackgroundColor="Transparent" FontSize="17" BorderColor="#7FB7BE"
-                BorderWidth="2"
-                FontAttributes="Bold"
-                CornerRadius="15" WidthRequest="300" Margin="-70,20,0,0" Clicked="startShopping">
-                    <Button.Shadow>
-                        <Shadow Brush="Black" Opacity="0.25" Offset="5,9" Radius="9" />
-                    </Button.Shadow>
-                </Button>
+        </VerticalStackLayout>
 
-                <Frame x:Name="productAddedNotificationFrame"
-                BackgroundColor="#8FB7C1"
-                CornerRadius="17"
-                HasShadow="True"
-                Padding="0"
-                HorizontalOptions="Center"
-                VerticalOptions="End"
-                WidthRequest="375"
-                Margin="0,70,0,0"
-                Opacity="0">
+        <Frame x:Name="productAddedNotificationFrame"
+               BackgroundColor="#9AA6B2"
+               CornerRadius="17"
+               HasShadow="True"
+               Padding="0"
+               HorizontalOptions="Center"
+               VerticalOptions="End"
+               WidthRequest="375"
+               Margin="0,30,0,0"
+               Opacity="0">
 
-                    <Label x:Name="productAddedNotification"
-                    Text="Produkt erfolgreich hinzugefügt !"
-                    FontAttributes="Bold"
-                    FontSize="Medium"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    TextColor="Black"
-                    Padding="10,5" />
+            <Label x:Name="productAddedNotification"
+                   Text="Produkt erfolgreich hinzugefügt!"
+                   FontAttributes="Bold"
+                   FontSize="Medium"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   TextColor="Black"
+                   Padding="10,5"/>
+        </Frame>
 
-                </Frame>
-
-
-
-
-            </VerticalStackLayout>
-        </Grid>
     </VerticalStackLayout>
 </ContentPage>

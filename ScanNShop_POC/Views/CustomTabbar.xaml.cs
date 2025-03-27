@@ -20,7 +20,8 @@ namespace ScanNShop_POC.Views
 
         private async void NavigateListsPage(object sender, EventArgs e)
         {
-            await Shell.Current.GoToAsync("//ListsPage");
+
+            await Shell.Current.GoToAsync("ListsPage");
         }
 
         private async void NavigateProfilePage(object sender, EventArgs e)

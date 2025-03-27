@@ -18,6 +18,9 @@ namespace ScanNShop_POC.Database
         [Column("name")]
         public string Name { get; set; }
 
+        [Column("creation_date")]
+        public DateTime CreationDate { get; set; } 
+
 
     }
 }

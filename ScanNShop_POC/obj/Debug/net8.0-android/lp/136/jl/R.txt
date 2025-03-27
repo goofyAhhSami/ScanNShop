@@ -1,13 +1,25 @@
-int attr implementationMode 0x0
-int attr scaleType 0x0
-int id compatible 0x0
-int id fillCenter 0x0
-int id fillEnd 0x0
-int id fillStart 0x0
-int id fitCenter 0x0
-int id fitEnd 0x0
-int id fitStart 0x0
-int id performance 0x0
-int[] styleable PreviewView { 0x0, 0x0 }
-int styleable PreviewView_implementationMode 0
-int styleable PreviewView_scaleType 1
+int drawable abc_vector_test 0x0
+int[] styleable AnimatedStateListDrawableCompat { 0x1010196, 0x101011c, 0x101030c, 0x101030d, 0x1010195, 0x1010194 }
+int styleable AnimatedStateListDrawableCompat_android_constantSize 0
+int styleable AnimatedStateListDrawableCompat_android_dither 1
+int styleable AnimatedStateListDrawableCompat_android_enterFadeDuration 2
+int styleable AnimatedStateListDrawableCompat_android_exitFadeDuration 3
+int styleable AnimatedStateListDrawableCompat_android_variablePadding 4
+int styleable AnimatedStateListDrawableCompat_android_visible 5
+int[] styleable AnimatedStateListDrawableItem { 0x1010199, 0x10100d0 }
+int styleable AnimatedStateListDrawableItem_android_drawable 0
+int styleable AnimatedStateListDrawableItem_android_id 1
+int[] styleable AnimatedStateListDrawableTransition { 0x1010199, 0x101044a, 0x101044b, 0x1010449 }
+int styleable AnimatedStateListDrawableTransition_android_drawable 0
+int styleable AnimatedStateListDrawableTransition_android_fromId 1
+int styleable AnimatedStateListDrawableTransition_android_reversible 2
+int styleable AnimatedStateListDrawableTransition_android_toId 3
+int[] styleable StateListDrawable { 0x1010196, 0x101011c, 0x101030c, 0x101030d, 0x1010195, 0x1010194 }
+int styleable StateListDrawable_android_constantSize 0
+int styleable StateListDrawable_android_dither 1
+int styleable StateListDrawable_android_enterFadeDuration 2
+int styleable StateListDrawable_android_exitFadeDuration 3
+int styleable StateListDrawable_android_variablePadding 4
+int styleable StateListDrawable_android_visible 5
+int[] styleable StateListDrawableItem { 0x1010199 }
+int styleable StateListDrawableItem_android_drawable 0

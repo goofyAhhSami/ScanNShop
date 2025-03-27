@@ -15,7 +15,6 @@ namespace ScanNShop_POC
         {
             InitializeComponent();
             _dbService = dbService;
-            StartTextAnimation();
             UpdateListViewAsync(); // Stelle sicher, dass die Listen geladen werden
 
             MessagingCenter.Subscribe<ListEdit>(this, "ListDeleted", async (sender) =>
@@ -106,30 +105,6 @@ namespace ScanNShop_POC
             }
         }
 
-        private async void StartTextAnimation()
-        {
-            if (_isAnimating)
-                return;
-
-            _isAnimating = true;
-            animatedLabel.Text = string.Empty;
-
-            while (true)
-            {
-                if (_currentIndex < _fullText.Length)
-                {
-                    animatedLabel.Text += _fullText[_currentIndex];
-                    _currentIndex++;
-                }
-                else
-                {
-                    _currentIndex = 0;
-                    animatedLabel.Text = string.Empty;
-                    await Task.Delay(1000);
-                }
-
-                await Task.Delay(210);
-            }
-        }
+        
     }
 }

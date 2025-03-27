@@ -43,8 +43,9 @@ public partial class ListEdit : ContentPage
             };
             await _dbService.CreateProduct(product);
             productEntryField.Text = string.Empty;
+            LoadListData();
 
-           /* if (productAddedNotificationFrame != null && productAddedNotificationFrame.Handler != null)
+            if (productAddedNotificationFrame != null && productAddedNotificationFrame.Handler != null)
             {
                 await productAddedNotificationFrame.FadeTo(1, 500);
                 await Task.Delay(2000);
@@ -53,7 +54,8 @@ public partial class ListEdit : ContentPage
                 {
                     await productAddedNotificationFrame.FadeTo(0, 500);
                 }
-            }*/
+            }
+
         }
     }
 
@@ -63,6 +65,24 @@ public partial class ListEdit : ContentPage
         if (list != null)
         {
             Title = list.Name;
+            listNameLabel.Text = $"{list.Name}";
+
+            // Gesamtanzahl der Produkte
+            int totalProducts = await GetProductCount(_listId);
+            productCountLabel.Text = $"{totalProducts}";
+
+            // Gekaufte Produkte
+            int purchasedProducts = await GetPurchasedProductCount(_listId);
+            purchasedCountLabel.Text = $"{purchasedProducts}";
+
+            // Übrige Produkte berechnen
+            int remainingProducts = totalProducts - purchasedProducts;
+            remainingCountLabel.Text = $"{remainingProducts}";
+
+            // Erstellungsdatum anzeigen
+            creationDateLabel.Text = list.CreationDate != default
+                ? $"{list.CreationDate:dd.MM.yyyy}"
+                : "Unbekannt";
         }
         else
         {
@@ -70,6 +90,21 @@ public partial class ListEdit : ContentPage
             await Shell.Current.GoToAsync("..");
         }
     }
+
+
+
+
+    private async Task<int> GetProductCount(int listId)
+    {
+        return await _dbService.GetProductCountAsync(listId);
+    }
+
+    private async Task<int> GetPurchasedProductCount(int listId)
+    {
+        return await _dbService.GetPurchasedProductCountAsync(listId);
+    }
+
+
 
 
 

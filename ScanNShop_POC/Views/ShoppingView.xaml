@@ -1,65 +1,74 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ScanNShop_POC.Converter"
              x:Class="ScanNShop_POC.Views.ShoppingView"
              Title="ShoppingView"
              NavigationPage.HasNavigationBar="false"
              Shell.NavBarIsVisible="false">
-    <VerticalStackLayout BackgroundColor="#F0F8FF">
 
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:BooleanToColorConverter x:Key="BooleanToColorConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
-        <ImageButton Source="Resources/Images/back_arrow.png"
-        VerticalOptions="Start"
-        HorizontalOptions="Start"
-        WidthRequest="50"
-        HeightRequest="50"
-        Aspect="AspectFit"
-        Clicked="navigateBack"
-        Padding="15,0,0,0"/>
+    <VerticalStackLayout BackgroundColor="#F0F8FF" Padding="10">
 
-        <BoxView Color="Black" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
-
-        <Label Text="Zu Kaufen" FontSize="Large" FontAttributes="Bold" Margin="20,10,0,0" Padding="0,0,0,10" TextColor="Black" FontFamily="Varela"/>
-        <ListView x:Name="unCheckedProductsListView" SeparatorVisibility="None" SelectionMode="None">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <HorizontalStackLayout Padding="10" Spacing="10" VerticalOptions="Center" HeightRequest="60">
-                            <Button Text="{Binding Name}" VerticalOptions="Center" TextColor="White" FontSize="Medium" Margin="0,-2,0,0" Clicked="Product_ItemTapped" WidthRequest="200" BackgroundColor="#578890" BorderColor="#333333" BorderWidth="2" FontFamily="Varela" FontAttributes="Bold"/>
-                            <Button Text="-" FontAttributes="Bold" Clicked="DecreaseQuantity_Clicked" CommandParameter="{Binding .}" VerticalOptions="End" Margin="10,0,0,0" BackgroundColor="#5c615d" FontFamily="Varela"/>
-                            <Button Text="+" FontAttributes="Bold" Clicked="IncreaseQuantity_Clicked" CommandParameter="{Binding .}" VerticalOptions="End" Margin="20,0,0,0" BackgroundColor="#5c615d" FontFamily="Varela"/>
-                            <Label Text="{Binding Quantity}" FontAttributes="Bold" VerticalOptions="Center" VerticalTextAlignment="Center" TextColor="Black" FontSize="Medium" Margin="15,0,0,0" FontFamily="Varela"/>
-                        </HorizontalStackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-
-        <Grid x:Name="PopupOverlay" BackgroundColor="#F0F8FF" IsVisible="False">
-            <Frame BackgroundColor="White" Padding="20" VerticalOptions="Center" HorizontalOptions="Center" CornerRadius="7" Margin="0,-40,0,0">
-                <StackLayout>
-                    <Label Text="Sie haben nun alles im Einkaufswagen!" FontSize="Medium" TextColor="Black" HorizontalTextAlignment="Center" FontFamily="Varela" FontAttributes="Bold"/>
-                    <Button Text="Schließen" Clicked="ClosePopup" BackgroundColor="#7FB7BE" TextColor="Black" CornerRadius="10" FontAttributes="Bold" FontFamily="Varela"/>
-                </StackLayout>
-            </Frame>
+        <!-- Header -->
+        <Grid HeightRequest="60" VerticalOptions="Start" Margin="15,10,15,10">
+            <Border Background="White" Stroke="#2C3E50" StrokeShape="RoundRectangle 20,20,20,20" StrokeThickness="2" Padding="5">
+                <Grid ColumnDefinitions="50,*,50">
+                    <ImageButton Grid.Column="0" Source="Resources/Images/back_arrow.png"
+                                 VerticalOptions="Center" HorizontalOptions="Start"
+                                 WidthRequest="40" HeightRequest="40"
+                                 Clicked="navigateBack" Margin="10,0,0,0"/>
+                    <Label x:Name="shoppingStatusLabel"
+                           Grid.Column="1" Text="Lade Einkaufsliste..."
+                           FontSize="18" FontAttributes="Bold" TextColor="Black"
+                           HorizontalOptions="Center" VerticalOptions="Center"/>
+                </Grid>
+            </Border>
         </Grid>
 
+        <Label Text="🛒 Produkte" FontSize="Large" FontAttributes="Bold" Margin="20,10,0,15" TextColor="Black"/>
 
-        <Label Text="Abgehakte Produkte" FontSize="Large" FontAttributes="Bold" Margin="18,10,0,0" TextColor="Black" Padding="0,0,0,10" FontFamily="Varela" />
-        <ListView x:Name="checkedProductsListView" HasUnevenRows="True" SeparatorVisibility="None" SelectionMode="None">
-            <ListView.ItemTemplate>
+        <CollectionView x:Name="productsCollectionView" SelectionMode="None">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" Span="2" VerticalItemSpacing="10" HorizontalItemSpacing="10"/>
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
-                        <HorizontalStackLayout Padding="10,3,0,0" Spacing="10"  VerticalOptions="Center">
-                            <Button Text="{Binding Name}" VerticalOptions="Center" TextColor="White" FontSize="Medium" WidthRequest="200"  BackgroundColor="#2F5E64" BorderWidth="2" BorderColor="#333333" FontFamily="Varela" FontAttributes="Bold"/>
-                            <Label Text="{Binding Quantity, StringFormat='x {0}'}" FontAttributes="Bold" VerticalOptions="Center" VerticalTextAlignment="Center" TextColor="Black" FontSize="Medium" FontFamily="Varela"  />
-                        </HorizontalStackLayout>
-                    </ViewCell>
+                    <Frame Padding="15" CornerRadius="15" HeightRequest="150"
+                           BackgroundColor="{Binding IsChecked, Converter={StaticResource BooleanToColorConverter}}">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Product_ItemTapped" NumberOfTapsRequired="1"/>
+                        </Frame.GestureRecognizers>
+                        <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="5">
+                            <Label Text="{Binding Name}" FontSize="Medium" FontAttributes="Bold"
+                                   HorizontalOptions="Center" TextColor="Black"/>
+                            <HorizontalStackLayout HorizontalOptions="Center" Spacing="15">
+                                <Button Text="-" Clicked="DecreaseQuantity_Clicked" FontSize="18"
+                                        CommandParameter="{Binding}" BackgroundColor="Transparent"
+                                        TextColor="Black" WidthRequest="40"/>
+                                <Label Text="{Binding Quantity}" FontSize="Medium" FontAttributes="Bold"
+                                       HorizontalOptions="Center" TextColor="Black"/>
+                                <Button Text="+" Clicked="IncreaseQuantity_Clicked" FontSize="18"
+                                        CommandParameter="{Binding}" BackgroundColor="Transparent"
+                                        TextColor="Black" WidthRequest="40"/>
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </Frame>
                 </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
 
-       
-
+        <Label x:Name="emptyListLabel"
+               Text="Alles erledigt! Keine Produkte mehr übrig."
+               FontSize="Medium" FontAttributes="Bold"
+               TextColor="Green"
+               HorizontalOptions="Center"
+               VerticalOptions="End"
+               IsVisible="False"/>
     </VerticalStackLayout>
 </ContentPage>

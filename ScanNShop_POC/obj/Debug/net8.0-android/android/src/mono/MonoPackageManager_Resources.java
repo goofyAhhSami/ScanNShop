@@ -6,6 +6,8 @@ public class MonoPackageManager_Resources {
 		"Azure.Core.dll",
 		"Azure.Identity.dll",
 		"Azure.Security.KeyVault.Secrets.dll",
+		"CommunityToolkit.Maui.dll",
+		"CommunityToolkit.Maui.Core.dll",
 		"GoogleGson.dll",
 		"GroqSharp.dll",
 		"Microsoft.Bcl.AsyncInterfaces.dll",

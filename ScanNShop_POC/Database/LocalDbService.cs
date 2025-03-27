@@ -19,8 +19,20 @@ namespace ScanNShop_POC.Database
         private LocalDbService()
         {
             _connection = new SQLiteAsyncConnection(Path.Combine(FileSystem.AppDataDirectory, DB_NAME));
-            _connection.CreateTableAsync<Liste>();
-            _connection.CreateTableAsync<Product>();
+            InitializeDatabase();
+        }
+
+        private async void InitializeDatabase()
+        {
+            await _connection.CreateTableAsync<Liste>();
+            await _connection.CreateTableAsync<Product>();
+
+            // Falls eine alte Datenbank existiert, prüfe, ob das Feld "CreationDate" vorhanden ist
+            var tableInfo = await _connection.GetTableInfoAsync("liste");
+            if (!tableInfo.Exists(c => c.Name == "creation_date"))
+            {
+                await _connection.ExecuteAsync("ALTER TABLE liste ADD COLUMN creation_date TEXT");
+            }
         }
 
         public async Task<List<Liste>> GetLists()
@@ -41,7 +53,11 @@ namespace ScanNShop_POC.Database
             return await _connection.Table<Liste>().FirstOrDefaultAsync(l => l.listId == listId);
         }
 
-        public async Task Create(Liste liste) => await _connection.InsertAsync(liste);
+        public async Task Create(Liste liste)
+        {
+            liste.CreationDate = DateTime.UtcNow; 
+            await _connection.InsertAsync(liste);
+        }
         public async Task Update(Liste liste) => await _connection.UpdateAsync(liste);
         public async Task Delete(Liste liste) => await _connection.DeleteAsync(liste);
         public async Task DeleteAllListsAsync() => await _connection.DeleteAllAsync<Liste>();
@@ -56,8 +72,29 @@ namespace ScanNShop_POC.Database
             return await _connection.Table<Product>().Where(p => p.ListId == listId && !p.IsChecked).ToListAsync();
         }
 
+        public async Task<List<Product>> GetAllProductsByListId(int listId)
+        {
+            return await _connection.Table<Product>()
+                                    .Where(p => p.ListId == listId)
+                                    .ToListAsync();
+        }
+
+
         public async Task CreateProduct(Product product) => await _connection.InsertAsync(product);
         public async Task UpdateProduct(Product product) => await _connection.UpdateAsync(product);
         public async Task DeleteProduct(Product product) => await _connection.DeleteAsync(product);
+
+        public async Task<int> GetProductCountAsync(int listId)
+        {
+            return await _connection.Table<Product>().Where(p => p.ListId == listId).CountAsync();
+        }
+
+        public async Task<int> GetPurchasedProductCountAsync(int listId)
+        {
+            return await _connection.Table<Product>().Where(p => p.ListId == listId && p.IsChecked).CountAsync();
+        }
+
+
+
     }
 }

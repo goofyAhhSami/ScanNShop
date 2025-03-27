@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ScanNShop_POC.Views.LogInPage"
-             BackgroundColor="#EDF6F9"
+             BackgroundColor="#F8FAFC"
              NavigationPage.HasNavigationBar="false">
 
     <Grid>
@@ -12,7 +12,8 @@
                 <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
                     <Image Source="logo_s.png" HeightRequest="100" WidthRequest="100" />
                     <Label Text="ScanNShop"
-                           TextColor="DarkSlateBlue"
+                           TextColor="Black"
+                           Opacity="0.8"
                            FontSize="32"
                            FontAttributes="Bold"
                            VerticalOptions="Center"
@@ -34,13 +35,13 @@
             </Frame>
 
             <Frame CornerRadius="15" HasShadow="True" Padding="0" BackgroundColor="Transparent">
-                <Button Text="Anmelden" BackgroundColor="DarkSlateBlue" TextColor="White" FontAttributes="Bold"
-                        HeightRequest="50" CornerRadius="15"
+                <Button Text="Anmelden" BackgroundColor="#9AA6B2" TextColor="White" FontAttributes="Bold"
+                        HeightRequest="50" CornerRadius="15" FontSize="15"
                         Clicked="OnLoginClicked"/>
             </Frame>
 
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                <Label Text="Noch kein Konto?" TextColor="#B0BEC5" FontSize="14"/>
+                <Label Text="Noch kein Konto?" TextColor="DarkGray" FontSize="14"/>
                 <Label Text=" Registrieren" TextColor="DarkSlateBlue" FontAttributes="Bold" FontSize="14">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnRegisterTapped"/>

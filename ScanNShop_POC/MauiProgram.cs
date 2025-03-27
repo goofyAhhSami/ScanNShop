@@ -3,6 +3,7 @@ using Microsoft.Maui.Controls.PlatformConfiguration;
 using ScanNShop_POC.Database;
 using ZXing.Net.Maui.Controls;
 using Syncfusion.Maui.Core.Hosting;
+using CommunityToolkit.Maui;
 
 namespace ScanNShop_POC
 {
@@ -13,6 +14,7 @@ namespace ScanNShop_POC
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .UseMauiCommunityToolkit()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

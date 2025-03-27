@@ -14,34 +14,35 @@ public partial class ShoppingView : ContentPage
         _dbService = dbService;
         _listId = listId;
         LoadProducts();
-
-      
     }
 
     public async void LoadProducts()
     {
-        var uncheckedProducts = await _dbService.GetProductsByListId(_listId);
-        var checkedProducts = await _dbService.GetCheckedProductsByListId(_listId);
+        var allProducts = await _dbService.GetAllProductsByListId(_listId);
 
-        unCheckedProductsListView.ItemsSource = uncheckedProducts;
-        checkedProductsListView.ItemsSource = checkedProducts;
+        var sorted = allProducts.OrderBy(p => p.IsChecked).ToList();
+        productsCollectionView.ItemsSource = sorted;
 
-        if (uncheckedProducts.Count == 0)
-        {
-            await ShowCompletionPopup();
-        }
+        emptyListLabel.IsVisible = !sorted.Any(p => !p.IsChecked);
+        UpdateShoppingStatus(sorted);
+    }
+
+    private void UpdateShoppingStatus(List<Product> products)
+    {
+        int remaining = products.Count(p => !p.IsChecked);
+        int done = products.Count(p => p.IsChecked);
+
+        if (remaining == 0 && done > 0)
+            shoppingStatusLabel.Text = "Einkauf abgeschlossen!";
+        else if (remaining > 0)
+            shoppingStatusLabel.Text = $"Einkauf läuft – {remaining} Artikel übrig";
         else
-        {
-            // Ensure the popup is hidden if products are present
-            PopupOverlay.IsVisible = false;
-        }
-
-
+            shoppingStatusLabel.Text = "Keine Produkte in der Liste.";
     }
 
     private async void Product_ItemTapped(object sender, EventArgs e)
     {
-        if (sender is Button button && button.BindingContext is Product product)
+        if (sender is Frame frame && frame.BindingContext is Product product)
         {
             product.IsChecked = !product.IsChecked;
             await _dbService.UpdateProduct(product);
@@ -49,45 +50,36 @@ public partial class ShoppingView : ContentPage
         }
     }
 
-    private async Task ShowCompletionPopup()
-    {
-        PopupOverlay.IsVisible = true; // Popup sichtbar machen
-    }
-
-    private async void ClosePopup(object sender, EventArgs e)
-    {
-        PopupOverlay.IsVisible = false; // Popup ausblenden
-        await Navigation.PopAsync(true);
-      
-    }
-
-
     private async void IncreaseQuantity_Clicked(object sender, EventArgs e)
     {
-        var product = (Product)((Button)sender).CommandParameter;
-        product.Quantity++;
-        await _dbService.UpdateProduct(product);
-        LoadProducts();
+        if (sender is Button btn && btn.CommandParameter is Product product)
+        {
+            product.Quantity++;
+            await _dbService.UpdateProduct(product);
+            LoadProducts();
+        }
     }
 
     private async void DecreaseQuantity_Clicked(object sender, EventArgs e)
     {
-        var product = (Product)((Button)sender).CommandParameter;
-        if (product.Quantity > 1)
+        if (sender is Button btn && btn.CommandParameter is Product product)
         {
-            product.Quantity--;
-            await _dbService.UpdateProduct(product);
+            if (product.Quantity > 1)
+            {
+                product.Quantity--;
+                await _dbService.UpdateProduct(product);
+            }
+            else
+            {
+                await _dbService.DeleteProduct(product);
+            }
+
+            LoadProducts();
         }
-        else
-        {
-            await _dbService.DeleteProduct(product);
-        }
-        LoadProducts();
     }
 
     private async void navigateBack(object sender, EventArgs e)
     {
         await Navigation.PopAsync(true);
     }
-
 }

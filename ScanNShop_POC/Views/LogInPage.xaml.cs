@@ -1,3 +1,4 @@
+﻿using Newtonsoft.Json;
 using ScanNShop_POC.Database;
 using ScanNShop_POC.Services;
 using System;
@@ -11,7 +12,7 @@ namespace ScanNShop_POC.Views
         public LogInPage()
         {
             InitializeComponent();
-            _apiService = new ApiService();
+            _apiService = ApiService.Instance;
         }
 
         private async void OnLoginClicked(object sender, EventArgs e)
@@ -28,8 +29,65 @@ namespace ScanNShop_POC.Views
             var token = await _apiService.Login(username, password);
             if (token != null)
             {
-                // Hier den Token speichern und den Nutzer weiterleiten
+                Preferences.Set("IsGuest", false);
+                _apiService.SetAuthToken(token); // Set JWT for further API calls
+
                 var dbService = LocalDbService.Instance;
+
+                // ✅ Lokale SQLite-Datenbank löschen
+                await dbService.DeleteAllListsAsync();
+              
+                await dbService.DeleteAllProductsAsync();
+
+
+                // ✅ User vom Server holen
+                var user = await _apiService.GetUserByUsername(username);
+                if (user == null)
+                {
+                    await DisplayAlert("Fehler", "Benutzer konnte nicht geladen werden.", "OK");
+                    return;
+                }
+
+                // 🆕 User in Preferences speichern
+                var userJson = JsonConvert.SerializeObject(user);
+                Preferences.Set("User", userJson);
+                Console.WriteLine($"✅ Benutzer gespeichert in Preferences: {userJson}");
+
+                // ✅ Listen holen
+                var listen = await _apiService.GetListsByUserId(user.UserId);
+                if (listen == null || !listen.Any())
+                {
+                    await DisplayAlert("Hinweis", "Keine Listen gefunden.", "OK");
+                }
+
+                // ✅ Listen speichern
+                foreach (var liste in listen)
+                {
+                    Console.WriteLine("Liste ID :" + liste.ListId);
+                    await dbService.Create(new Liste
+                    {
+                        ListId = liste.ListId,
+                        Name = liste.Name,
+                        CreationDate = DateTime.UtcNow
+                    });
+                }
+
+                // ✅ Produkte holen & speichern
+                var listIds = listen.Select(l => l.ListId).ToList();
+                var produkte = await _apiService.GetProductsByListIds(listIds);
+                foreach (var produkt in produkte)
+                {
+                    await dbService.CreateProduct(new Product
+                    {
+                        ProductId = produkt.ProductId,
+                        ListId = produkt.ListId ,
+                        Name = produkt.Name,
+                        Quantity = produkt.Quantity,
+                        IsChecked = produkt.IsChecked
+                    });
+                }
+
+                // ✅ Navigation
                 Application.Current.MainPage = new AppShell(dbService);
             }
             else
@@ -38,12 +96,14 @@ namespace ScanNShop_POC.Views
             }
         }
 
+
+
         private void OnRegisterTapped(object sender, EventArgs e)
         {
             Overlay.IsVisible = true;
             RegisterPopup.IsVisible = true;
 
-            // Animation f�r das Abdunkeln des Hintergrunds
+            // Animation für das Abdunkeln des Hintergrunds
             Overlay.FadeTo(0.5, 250);
         }
 
@@ -62,7 +122,7 @@ namespace ScanNShop_POC.Views
 
             if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
-                await DisplayAlert("Fehler", "Bitte f�lle alle Felder aus.", "OK");
+                await DisplayAlert("Fehler", "Bitte fülle alle Felder aus.", "OK");
                 return;
             }
 
@@ -77,6 +137,17 @@ namespace ScanNShop_POC.Views
                 await DisplayAlert("Fehler", "Registrierung fehlgeschlagen.", "OK");
             }
         }
+
+        private void OnGuestTapped(object sender, EventArgs e)
+        {
+            var dbService = LocalDbService.Instance;
+
+            // Speichern, dass der Benutzer ein Gast ist
+            Preferences.Set("IsGuest", true);
+
+            Application.Current.MainPage = new AppShell(dbService);
+        }
+
 
         private void OnSuccessPopupCloseClicked(object sender, EventArgs e)
         {

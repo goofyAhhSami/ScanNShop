@@ -10,7 +10,7 @@ namespace ScanNShop_POC.Database
     [Table("product")]
     public class Product
     {
-        [PrimaryKey, AutoIncrement]
+        [PrimaryKey]
         public int ProductId { get; set; }
 
         [Indexed]

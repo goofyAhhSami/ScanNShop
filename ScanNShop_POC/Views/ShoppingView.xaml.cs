@@ -1,5 +1,6 @@
 using ScanNShop_POC.Database;
 using Microsoft.Maui.Controls;
+using ScanNShop_POC.Services;
 
 namespace ScanNShop_POC.Views;
 
@@ -46,6 +47,13 @@ public partial class ShoppingView : ContentPage
         {
             product.IsChecked = !product.IsChecked;
             await _dbService.UpdateProduct(product);
+
+            if (Connectivity.Current.NetworkAccess == NetworkAccess.Internet)
+            {
+                var api = ApiService.Instance;
+                await api.UpdateProduct(product);
+            }
+
             LoadProducts();
         }
     }
@@ -56,6 +64,14 @@ public partial class ShoppingView : ContentPage
         {
             product.Quantity++;
             await _dbService.UpdateProduct(product);
+
+            if (Connectivity.Current.NetworkAccess == NetworkAccess.Internet)
+            {
+                var api = ApiService.Instance;
+                Console.WriteLine("Increase");
+                await api.UpdateProduct(product);
+            }
+
             LoadProducts();
         }
     }
@@ -68,15 +84,24 @@ public partial class ShoppingView : ContentPage
             {
                 product.Quantity--;
                 await _dbService.UpdateProduct(product);
+
+                if (Connectivity.Current.NetworkAccess == NetworkAccess.Internet)
+                {
+                    var api = ApiService.Instance;
+                   
+                    await api.UpdateProduct(product);
+                }
             }
             else
             {
                 await _dbService.DeleteProduct(product);
+                // Optional: DELETE vom Server – falls du möchtest
             }
 
             LoadProducts();
         }
     }
+
 
     private async void navigateBack(object sender, EventArgs e)
     {

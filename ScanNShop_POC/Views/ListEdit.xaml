@@ -24,7 +24,7 @@
                          HorizontalOptions="Start"
                          WidthRequest="40"
                          HeightRequest="40"
-                         Clicked="navigateBack"
+                          Command="{Binding NavigateBackCommand}"
                          Margin="10,0,0,0"/>
 
                     <!-- Platzhalter für den Titel oder für mittige Ausrichtung -->
@@ -175,7 +175,8 @@
                 </Button.Shadow>
             </Button>
 
-            <ImageButton Source="Resources/Images/scanner.png"
+                <ImageButton  x:Name="ScannerButton"
+                              Source="Resources/Images/scanner.png"
                          WidthRequest="50"
                          HeightRequest="50"
                          CornerRadius="3"

@@ -26,7 +26,7 @@ public partial class NewList : ContentPage
         {
             await _dbService.Update(new Liste
             {
-                listId = _editListId,
+                ListId = _editListId,
                 Name = nameEntryField.Text
             });
             _editListId = 0;

@@ -10,10 +10,10 @@ namespace ScanNShop_POC.Database
     [Table("liste")]
     public class Liste
     {
+       
         [PrimaryKey]
-        [AutoIncrement]
-        [Column("listId")]
-        public int listId { get; set; }
+        public int ListId { get; set; } // statt listId
+
 
         [Column("name")]
         public string Name { get; set; }

@@ -1,4 +1,7 @@
-﻿using ScanNShop_POC.Database;
+﻿using Newtonsoft.Json;
+using ScanNShop_POC.Database;
+using ScanNShop_POC.DTO;
+using ScanNShop_POC.Services;
 using ScanNShop_POC.Views;
 
 namespace ScanNShop_POC
@@ -21,6 +24,12 @@ namespace ScanNShop_POC
             {
                 await UpdateListViewAsync();
             });
+
+            MessagingCenter.Subscribe<ListsPage>(this, "ListDeletedFromListsPage", async (sender) =>
+            {
+                await UpdateListViewAsync();
+            });
+
         }
 
         private async void createNewList(object sender, EventArgs e)
@@ -36,6 +45,8 @@ namespace ScanNShop_POC
             PopupContainer.IsVisible = false;
         }
 
+
+
         private async void saveButton_Clicked(object sender, EventArgs e)
         {
             string listName = nameEntryField.Text;
@@ -49,8 +60,49 @@ namespace ScanNShop_POC
             {
                 var neueListe = new Liste { Name = listName };
                 await _dbService.Create(neueListe);
+                Console.WriteLine($"✅ Liste '{listName}' wurde lokal erstellt.");
 
-                Console.WriteLine($"✅ Liste '{listName}' wurde erfolgreich erstellt.");
+                // 🌐 Wenn Internet verfügbar → hochladen
+                if (Connectivity.Current.NetworkAccess == NetworkAccess.Internet)
+                {
+                    var userRaw = Preferences.Get("User", null);
+                    Console.WriteLine($"[DEBUG] User-JSON: {userRaw}");
+
+                    if (!string.IsNullOrEmpty(userRaw) && userRaw.Trim().StartsWith("{"))
+                    {
+                        var userObj = JsonConvert.DeserializeObject<User>(userRaw);
+                        var api = ApiService.Instance;
+
+                        var newListIdFromServer = await api.InsertList(new CreateListDto
+                        {
+                            Name = listName,
+                            UserId = userObj.UserId
+                        });
+
+                        Console.WriteLine("NewListId: " + newListIdFromServer);
+                        if (newListIdFromServer.HasValue)
+                        {
+                            // ❌ Lokale Liste löschen (falsche SQLite-ID)
+                            await _dbService.Delete(neueListe);
+
+                            // ✅ Neue Liste mit korrekter Server-ListId einfügen
+                            var syncedListe = new Liste
+                            {
+                                ListId = newListIdFromServer.Value,
+                                Name = listName,
+                                CreationDate = DateTime.UtcNow
+                            };
+
+                            await _dbService.Create(syncedListe);
+                            Console.WriteLine($"✅ Liste mit Server-ListId gespeichert: {syncedListe.ListId}");
+
+                            Console.WriteLine($"✅ Server-ListId gespeichert: {newListIdFromServer.Value}");
+                        }
+                    }
+
+
+                }
+
                 await UpdateListViewAsync();
             }
             catch (Exception ex)
@@ -62,6 +114,8 @@ namespace ScanNShop_POC
             PopupContainer.IsVisible = false;
         }
 
+
+
         private async void listView_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             var liste = (Liste)e.Item;
@@ -70,7 +124,7 @@ namespace ScanNShop_POC
             switch (action)
             {
                 case "Bearbeiten":
-                    _editListId = liste.listId;
+                    _editListId = liste.ListId;
                     nameEntryField.Text = liste.Name;
                     break;
 
@@ -86,12 +140,12 @@ namespace ScanNShop_POC
             listView.ItemsSource = await _dbService.GetLists();
         }
 
-        // ✅ KORREKTE NAVIGATION ZUR LISTEDIT SEITE
+       
         private async void OnButtonClicked(object sender, EventArgs e)
         {
             if (sender is Button button && button.BindingContext is Liste liste)
             {
-                await Shell.Current.GoToAsync($"{nameof(ListEdit)}?listId={liste.listId}");
+                await Shell.Current.GoToAsync($"{nameof(ListEdit)}?listId={liste.ListId}");
             }
         }
 

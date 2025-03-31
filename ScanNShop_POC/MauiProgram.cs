@@ -4,6 +4,7 @@ using ScanNShop_POC.Database;
 using ZXing.Net.Maui.Controls;
 using Syncfusion.Maui.Core.Hosting;
 using CommunityToolkit.Maui;
+using ScanNShop_POC.Services;
 
 namespace ScanNShop_POC
 {
@@ -28,6 +29,7 @@ namespace ScanNShop_POC
             //builder.Services.AddSingleton<LocalDbService>();
             // LocalDbService als Singleton registrieren
             builder.Services.AddSingleton(LocalDbService.Instance);
+            builder.Services.AddSingleton(ApiService.Instance);
             builder.Services.AddTransient<MainPage>();
 
 #if DEBUG

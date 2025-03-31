@@ -1,5 +1,8 @@
 ﻿using ScanNShop_POC.Database;
 using ScanNShop_POC.Views;
+using Microsoft.Maui.Networking; // Wichtig für Connectivity
+using System.Windows.Input;
+using ScanNShop_POC.Services;
 
 namespace ScanNShop_POC.Views;
 
@@ -8,14 +11,17 @@ public partial class ListEdit : ContentPage
 {
     private readonly LocalDbService _dbService;
     private int _listId;
+    public ICommand NavigateBackCommand { get; }
 
     public ListEdit()
     {
         InitializeComponent();
-      
+
         _dbService = LocalDbService.Instance; // Singleton-Instanz verwenden
 
         //shoppingView = new ShoppingView(dbService, _listId);
+        NavigateBackCommand = new Command(async () => await navigateBack());
+        BindingContext = this;
     }
 
 
@@ -26,38 +32,66 @@ public partial class ListEdit : ContentPage
             if (!string.IsNullOrEmpty(value) && int.TryParse(value, out int id))
             {
                 _listId = id;
+      
                 LoadListData();
             }
         }
     }
+
+
     private async void AddProductButton_Clicked(object sender, EventArgs e)
     {
         if (!string.IsNullOrWhiteSpace(productEntryField.Text))
         {
-            var product = new Product
+            var localProduct = new Product
             {
                 ListId = _listId,
                 Name = productEntryField.Text,
                 Quantity = 1,
                 IsChecked = false
             };
-            await _dbService.CreateProduct(product);
-            productEntryField.Text = string.Empty;
-            LoadListData();
 
-            if (productAddedNotificationFrame != null && productAddedNotificationFrame.Handler != null)
+            // 🟡 Lokale Version einfügen
+            await _dbService.CreateProduct(localProduct);
+
+            // 🟢 Server Sync
+            if (Connectivity.Current.NetworkAccess == NetworkAccess.Internet)
             {
-                await productAddedNotificationFrame.FadeTo(1, 500);
-                await Task.Delay(2000);
-
-                if (productAddedNotificationFrame != null && productAddedNotificationFrame.Handler != null)
+                var api = ApiService.Instance;
+                var serverProductId = await api.InsertSingleProduct(localProduct);
+                Console.WriteLine(serverProductId.ToString());
+                if (serverProductId.HasValue)
                 {
-                    await productAddedNotificationFrame.FadeTo(0, 500);
+                    // ❌ lokale (falsche ID) löschen
+                    await _dbService.DeleteProduct(localProduct);
+
+                    // ✅ neu mit Server-ID einfügen
+                    var synced = new Product
+                    {
+                        ProductId = serverProductId.Value,
+                        ListId = localProduct.ListId,
+                        Name = localProduct.Name,
+                        Quantity = localProduct.Quantity,
+                        IsChecked = localProduct.IsChecked
+                    };
+
+                    await _dbService.CreateProduct(synced);
+                    Console.WriteLine($"✅ Produkt mit Server-Id gespeichert: {serverProductId.Value}");
                 }
             }
 
+            productEntryField.Text = string.Empty;
+
+            if (productAddedNotificationFrame?.Handler != null)
+            {
+                await productAddedNotificationFrame.FadeTo(1, 500);
+                await Task.Delay(2000);
+                if (productAddedNotificationFrame?.Handler != null)
+                    await productAddedNotificationFrame.FadeTo(0, 500);
+            }
         }
     }
+
 
     private async void LoadListData()
     {
@@ -65,24 +99,6 @@ public partial class ListEdit : ContentPage
         if (list != null)
         {
             Title = list.Name;
-            listNameLabel.Text = $"{list.Name}";
-
-            // Gesamtanzahl der Produkte
-            int totalProducts = await GetProductCount(_listId);
-            productCountLabel.Text = $"{totalProducts}";
-
-            // Gekaufte Produkte
-            int purchasedProducts = await GetPurchasedProductCount(_listId);
-            purchasedCountLabel.Text = $"{purchasedProducts}";
-
-            // Übrige Produkte berechnen
-            int remainingProducts = totalProducts - purchasedProducts;
-            remainingCountLabel.Text = $"{remainingProducts}";
-
-            // Erstellungsdatum anzeigen
-            creationDateLabel.Text = list.CreationDate != default
-                ? $"{list.CreationDate:dd.MM.yyyy}"
-                : "Unbekannt";
         }
         else
         {
@@ -93,33 +109,23 @@ public partial class ListEdit : ContentPage
 
 
 
+    private bool _isNavigating = false;
 
-    private async Task<int> GetProductCount(int listId)
+    private async Task navigateBack()
     {
-        return await _dbService.GetProductCountAsync(listId);
-    }
+        if (_isNavigating) return;
+        _isNavigating = true;
 
-    private async Task<int> GetPurchasedProductCount(int listId)
-    {
-        return await _dbService.GetPurchasedProductCountAsync(listId);
-    }
-
-
-
-
-
-    private async void navigateBack(object sender, EventArgs e)
-    {
         try
         {
-            //if (productAddedNotificationFrame != null && productAddedNotificationFrame.Handler != null)
-           // {
-             //   productAddedNotificationFrame.IsVisible = false;
-          //  }
-
-            if (Shell.Current.Navigation.NavigationStack.Count > 1)
+            if (productAddedNotificationFrame?.Handler != null)
             {
-                await Shell.Current.GoToAsync("..", true);
+                productAddedNotificationFrame.IsVisible = false;
+            }
+
+            if (Shell.Current.CurrentPage is not ListsPage) // Prüfe, ob du schon dort bist
+            {
+                await Shell.Current.GoToAsync("ListsPage"); // Kein `//`, um die alte Instanz zu behalten
             }
             else
             {
@@ -130,6 +136,10 @@ public partial class ListEdit : ContentPage
         {
             Console.WriteLine($"❌ Fehler bei der Navigation: {ex.Message}");
         }
+        finally
+        {
+            _isNavigating = false;
+        }
     }
 
 
@@ -137,19 +147,22 @@ public partial class ListEdit : ContentPage
     protected override void OnDisappearing()
     {
         base.OnDisappearing();
-
-        //if (productAddedNotificationFrame != null && productAddedNotificationFrame.Handler != null)
-       // {
-        //    productAddedNotificationFrame.IsVisible = false;
-       // }
-
-        Console.WriteLine("🔄 ListEdit wird verlassen, UI-Elemente deaktiviert.");
+        Connectivity.ConnectivityChanged -= Connectivity_ConnectivityChanged;
     }
 
 
+    private void Connectivity_ConnectivityChanged(object sender, ConnectivityChangedEventArgs e)
+    {
+        UpdateScannerButtonState();
+    }
 
+    private void UpdateScannerButtonState()
+    {
+        bool isOnline = Connectivity.Current.NetworkAccess == NetworkAccess.Internet;
 
-
+        ScannerButton.IsEnabled = isOnline;
+        ScannerButton.Opacity = isOnline ? 1.0 : 0.5;
+    }
 
     private async void OpenScannerPage(object sender, EventArgs e)
     {
@@ -162,27 +175,49 @@ public partial class ListEdit : ContentPage
     }
 
     // Methode zum Löschen der Liste
+
     private async void DeleteListButton_Clicked(object sender, EventArgs e)
     {
         bool confirm = await DisplayAlert("Bestätigung", "Möchten Sie diese Liste wirklich löschen?", "Ja", "Abbrechen");
-        if (confirm)
+        if (!confirm) return;
+
+        var listToDelete = await _dbService.GetListByIdAsync(_listId);
+        if (listToDelete == null)
         {
-            var listToDelete = await _dbService.GetListByIdAsync(_listId);
-            if (listToDelete != null)
+            await DisplayAlert("Fehler", "Liste nicht gefunden.", "OK");
+            return;
+        }
+
+        // 🌐 Versuche Server-Löschung, wenn Internet vorhanden
+        if (Connectivity.Current.NetworkAccess == NetworkAccess.Internet)
+        {
+            try
             {
-                await _dbService.Delete(listToDelete);
-                // Nachricht senden, um die ListView auf der MainPage zu aktualisieren
-                MessagingCenter.Send(this, "ListDeleted");
-                await Navigation.PopAsync(true); // Zurück zur vorherigen Seite
+                var api = ApiService.Instance;
+                var success = await api.DeleteListFromServer(listToDelete.ListId);
+
+                if (!success)
+                    Console.WriteLine("⚠ Liste konnte auf dem Server nicht gelöscht werden.");
             }
-            else
+            catch (Exception ex)
             {
-                await DisplayAlert("Fehler", "Liste nicht gefunden.", "OK");
+                Console.WriteLine($"❌ Fehler beim Löschen auf dem Server: {ex.Message}");
             }
         }
+
+        // 🗑 Lokale Liste löschen
+        await _dbService.Delete(listToDelete);
+
+        // 🔄 MainPage & ListsPage benachrichtigen
+        MessagingCenter.Send(this, "ListDeleted");
+        MessagingCenter.Send(this, "ListDeletedFromListsPage");
+
+        // Navigation zurück
+        await Shell.Current.GoToAsync("ListsPage");
     }
 
-    protected override async void OnAppearing()
+
+    protected override void OnAppearing()
     {
         base.OnAppearing();
 
@@ -192,7 +227,10 @@ public partial class ListEdit : ContentPage
             return;
         }
 
+        UpdateScannerButtonState();
+        Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
     }
+
 
 
 }

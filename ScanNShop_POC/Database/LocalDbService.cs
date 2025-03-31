@@ -9,7 +9,7 @@ namespace ScanNShop_POC.Database
 {
     public class LocalDbService
     {
-        private const string DB_NAME = "local_database.db3";
+        private const string DB_NAME = "local_databaseV1.db3";
         private static LocalDbService _instance;
         private readonly SQLiteAsyncConnection _connection;
 
@@ -35,6 +35,16 @@ namespace ScanNShop_POC.Database
             }
         }
 
+        public async Task DeleteByName(string name)
+        {
+            var existing = await _connection.Table<Liste>().Where(l => l.Name == name).FirstOrDefaultAsync();
+            if (existing != null)
+            {
+                await _connection.DeleteAsync(existing);
+            }
+        }
+
+
         public async Task<List<Liste>> GetLists()
         {
             try
@@ -50,7 +60,7 @@ namespace ScanNShop_POC.Database
 
         public async Task<Liste> GetListByIdAsync(int listId)
         {
-            return await _connection.Table<Liste>().FirstOrDefaultAsync(l => l.listId == listId);
+            return await _connection.Table<Liste>().FirstOrDefaultAsync(l => l.ListId == listId);
         }
 
         public async Task Create(Liste liste)
@@ -83,6 +93,8 @@ namespace ScanNShop_POC.Database
         public async Task CreateProduct(Product product) => await _connection.InsertAsync(product);
         public async Task UpdateProduct(Product product) => await _connection.UpdateAsync(product);
         public async Task DeleteProduct(Product product) => await _connection.DeleteAsync(product);
+        public async Task DeleteAllProductsAsync() => await _connection.DeleteAllAsync<Product>();
+
 
         public async Task<int> GetProductCountAsync(int listId)
         {

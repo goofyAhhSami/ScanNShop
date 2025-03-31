@@ -1,4 +1,5 @@
-using ScanNShop_POC.Database;
+﻿using ScanNShop_POC.Database;
+using ScanNShop_POC.Services;
 
 namespace ScanNShop_POC.Views;
 
@@ -46,7 +47,7 @@ public partial class ListsPage : ContentPage
         var lists = await _dbService.GetLists();
         Console.WriteLine($"Anzahl der Listen geladen: {lists.Count}");
 
-        // Wichtig: UI-Elemente m�ssen im Main-Thread aktualisiert werden
+        // Wichtig: UI-Elemente müssen im Main-Thread aktualisiert werden
         MainThread.BeginInvokeOnMainThread(() =>
         {
             listView.ItemsSource = lists;
@@ -59,7 +60,7 @@ public partial class ListsPage : ContentPage
     {
         if (e.Item is Liste selectedList)
         {
-            await Shell.Current.GoToAsync($"{nameof(ListEdit)}?listId={selectedList.listId}");
+            await Shell.Current.GoToAsync($"{nameof(ListEdit)}?listId={selectedList.ListId}");
 
         }
     }
@@ -68,18 +69,33 @@ public partial class ListsPage : ContentPage
     {
         if (sender is Button button && button.BindingContext is Liste list)
         {
-            bool confirm = await DisplayAlert("L�schen", $"M�chtest du die Liste '{list.Name}' wirklich l�schen?", "Ja", "Nein");
+            bool confirm = await DisplayAlert("Löschen", $"Möchtest du die Liste '{list.Name}' wirklich löschen?", "Ja", "Nein");
             if (confirm)
             {
+                // 🛠️ Selektion aufheben bevor Daten geändert werden
+                listView.SelectedItem = null;
+
+                // 🌐 Wenn online → auch am Server löschen
+                if (Connectivity.Current.NetworkAccess == NetworkAccess.Internet)
+                {
+                    var api = ApiService.Instance;
+                    bool deleted = await api.DeleteListFromServer(list.ListId);
+                    if (deleted)
+                    {
+                        Console.WriteLine($"✅ Liste {list.ListId} vom Server gelöscht.");
+                    }
+                }
+
+                // 🔨 Lokal löschen
                 await _dbService.Delete(list);
-                await UpdateListViewAsync();
+
+                MessagingCenter.Send(this, "ListDeletedFromListsPage");
+                // await UpdateListViewAsync();
+                await Shell.Current.GoToAsync("ListsPage");
             }
         }
     }
 
-    public void SetDbService(LocalDbService dbService)
-    {
-        _dbService = dbService;
-    }
+
 
 }

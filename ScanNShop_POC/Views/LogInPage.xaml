@@ -48,6 +48,13 @@
                     </Label.GestureRecognizers>
                 </Label>
             </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="Als Gast fortfahren" TextColor="DarkSlateBlue" FontAttributes="Bold" FontSize="14">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnGuestTapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
         </VerticalStackLayout>
 
         <BoxView x:Name="Overlay" Color="Black" Opacity="0" IsVisible="False"

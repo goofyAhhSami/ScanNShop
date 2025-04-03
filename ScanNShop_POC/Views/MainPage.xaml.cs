@@ -32,6 +32,18 @@ namespace ScanNShop_POC
 
         }
 
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+
+            mainContent.Opacity = 0;
+            await Task.Delay(100); // Für mehr cinematic Vibes
+            await mainContent.FadeTo(1, 500, Easing.SinInOut);
+
+            await UpdateListViewAsync();
+        }
+
+
         private async void createNewList(object sender, EventArgs e)
         {
             PopupContainer.IsVisible = true;
@@ -137,10 +149,17 @@ namespace ScanNShop_POC
 
         public async Task UpdateListViewAsync()
         {
-            listView.ItemsSource = await _dbService.GetLists();
+            var allLists = await _dbService.GetLists();
+            var top3Lists = allLists
+                .OrderByDescending(l => l.CreationDate)
+                .Take(3)
+                .ToList();
+
+            listView.ItemsSource = top3Lists;
         }
 
-       
+
+
         private async void OnButtonClicked(object sender, EventArgs e)
         {
             if (sender is Button button && button.BindingContext is Liste liste)

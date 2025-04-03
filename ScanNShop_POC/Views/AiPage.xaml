@@ -5,16 +5,18 @@
              xmlns:listView="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView"
              xmlns:core="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
              xmlns:controls="clr-namespace:ScanNShop_POC.Views"
-             x:Class="ScanNShop_POC.Views.AiPage">
+             x:Class="ScanNShop_POC.Views.AiPage"
+             BackgroundColor="#F0F4F8">
 
     <ContentPage.Resources>
         <DataTemplate x:Key="botTemplate">
             <Grid ColumnDefinitions="40,*" VerticalOptions="Center" Margin="5,5,40,5">
                 <core:SfAvatarView VerticalOptions="End" StrokeThickness="0" AvatarShape="Circle" AvatarSize="Small"
-                                   ContentType="AvatarCharacter" AvatarCharacter="Avatar29" BackgroundColor="LightGray"/>
+                                   ContentType="AvatarCharacter" AvatarCharacter="Avatar29" BackgroundColor="#B0BEC5"/>
                 <Grid Grid.Column="1">
-                    <BoxView CornerRadius="10,10,10,10" Color="#EDF6F9"/>
-                    <Label Text="{Binding Text}" VerticalOptions="Start" Margin="10,5" FontFamily="Varela" FontAttributes="Bold"/>
+                    <Frame CornerRadius="10" BackgroundColor="#ECEFF1" Padding="10" HasShadow="False">
+                        <Label Text="{Binding Text}" FontFamily="OpenSansRegular" FontSize="14" TextColor="#37474F"/>
+                    </Frame>
                 </Grid>
             </Grid>
         </DataTemplate>
@@ -22,11 +24,12 @@
         <DataTemplate x:Key="userTemplate">
             <Grid ColumnDefinitions="*,40" Margin="40,5,5,5" HorizontalOptions="End">
                 <Grid>
-                    <BoxView CornerRadius="10,10,10,0" Color="#7FB7BE" Opacity="1"/>
-                    <Label Text="{Binding Text}" VerticalOptions="Start" Margin="10,5" FontFamily="Varela" FontAttributes="Bold"/>
+                    <Frame CornerRadius="10" BackgroundColor="#7FB7BE" Padding="10" HasShadow="False">
+                        <Label Text="{Binding Text}" FontFamily="OpenSansRegular" FontSize="14" TextColor="White"/>
+                    </Frame>
                 </Grid>
                 <core:SfAvatarView Grid.Column="1" VerticalOptions="End" StrokeThickness="0" AvatarShape="Circle"
-                                   AvatarSize="Small" ContentType="AvatarCharacter" AvatarCharacter="Avatar4" BackgroundColor="LightGray"/>
+                                   AvatarSize="Small" ContentType="AvatarCharacter" AvatarCharacter="Avatar4" BackgroundColor="#B0BEC5"/>
             </Grid>
         </DataTemplate>
 
@@ -36,16 +39,23 @@
     </ContentPage.Resources>
 
     <Grid RowDefinitions="Auto,*,Auto,Auto">
-        <Grid BackgroundColor="#7FB7BE" Grid.Row="0">
-            <Label Text="AI Chatbot" Margin="20,0,0,0" FontSize="20" TextColor="White" FontAttributes="Bold"
-                   FontFamily="Varela" HorizontalOptions="Center" VerticalOptions="Center"/>
+        <!-- Header -->
+        <Grid BackgroundColor="#7FB7BE" Grid.Row="0" HeightRequest="60">
+            <Label Text="AI Chatbot" FontSize="20" TextColor="White" FontAttributes="Bold"
+                   FontFamily="OpenSansSemibold" HorizontalOptions="Center" VerticalOptions="Center"/>
         </Grid>
 
+        <!-- Chatverlauf -->
         <listView:SfListView Grid.Row="1" x:Name="listView" AutoFitMode="DynamicHeight"
-                             ItemsSource="{Binding Messages}" ItemTemplate="{StaticResource messageDataTemplateSelector}"/>
+                             ItemsSource="{Binding Messages}" ItemTemplate="{StaticResource messageDataTemplateSelector}"
+                             BackgroundColor="Transparent"/>
 
-        <Grid ColumnDefinitions="*,50" Padding="0,10" Grid.Row="2">
-            <Editor x:Name="queryView" BackgroundColor="#EEEEEE" Margin="10,0,0,0"/>
+        <!-- Eingabebereich -->
+        <Grid ColumnDefinitions="*,50" Padding="10" Grid.Row="2" BackgroundColor="White">
+            <Frame CornerRadius="20" BackgroundColor="#ECEFF1" HasShadow="False" Padding="5" Margin="0,0,10,0">
+                <Editor x:Name="queryView" BackgroundColor="Transparent" Placeholder="Nachricht eingeben..."
+                        FontFamily="OpenSansRegular" FontSize="14" TextColor="#37474F"/>
+            </Frame>
             <core:SfBusyIndicator Grid.Column="1" x:Name="busyIndicator" AnimationType="DoubleCircle"
                                   IndicatorColor="#7FB7BE" SizeFactor="0.4">
                 <Image x:Name="sendImage" Source="send.png" WidthRequest="40" HeightRequest="40">
@@ -56,6 +66,7 @@
             </core:SfBusyIndicator>
         </Grid>
 
+        <!-- Benutzerdefinierte Tab-Leiste -->
         <controls:CustomTabbar Grid.Row="3" VerticalOptions="End"/>
     </Grid>
 

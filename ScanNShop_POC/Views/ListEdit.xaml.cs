@@ -81,6 +81,7 @@ public partial class ListEdit : ContentPage
             }
 
             productEntryField.Text = string.Empty;
+            LoadListData();
 
             if (productAddedNotificationFrame?.Handler != null)
             {
@@ -99,12 +100,40 @@ public partial class ListEdit : ContentPage
         if (list != null)
         {
             Title = list.Name;
+            listNameLabel.Text = $"{list.Name}";
+
+            // Gesamtanzahl der Produkte
+            int totalProducts = await GetProductCount(_listId);
+            productCountLabel.Text = $"{totalProducts}";
+
+            // Gekaufte Produkte
+            int purchasedProducts = await GetPurchasedProductCount(_listId);
+            purchasedCountLabel.Text = $"{purchasedProducts}";
+
+            // Übrige Produkte berechnen
+            int remainingProducts = totalProducts - purchasedProducts;
+            remainingCountLabel.Text = $"{remainingProducts}";
+
+            // Erstellungsdatum anzeigen
+            creationDateLabel.Text = list.CreationDate != default
+                ? $"{list.CreationDate:dd.MM.yyyy}"
+                : "Unbekannt";
         }
         else
         {
             await DisplayAlert("Fehler", "Liste nicht gefunden.", "OK");
             await Shell.Current.GoToAsync("..");
         }
+    }
+
+    private async Task<int> GetProductCount(int listId)
+    {
+        return await _dbService.GetProductCountAsync(listId);
+    }
+
+    private async Task<int> GetPurchasedProductCount(int listId)
+    {
+        return await _dbService.GetPurchasedProductCountAsync(listId);
     }
 
 
@@ -229,6 +258,31 @@ public partial class ListEdit : ContentPage
 
         UpdateScannerButtonState();
         Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
+    }
+
+    private async void navigateBack(object sender, EventArgs e)
+    {
+        try
+        {
+            //if (productAddedNotificationFrame != null && productAddedNotificationFrame.Handler != null)
+            // {
+            //   productAddedNotificationFrame.IsVisible = false;
+            //  }
+
+            if (Navigation.NavigationStack.Count > 1)
+            {
+                await Navigation.PopAsync(); // ← verwendet NavigationStack, nicht Shell
+            }
+            else
+            {
+                await Shell.Current.GoToAsync("..");
+            }
+
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"❌ Fehler bei der Navigation: {ex.Message}");
+        }
     }
 
 

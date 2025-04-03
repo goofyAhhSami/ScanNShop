@@ -29,6 +29,7 @@ namespace ScanNShop_POC.Views
             var token = await _apiService.Login(username, password);
             if (token != null)
             {
+                Preferences.Set("auth_token", token);
                 Preferences.Set("IsGuest", false);
                 _apiService.SetAuthToken(token); // Set JWT for further API calls
 

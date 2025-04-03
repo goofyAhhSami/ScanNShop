@@ -106,6 +106,7 @@ namespace ScanNShop_POC.Database
             return await _connection.Table<Product>().Where(p => p.ListId == listId && p.IsChecked).CountAsync();
         }
 
+    
 
 
     }

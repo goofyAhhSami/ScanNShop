@@ -10,6 +10,7 @@
         <Grid>
 
             <VerticalStackLayout
+            x:Name="mainContent"
             Padding="30,20"
             Spacing="25">
 

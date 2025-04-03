@@ -20,6 +20,10 @@ public partial class ListsPage : ContentPage
     {
         base.OnAppearing();
 
+        
+         listContent.Opacity = 0;
+        await listContent.FadeTo(1, 400, Easing.CubicInOut);
+
         if (_dbService == null)
         {
             Console.WriteLine("_dbService ist NULL in ListsPage!");

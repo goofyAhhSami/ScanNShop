@@ -8,7 +8,7 @@
 
     <VerticalStackLayout BackgroundColor="#F8FAFC">
 
-        <Grid HeightRequest="60" VerticalOptions="Start" Margin="15,10,15,10" WidthRequest="410">
+        <Grid HeightRequest="60" VerticalOptions="Start" Margin="15,10,15,10">
             <Border Background="White"
             Stroke="#2C3E50"
             StrokeShape="RoundRectangle 20,20,20,20"
@@ -24,7 +24,7 @@
                          HorizontalOptions="Start"
                          WidthRequest="40"
                          HeightRequest="40"
-                          Command="{Binding NavigateBackCommand}"
+                         Clicked="navigateBack"
                          Margin="10,0,0,0"/>
 
                     <!-- Platzhalter für den Titel oder für mittige Ausrichtung -->
@@ -55,89 +55,97 @@
 
 
         <Frame x:Name="listInfoFrame"
-               BackgroundColor="White"
-               CornerRadius="25"
-               HasShadow="True"
-               Padding="25"
-               Margin="15,20,15,10"
-               HorizontalOptions="FillAndExpand"
-               VerticalOptions="Start"
-               HeightRequest="350"
-               WidthRequest="380">
+       BackgroundColor="White"
+       CornerRadius="25"
+       HasShadow="True"
+       Padding="20"
+       Margin="15,20,15,10"
+       HorizontalOptions="FillAndExpand"
+       VerticalOptions="Start">
 
-            <VerticalStackLayout Spacing="10">
+            <VerticalStackLayout Spacing="12">
 
+                <!-- Titel -->
                 <Label x:Name="listNameLabel"
-                       Text="📝 Liste: -"
+               Text="Billa"
+               FontAttributes="Bold"
+               FontSize="22"
+               TextColor="#222"
+               LineBreakMode="WordWrap"
+               HorizontalOptions="Start" />
+
+                <BoxView HeightRequest="1" BackgroundColor="#CCCCCC" />
+
+                <!-- Infos -->
+                <VerticalStackLayout Spacing="6">
+                    <HorizontalStackLayout>
+                        <Label Text="🛒 Gesamtprodukte:  "
                        FontAttributes="Bold"
-                       FontSize="20"
-                       TextColor="Black" />
+                       FontSize="15"
+                       TextColor="#4A4A4A"/>
+                        <Label x:Name="productCountLabel"
+                       Text="14"
+                       FontSize="15"
+                       TextColor="Black"/>
+                    </HorizontalStackLayout>
 
-                <BoxView HeightRequest="2" BackgroundColor="#D3D3D3" Margin="0,0,0,30"/>
+                    <HorizontalStackLayout>
+                        <Label Text="✅ Gekauft: "
+                       FontAttributes="Bold"
+                       FontSize="15"
+                       TextColor="Green"/>
+                        <Label x:Name="purchasedCountLabel"
+                       Text="14"
+                       FontSize="15"
+                       TextColor="Black"/>
+                    </HorizontalStackLayout>
 
-                <HorizontalStackLayout Spacing="10">
-                    <Label Text="🛒 Gesamtprodukte:"
-                           FontAttributes="Bold"
-                           FontSize="16"
-                           TextColor="#4A4A4A"/>
-                    <Label x:Name="productCountLabel"
-                           Text="-"
-                           FontSize="16"
-                           TextColor="Black"/>
-                </HorizontalStackLayout>
+                    <HorizontalStackLayout>
+                        <Label Text="⏳ Noch zu kaufen:  "
+                       FontAttributes="Bold"
+                       FontSize="15"
+                       TextColor="#FF5733"/>
+                        <Label x:Name="remainingCountLabel"
+                       Text="0"
+                       FontSize="15"
+                       TextColor="Black"/>
+                    </HorizontalStackLayout>
 
-                <HorizontalStackLayout Spacing="10">
-                    <Label Text="✅ Gekauft:"
-                           FontAttributes="Bold"
-                           FontSize="16"
-                           TextColor="Green"/>
-                    <Label x:Name="purchasedCountLabel"
-                           Text="-"
-                           FontSize="16"
-                           TextColor="Black"/>
-                </HorizontalStackLayout>
+                    <HorizontalStackLayout>
+                        <Label Text="📅 Erstellt am: "
+                       FontAttributes="Bold"
+                       FontSize="15"
+                       TextColor="#4A4A4A"/>
+                        <Label x:Name="creationDateLabel"
+                       Text="20.03.2025"
+                       FontSize="15"
+                       TextColor="Black"/>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
 
-                <HorizontalStackLayout Spacing="10">
-                    <Label Text="⏳ Noch zu kaufen:"
-                           FontAttributes="Bold"
-                           FontSize="16"
-                           TextColor="#FF5733"/>
-                    <Label x:Name="remainingCountLabel"
-                           Text="-"
-                           FontSize="16"
-                           TextColor="Black"/>
-                </HorizontalStackLayout>
-
-                <HorizontalStackLayout Spacing="10">
-                    <Label Text="📅 Erstellt am:"
-                           FontAttributes="Bold"
-                           FontSize="16"
-                           TextColor="#4A4A4A"/>
-                    <Label x:Name="creationDateLabel"
-                           Text="-"
-                           FontSize="16"
-                           TextColor="Black"/>
-                </HorizontalStackLayout>
-
+                <!-- Button → Extra Padding am Bottom -->
                 <Button Text="Einkauf starten"
-                        TextColor="Black"
-                        BackgroundColor="#BCCCDC"
-                        FontSize="17"
-                        BorderColor="#BCCCDC"
-                        BorderWidth="2"
-                        FontAttributes="Bold"
-                        CornerRadius="10"
-                        WidthRequest="305"
-                        Margin="0,30,0,0"
-                        Clicked="startShopping"
-                        HorizontalOptions="Start">
+                TextColor="Black"
+                BackgroundColor="#BCCCDC"
+                FontSize="16"
+                BorderColor="#BCCCDC"
+                BorderWidth="1"
+                FontAttributes="Bold"
+                CornerRadius="10"
+                Margin="0,15,0,5"
+                Padding="0,10"
+                Clicked="startShopping"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="End">
                     <Button.Shadow>
-                        <Shadow Brush="Black" Opacity="0.2" Offset="3,5" Radius="9"/>
+                        <Shadow Brush="Black" Opacity="0.2" Offset="2,4" Radius="6"/>
                     </Button.Shadow>
                 </Button>
 
             </VerticalStackLayout>
         </Frame>
+
+
 
         <VerticalStackLayout Padding="10,50,10,0">
 
@@ -159,7 +167,7 @@
 
 
             <Grid>
-            <Button Text="Hinzufügen" 
+                <Button Text="Hinzufügen" 
                     TextColor="Black"
                     FontAttributes="Bold"
                     WidthRequest="300"
@@ -170,13 +178,12 @@
                     VerticalOptions="End"
                     Margin="0,10,0,0"
                     Clicked="AddProductButton_Clicked">
-                <Button.Shadow>
-                    <Shadow Brush="Black" Opacity="0.25" Offset="5,9" Radius="9"/>
-                </Button.Shadow>
-            </Button>
+                    <Button.Shadow>
+                        <Shadow Brush="Black" Opacity="0.25" Offset="5,9" Radius="9"/>
+                    </Button.Shadow>
+                </Button>
 
-                <ImageButton  x:Name="ScannerButton"
-                              Source="Resources/Images/scanner.png"
+                <ImageButton x:Name="ScannerButton" Source="Resources/Images/scanner.png"
                          WidthRequest="50"
                          HeightRequest="50"
                          CornerRadius="3"

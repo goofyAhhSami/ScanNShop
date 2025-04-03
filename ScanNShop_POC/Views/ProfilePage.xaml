@@ -2,26 +2,72 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:ScanNShop_POC.Views"
-             x:Class="ScanNShop_POC.Views.ProfilePage">
+             x:Class="ScanNShop_POC.Views.ProfilePage"
+             BackgroundColor="#F8FAFC">
 
     <Grid>
+
         <ScrollView>
-            <VerticalStackLayout Padding="20" Spacing="20">
-                <Image Source="profile.png" WidthRequest="120" HeightRequest="120"
-                       HorizontalOptions="Center" />
+            <VerticalStackLayout Padding="25" Spacing="25" VerticalOptions="Center">
 
-                <Label Text="Benutzername" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" />
-                <Label Text="E-Mail: test@gmail.com" FontSize="16" HorizontalOptions="Center" />
+                <Frame BackgroundColor="White"
+                       CornerRadius="25"
+                       Padding="30"
+                       HasShadow="True"
+                       VerticalOptions="Center"
+                       HorizontalOptions="FillAndExpand"
+                       Margin="0,40,0,40"
+                       x:Name="profileFrame">
 
-                <Button Text="Einstellungen" BackgroundColor="#7FB7BE" TextColor="Black" CornerRadius="15"
-                        WidthRequest="250" HeightRequest="50" Clicked="OpenSettings"/>
+                    <VerticalStackLayout Spacing="20" HorizontalOptions="Center">
 
-                <Button Text="Abmelden" BackgroundColor="#FF6B6B" TextColor="Black" CornerRadius="15"
-                        WidthRequest="250" HeightRequest="50" Clicked="Logout"/>
+                        <Image Source="profile.png"
+                               WidthRequest="130"
+                               HeightRequest="130"
+                               HorizontalOptions="Center"
+                               Margin="0,0,0,10"/>
+
+                        <Label x:Name="usernameLabel"
+                               Text="Benutzername"
+                               FontSize="24"
+                               FontAttributes="Bold"
+                               TextColor="#2C3E50"
+                               HorizontalOptions="Center"/>
+
+                        <Label x:Name="emailLabel"
+                               Text="E-Mail: example@example.com"
+                               FontSize="16"
+                               TextColor="#4A4A4A"
+                               HorizontalOptions="Center"/>
+
+                        <BoxView HeightRequest="1"
+                                 WidthRequest="200"
+                                 BackgroundColor="#E0E0E0"
+                                 HorizontalOptions="Center"
+                                 Margin="0,10"/>
+
+                        <Button Text="⚙️ Einstellungen"
+                                BackgroundColor="#E3F2FD"
+                                TextColor="#0D47A1"
+                                CornerRadius="12"
+                                HeightRequest="48"
+                                FontAttributes="Bold"
+                                Clicked="OpenSettings"
+                                HorizontalOptions="FillAndExpand"/>
+
+                        <Button Text="Abmelden"
+                                BackgroundColor="#FFCDD2"
+                                TextColor="#B71C1C"
+                                CornerRadius="12"
+                                HeightRequest="48"
+                                FontAttributes="Bold"
+                                Clicked="Logout"
+                                HorizontalOptions="FillAndExpand"/>
+                    </VerticalStackLayout>
+                </Frame>
             </VerticalStackLayout>
         </ScrollView>
 
         <controls:CustomTabbar VerticalOptions="End" />
     </Grid>
-
 </ContentPage>

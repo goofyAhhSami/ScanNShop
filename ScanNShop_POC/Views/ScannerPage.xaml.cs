@@ -53,7 +53,7 @@ public partial class ScannerPage : ContentPage
     {
         using (WebClient webClient = new WebClient())
         {
-            string api_key = "s5wtuv6da6knartsd7fiug1owr05i8";
+            string api_key = "zy3pfapj8trmgczo4ql29echrgchmm";
             string url = $"https://api.barcodelookup.com/v3/products?barcode={barcodeValue}&formatted=y&key={api_key}";
 
             try
@@ -105,4 +105,25 @@ public partial class ScannerPage : ContentPage
         await _dbService.CreateProduct(product);
         await DisplayAlert("Erfolgreich", $"Das Produkt '{name}' wurde zur Liste hinzugef¸gt.", "OK");
     }
+
+    private async void CloseScanner(object sender, EventArgs e)
+    {
+        try
+        {
+            // Falls du Navigation ¸ber Shell nutzt
+            if (Shell.Current.Navigation.NavigationStack.Count > 1)
+            {
+                await Shell.Current.GoToAsync("..");
+            }
+            else
+            {
+                await Navigation.PopAsync();
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Fehler beim Schlieﬂen des Scanners: {ex.Message}");
+        }
+    }
+
 }

@@ -3,15 +3,63 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:zxing="clr-namespace:ZXing.Net.Maui.Controls;assembly=ZXing.Net.MAUI.Controls"
              x:Class="ScanNShop_POC.Views.ScannerPage"
-             Title="ScannerPage">
-    <VerticalStackLayout>
+             BackgroundColor="#F8FAFC"
+             Shell.NavBarIsVisible="false">
 
-        <zxing:CameraBarcodeReaderView
-                x:Name="barcodeReader"
-                BarcodesDetected="barcodeReader_BarcodesDetected"/>
+    <VerticalStackLayout Spacing="20">
 
-        <Label x:Name="barcodeResult" FontSize="20"/>
-        
- 
+        <!-- HEADER -->
+        <Grid HeightRequest="60" VerticalOptions="Start" Margin="15,10,15,0">
+            <Border BackgroundColor="White"
+                    Stroke="#2C3E50"
+                    StrokeShape="RoundRectangle 20,20,20,20"
+                    StrokeThickness="2"
+                    Padding="5">
+                <Grid ColumnDefinitions="50,*,50">
+                    <!-- Zurück Button (optional) -->
+                    <Label Grid.Column="1"
+                           Text="Barcode scannen"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="Black"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"/>
+
+                </Grid>
+            </Border>
+        </Grid>
+
+        <!-- SCANNER -->
+        <Frame BackgroundColor="White"
+               CornerRadius="20"
+               HasShadow="True"
+               Padding="0"
+               Margin="15,10,15,0"
+               HeightRequest="400">
+            <zxing:CameraBarcodeReaderView x:Name="barcodeReader"
+                                           BarcodesDetected="barcodeReader_BarcodesDetected"
+                                           HorizontalOptions="FillAndExpand"
+                                           VerticalOptions="FillAndExpand"/>
+        </Frame>
+
+        <!-- RESULT -->
+        <Label x:Name="barcodeResult"
+               FontSize="18"
+               TextColor="Black"
+               HorizontalOptions="Center"
+               Margin="0,10,0,0"
+               FontAttributes="Bold"
+               FontFamily="Varela"/>
+
+        <!-- BUTTON -->
+        <Button Text="Zurück"
+                FontSize="18"
+                BackgroundColor="#FF6B6B"
+                TextColor="White"
+                CornerRadius="10"
+                HorizontalOptions="Center"
+                WidthRequest="200"
+                Clicked="CloseScanner"/>
     </VerticalStackLayout>
+
 </ContentPage>

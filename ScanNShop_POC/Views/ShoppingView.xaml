@@ -12,7 +12,7 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <VerticalStackLayout BackgroundColor="#F0F8FF">
+    <VerticalStackLayout BackgroundColor="#F8FAFC">
 
         <!-- Header -->
         <Grid HeightRequest="60" VerticalOptions="Start" Margin="15,10,15,10">
@@ -30,7 +30,7 @@
             </Border>
         </Grid>
 
-        <Label Text="🛒 Produkte" FontSize="Large" FontAttributes="Bold" Margin="20,10,0,15" TextColor="Black"/>
+        <Label Text="Produkte" FontSize="Large" FontAttributes="Bold" Margin="20,10,0,15" TextColor="Black"/>
 
         <CollectionView x:Name="productsCollectionView" SelectionMode="None" Margin="10">
             <CollectionView.ItemsLayout>

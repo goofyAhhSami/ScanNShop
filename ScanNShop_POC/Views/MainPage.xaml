@@ -48,7 +48,7 @@
                 FontFamily="Varela"
                 FontAttributes="Bold"/>
 
-                <Frame BackgroundColor="#9AA6B2"
+                <Frame BackgroundColor="White"
                    CornerRadius="15"
                    HeightRequest="220"
                    HasShadow="true"
@@ -67,16 +67,16 @@
                                             FontSize="Medium" 
                                             HeightRequest="50"
                                             TextColor="Black"
-                                            BackgroundColor="#F8FAFC" 
+                                            BorderColor="Gray"
+                                            BorderWidth="1.5"     
+                                            BackgroundColor="White" 
                                             CornerRadius="10"
                                             Padding="15,0"
-                                            BorderWidth="2"
                                             HorizontalOptions="FillAndExpand"
                                             VerticalOptions="Center"
-                                            FontFamily="Varela"
                                             FontAttributes="Bold">
                                             <Button.Shadow>
-                                                <Shadow Brush="Black" Opacity="0.1" Offset="3,5" Radius="8" />
+                                                <Shadow Brush="Black" Opacity="0.4" Offset="3,5" Radius="8" />
                                             </Button.Shadow>
                                         </Button>
                                     </VerticalStackLayout>

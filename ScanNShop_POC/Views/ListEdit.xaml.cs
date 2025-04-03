@@ -271,11 +271,12 @@ public partial class ListEdit : ContentPage
 
             if (Navigation.NavigationStack.Count > 1)
             {
-                await Navigation.PopAsync(); // ← verwendet NavigationStack, nicht Shell
+               // await Navigation.PopAsync(); // ← verwendet NavigationStack, nicht Shell
+                await Shell.Current.GoToAsync("ListsPage");
             }
             else
             {
-                await Shell.Current.GoToAsync("..");
+                await Shell.Current.GoToAsync("//ListsPage");
             }
 
         }

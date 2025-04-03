@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.VisualBasic.FileIO;
+using Newtonsoft.Json;
 using ScanNShop_POC.Database;
 using ScanNShop_POC.Services;
 using System;
@@ -142,9 +143,14 @@ namespace ScanNShop_POC.Views
         private void OnGuestTapped(object sender, EventArgs e)
         {
             var dbService = LocalDbService.Instance;
-
+            _= dbService.DeleteAllListsAsync();
+            _ = dbService.DeleteAllProductsAsync();
+         
             // Speichern, dass der Benutzer ein Gast ist
             Preferences.Set("IsGuest", true);
+            Preferences.Clear("auth_token");
+            Preferences.Set("User", "{}");
+            Preferences.Clear("User");
 
             Application.Current.MainPage = new AppShell(dbService);
         }

@@ -40,8 +40,8 @@ namespace ScanNShop_POC.Views
                 {
                     var user = JsonConvert.DeserializeObject<User>(userJson);
 
-                    usernameLabel.Text = user?.Username ?? "Unbekannt";
-                    emailLabel.Text = $"E-Mail: {user?.Email ?? "-"}";
+                    usernameLabel.Text = user?.Username ?? "Gast";
+                    emailLabel.Text = $"{user?.Email ?? "-"}";
                 }
                 catch (Exception ex)
                 {

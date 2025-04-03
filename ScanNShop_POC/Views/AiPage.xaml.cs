@@ -3,12 +3,13 @@ using GroqSharp;
 using GroqSharp.Models;
 using ScanNShop_POC.Services;
 using System.Collections.ObjectModel;
+using System.Text.RegularExpressions;
 
 namespace ScanNShop_POC.Views;
 
 public partial class AiPage : ContentPage
 {
-   
+
 
     public ObservableCollection<MessageObject> Messages
     {
@@ -50,13 +51,21 @@ public partial class AiPage : ContentPage
         this.queryView.IsEnabled = false;
         this.sendImage.IsVisible = false;
         var reply = await _groqCloudService.ProcessTheUserInput(query);
-        reply = reply.Replace("\n", "");
+        reply = ConvertMarkdownToFormattedText(reply);
         MessageObject botMessage = new MessageObject() { IsBot = true, Text = reply };
         this.Messages.Add(botMessage);
         this.listView.ScrollTo(botMessage, ScrollToPosition.MakeVisible, true);
         this.sendImage.IsVisible = true;
         this.queryView.IsEnabled = true;
         this.busyIndicator.IsRunning = false;
+    }
+
+    private string ConvertMarkdownToFormattedText(string input)
+    {
+        // Fett markieren (ersetze **text** mit Unicode-Zeichen für Fett)
+        input = Regex.Replace(input, @"\*\*(.*?)\*\*", match => "𝗧𝗘𝗫𝗧".Replace("𝗧𝗘𝗫𝗧", match.Groups[1].Value));
+        input = Regex.Replace(input, @"(?m)^\* (.+)", "• $1");
+        return input;
     }
 
 

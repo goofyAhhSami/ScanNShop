@@ -79,7 +79,7 @@
                 <!-- Infos -->
                 <VerticalStackLayout Spacing="6">
                     <HorizontalStackLayout>
-                        <Label Text="🛒 Gesamtprodukte:  "
+                        <Label Text="Gesamtprodukte:  "
                        FontAttributes="Bold"
                        FontSize="15"
                        TextColor="#4A4A4A"/>

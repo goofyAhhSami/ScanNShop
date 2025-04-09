@@ -8,18 +8,41 @@
     <Grid>
         <VerticalStackLayout Spacing="30" Padding="40" VerticalOptions="Center">
 
-            <Frame BackgroundColor="Transparent" HasShadow="False" Padding="10" BorderColor="Transparent" Margin="0,0,0,10">
-                <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
-                    <Image Source="logo_s.png" HeightRequest="100" WidthRequest="100" />
-                    <Label Text="ScanNShop"
-                           TextColor="Black"
-                           Opacity="0.8"
-                           FontSize="32"
-                           FontAttributes="Bold"
-                           VerticalOptions="Center"
-                           Margin="15,0,0,0"/>
+            <Frame BackgroundColor="White"
+       CornerRadius="20"
+       Padding="15"
+       HasShadow="True"
+       BorderColor="#D6E4E5"
+       Margin="0,20,0,10">
+                <HorizontalStackLayout Spacing="15" VerticalOptions="Center">
+                    <Frame Padding="8"
+               CornerRadius="50"
+               HasShadow="True"
+               BackgroundColor="#F0F4F8"
+               HeightRequest="90"
+               WidthRequest="90"
+               HorizontalOptions="Center"
+               VerticalOptions="Center">
+                        <Image Source="logo_s.png" HeightRequest="70" WidthRequest="70" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    </Frame>
+
+                    <Label FontSize="32"
+                    FontAttributes="Bold"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    TextColor="Black">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Scan" TextColor="#2C3E50"/>
+                                <Span Text="N" TextColor="DarkSlateBlue"/>
+                                <Span Text="Shop" TextColor="#2C3E50"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
                 </HorizontalStackLayout>
             </Frame>
+
 
             <Label Text="Login" FontSize="32" FontAttributes="Bold" HorizontalOptions="Center"
                    TextColor="Black" Opacity="0.7" WidthRequest="400" Margin="75,0,0,0"/>
@@ -36,7 +59,7 @@
 
             <Frame CornerRadius="15" HasShadow="True" Padding="0" BackgroundColor="Transparent">
                 <Button Text="Anmelden" BackgroundColor="#9AA6B2" TextColor="White" FontAttributes="Bold"
-                        HeightRequest="50" CornerRadius="15" FontSize="15"
+                         CornerRadius="15" FontSize="16" HorizontalOptions="FillAndExpand"
                         Clicked="OnLoginClicked"/>
             </Frame>
 
@@ -89,5 +112,35 @@
             <Label Text="Erfolgreich registiert !"/>
             <Button Text="Schließen" BackgroundColor="LightGray" TextColor="Black" FontAttributes="Bold" Clicked="OnSuccessPopupCloseClicked"/>
         </Grid>
+
+        <Grid x:Name="LoginLoadingOverlay"
+      IsVisible="False"
+      BackgroundColor="#80000000"
+      AbsoluteLayout.LayoutBounds="0,0,1,1"
+      AbsoluteLayout.LayoutFlags="All"
+      ZIndex="99">
+
+            <Frame BackgroundColor="White"
+           CornerRadius="20"
+           Padding="30"
+           HasShadow="True"
+           VerticalOptions="Center"
+           HorizontalOptions="Center">
+                <VerticalStackLayout Spacing="15" HorizontalOptions="Center">
+                    <ActivityIndicator x:Name="LoginSpinner"
+                               Color="#7FB7BE"
+                               IsRunning="True"
+                               WidthRequest="50"
+                               HeightRequest="50"/>
+                    <Label Text="Wird geladen..."
+                   FontAttributes="Bold"
+                   FontSize="16"
+                   TextColor="#37474F"
+                   HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+            </Frame>
+        </Grid>
+
+
     </Grid>
 </ContentPage>

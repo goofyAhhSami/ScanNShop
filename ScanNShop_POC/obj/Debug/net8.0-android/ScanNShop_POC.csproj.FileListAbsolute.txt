@@ -12905,7 +12905,6 @@ C:\Users\User\source\repos\ScanNShop_SYNC\ScanNShop_POC\obj\Debug\net8.0-android
 C:\Users\User\source\repos\ScanNShop_SYNC\ScanNShop_POC\obj\Debug\net8.0-android\android\assets\ZXing.Net.MAUI.Controls.dll
 C:\Users\User\source\repos\ScanNShop_SYNC\ScanNShop_POC\obj\Debug\net8.0-android\android\assets\ZXing.Net.MAUI.dll
 C:\Users\User\source\repos\ScanNShop_SYNC\ScanNShop_POC\obj\Debug\net8.0-android\android\assets\_Microsoft.Android.Resource.Designer.dll
-C:\Users\User\source\repos\ScanNShop_SYNC\ScanNShop_POC\obj\Debug\net8.0-android\android\typemaps.x86_64.ll
 C:\Users\User\source\repos\ScanNShop_SYNC\ScanNShop_POC\obj\Debug\net8.0-android\AndroidManifest.xml
 C:\Users\User\source\repos\ScanNShop_SYNC\ScanNShop_POC\obj\Debug\net8.0-android\android\AndroidManifest.xml
 C:\Users\User\source\repos\ScanNShop_SYNC\ScanNShop_POC\obj\Debug\net8.0-android\android\src\mono\MonoRuntimeProvider.java
@@ -12915,7 +12914,6 @@ C:\Users\User\source\repos\ScanNShop_SYNC\ScanNShop_POC\obj\Debug\net8.0-android
 C:\Users\User\source\repos\ScanNShop_SYNC\ScanNShop_POC\obj\Debug\net8.0-android\static.flag
 C:\Users\User\source\repos\ScanNShop_SYNC\ScanNShop_POC\obj\Debug\net8.0-android\__environment__.txt
 C:\Users\User\source\repos\ScanNShop_SYNC\ScanNShop_POC\obj\Debug\net8.0-android\buildid.txt
-C:\Users\User\source\repos\ScanNShop_SYNC\ScanNShop_POC\obj\Debug\net8.0-android\android\environment.x86_64.ll
 C:\Users\User\source\repos\ScanNShop_SYNC\ScanNShop_POC\obj\Debug\net8.0-android\android\src\androidx\activity\ktx\R.java
 C:\Users\User\source\repos\ScanNShop_SYNC\ScanNShop_POC\obj\Debug\net8.0-android\android\src\androidx\activity\R.java
 C:\Users\User\source\repos\ScanNShop_SYNC\ScanNShop_POC\obj\Debug\net8.0-android\android\src\androidx\annotation\experimental\R.java
@@ -13473,13 +13471,6 @@ C:\Users\User\source\repos\ScanNShop_SYNC\ScanNShop_POC\obj\Debug\net8.0-android
 C:\Users\User\source\repos\ScanNShop_SYNC\ScanNShop_POC\obj\Debug\net8.0-android\android\bin\packaged_resources
 C:\Users\User\source\repos\ScanNShop_SYNC\ScanNShop_POC\obj\Debug\net8.0-android\android\src\com\htlwels\scannshop\R.java
 C:\Users\User\source\repos\ScanNShop_SYNC\ScanNShop_POC\obj\Debug\net8.0-android\_CompileJava.FileList.txt
-C:\Users\User\source\repos\ScanNShop_SYNC\ScanNShop_POC\obj\Debug\net8.0-android\android\compressed_assemblies.x86_64.ll
-C:\Users\User\source\repos\ScanNShop_SYNC\ScanNShop_POC\obj\Debug\net8.0-android\android\typemaps.x86_64.o
-C:\Users\User\source\repos\ScanNShop_SYNC\ScanNShop_POC\obj\Debug\net8.0-android\android\environment.x86_64.o
-C:\Users\User\source\repos\ScanNShop_SYNC\ScanNShop_POC\obj\Debug\net8.0-android\android\compressed_assemblies.x86_64.o
-C:\Users\User\source\repos\ScanNShop_SYNC\ScanNShop_POC\obj\Debug\net8.0-android\android\marshal_methods.x86_64.o
-C:\Users\User\source\repos\ScanNShop_SYNC\ScanNShop_POC\obj\Debug\net8.0-android\android\jni_remap.x86_64.o
-C:\Users\User\source\repos\ScanNShop_SYNC\ScanNShop_POC\obj\Debug\net8.0-android\app_shared_libraries\x86_64\libxamarin-app.so
 C:\Users\User\source\repos\ScanNShop_SYNC\ScanNShop_POC\obj\Debug\net8.0-android\android\bin\classes.dex
 C:\Users\User\source\repos\ScanNShop_SYNC\ScanNShop_POC\obj\Debug\net8.0-android\android\bin\classes2.dex
 C:\Users\User\source\repos\ScanNShop_SYNC\ScanNShop_POC\obj\Debug\net8.0-android\stamp\_CleanIntermediateIfNeeded.stamp
@@ -13490,3 +13481,12 @@ C:\Users\User\source\repos\ScanNShop_SYNC\ScanNShop_POC\obj\Debug\net8.0-android
 C:\Users\User\source\repos\ScanNShop_SYNC\ScanNShop_POC\obj\Debug\net8.0-android\stamp\_GenerateJavaStubs.stamp
 C:\Users\User\source\repos\ScanNShop_SYNC\ScanNShop_POC\obj\Debug\net8.0-android\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\User\source\repos\ScanNShop_SYNC\ScanNShop_POC\obj\Debug\net8.0-android\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\User\source\repos\ScanNShop_SYNC\ScanNShop_POC\obj\Debug\net8.0-android\android\typemaps.x86_64.ll
+C:\Users\User\source\repos\ScanNShop_SYNC\ScanNShop_POC\obj\Debug\net8.0-android\android\environment.x86_64.ll
+C:\Users\User\source\repos\ScanNShop_SYNC\ScanNShop_POC\obj\Debug\net8.0-android\android\compressed_assemblies.x86_64.ll
+C:\Users\User\source\repos\ScanNShop_SYNC\ScanNShop_POC\obj\Debug\net8.0-android\android\typemaps.x86_64.o
+C:\Users\User\source\repos\ScanNShop_SYNC\ScanNShop_POC\obj\Debug\net8.0-android\android\environment.x86_64.o
+C:\Users\User\source\repos\ScanNShop_SYNC\ScanNShop_POC\obj\Debug\net8.0-android\android\compressed_assemblies.x86_64.o
+C:\Users\User\source\repos\ScanNShop_SYNC\ScanNShop_POC\obj\Debug\net8.0-android\android\marshal_methods.x86_64.o
+C:\Users\User\source\repos\ScanNShop_SYNC\ScanNShop_POC\obj\Debug\net8.0-android\android\jni_remap.x86_64.o
+C:\Users\User\source\repos\ScanNShop_SYNC\ScanNShop_POC\obj\Debug\net8.0-android\app_shared_libraries\x86_64\libxamarin-app.so

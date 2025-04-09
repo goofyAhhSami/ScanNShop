@@ -27,76 +27,89 @@ namespace ScanNShop_POC.Views
                 return;
             }
 
-            var token = await _apiService.Login(username, password);
-            if (token != null)
+            ShowLoginOverlay();
+
+            try
             {
-                Preferences.Set("auth_token", token);
-                Preferences.Set("IsGuest", false);
-                _apiService.SetAuthToken(token); // Set JWT for further API calls
-
-                var dbService = LocalDbService.Instance;
-
-                // ✅ Lokale SQLite-Datenbank löschen
-                await dbService.DeleteAllListsAsync();
-              
-                await dbService.DeleteAllProductsAsync();
-
-
-                // ✅ User vom Server holen
-                var user = await _apiService.GetUserByUsername(username);
-                if (user == null)
+                var token = await _apiService.Login(username, password);
+                if (token != null)
                 {
-                    await DisplayAlert("Fehler", "Benutzer konnte nicht geladen werden.", "OK");
-                    return;
-                }
+                    Preferences.Set("auth_token", token);
+                    Preferences.Set("IsGuest", false);
+                    _apiService.SetAuthToken(token);
 
-                // 🆕 User in Preferences speichern
-                var userJson = JsonConvert.SerializeObject(user);
-                Preferences.Set("User", userJson);
-                Console.WriteLine($"✅ Benutzer gespeichert in Preferences: {userJson}");
+                    var dbService = LocalDbService.Instance;
+                    await dbService.DeleteAllListsAsync();
+                    await dbService.DeleteAllProductsAsync();
 
-                // ✅ Listen holen
-                var listen = await _apiService.GetListsByUserId(user.UserId);
-                if (listen == null || !listen.Any())
-                {
-                    await DisplayAlert("Hinweis", "Keine Listen gefunden.", "OK");
-                }
-
-                // ✅ Listen speichern
-                foreach (var liste in listen)
-                {
-                    Console.WriteLine("Liste ID :" + liste.ListId);
-                    await dbService.Create(new Liste
+                    var user = await _apiService.GetUserByUsername(username);
+                    if (user == null)
                     {
-                        ListId = liste.ListId,
-                        Name = liste.Name,
-                        CreationDate = DateTime.UtcNow
-                    });
-                }
+                        await DisplayAlert("Fehler", "Benutzer konnte nicht geladen werden.", "OK");
+                        HideLoginOverlay();
+                        return;
+                    }
 
-                // ✅ Produkte holen & speichern
-                var listIds = listen.Select(l => l.ListId).ToList();
-                var produkte = await _apiService.GetProductsByListIds(listIds);
-                foreach (var produkt in produkte)
-                {
-                    await dbService.CreateProduct(new Product
+                    var userJson = JsonConvert.SerializeObject(user);
+                    Preferences.Set("User", userJson);
+
+                    var listen = await _apiService.GetListsByUserId(user.UserId);
+
+                    foreach (var liste in listen)
                     {
-                        ProductId = produkt.ProductId,
-                        ListId = produkt.ListId ,
-                        Name = produkt.Name,
-                        Quantity = produkt.Quantity,
-                        IsChecked = produkt.IsChecked
-                    });
-                }
+                        await dbService.Create(new Liste
+                        {
+                            ListId = liste.ListId,
+                            Name = liste.Name,
+                            CreationDate = DateTime.UtcNow
+                        });
+                    }
 
-                // ✅ Navigation
-                Application.Current.MainPage = new AppShell(dbService);
+                    var listIds = listen.Select(l => l.ListId).ToList();
+                    var produkte = await _apiService.GetProductsByListIds(listIds);
+                    foreach (var produkt in produkte)
+                    {
+                        await dbService.CreateProduct(new Product
+                        {
+                            ProductId = produkt.ProductId,
+                            ListId = produkt.ListId,
+                            Name = produkt.Name,
+                            Quantity = produkt.Quantity,
+                            IsChecked = produkt.IsChecked
+                        });
+                    }
+
+                    Application.Current.MainPage = new AppShell(dbService);
+                }
+                else
+                {
+                    await DisplayAlert("Fehler", "Falsche Anmeldeinformationen.", "OK");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                await DisplayAlert("Fehler", "Falsche Anmeldeinformationen.", "OK");
+                Console.WriteLine($"❌ Login Exception: {ex.Message}");
+                await DisplayAlert("Fehler", "Beim Login ist ein Fehler aufgetreten.", "OK");
+            }
+            finally
+            {
+                HideLoginOverlay();
             }
         }
+
+        private void ShowLoginOverlay()
+        {
+            LoginLoadingOverlay.Opacity = 0;
+            LoginLoadingOverlay.IsVisible = true;
+            LoginLoadingOverlay.FadeTo(1, 250);
+        }
+
+        private async void HideLoginOverlay()
+        {
+            await LoginLoadingOverlay.FadeTo(0, 250);
+            LoginLoadingOverlay.IsVisible = false;
+        }
+
 
 
 

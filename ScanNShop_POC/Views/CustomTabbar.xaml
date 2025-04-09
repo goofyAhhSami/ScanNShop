@@ -2,7 +2,7 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ScanNShop_POC.Views.CustomTabbar">
-    <Grid HeightRequest="65" VerticalOptions="End" Margin="15,0,15,5">
+    <Grid HeightRequest="65" VerticalOptions="End" Margin="15,0,15,5" FlexLayout.AlignSelf="End">
         <Border Background="White" Stroke="#2C3E50" StrokeShape="RoundRectangle 30,30,30,30" StrokeThickness="2">
             <Grid ColumnDefinitions="*,*,*,*" RowDefinitions="*,*" RowSpacing="3">
 

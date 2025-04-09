@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:ScanNShop_POC.Views"
@@ -6,61 +5,73 @@
              BackgroundColor="#F8FAFC">
 
     <Grid>
-
         <ScrollView>
             <VerticalStackLayout Padding="25" Spacing="25" VerticalOptions="Center">
 
+                <!-- Profile Card -->
                 <Frame BackgroundColor="White"
-                       CornerRadius="25"
-                       Padding="30"
+                       CornerRadius="30"
+                       Padding="35"
                        HasShadow="True"
                        VerticalOptions="Center"
                        HorizontalOptions="FillAndExpand"
                        Margin="0,40,0,40"
-                       x:Name="profileFrame">
+                       x:Name="profileFrame"
+                       BorderColor="#DCE3EC">
 
-                    <VerticalStackLayout Spacing="20" HorizontalOptions="Center">
+                    <VerticalStackLayout Spacing="25" HorizontalOptions="Center">
 
-                        <Image Source="profile.png"
-                               WidthRequest="130"
-                               HeightRequest="130"
-                               HorizontalOptions="Center"
-                               Margin="0,0,0,10"/>
+                        <!-- Profile Image -->
+                        <Frame Padding="5"
+                               CornerRadius="100"
+                               BackgroundColor="#F0F4F8"
+                               HasShadow="True"
+                               HeightRequest="140"
+                               WidthRequest="140"
+                               HorizontalOptions="Center">
+                            <Image Source="profile.png"
+                                   WidthRequest="120"
+                                   HeightRequest="120"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"/>
+                        </Frame>
 
                         <Label x:Name="usernameLabel"
                                Text="Gast"
                                FontSize="24"
                                FontAttributes="Bold"
-                               TextColor="#2C3E50"
+                               TextColor="#263238"
                                HorizontalOptions="Center"/>
 
                         <Label x:Name="emailLabel"
                                Text="keine Email"
-                               FontSize="16"
-                               TextColor="#4A4A4A"
+                               FontSize="15"
+                               TextColor="#607D8B"
                                HorizontalOptions="Center"/>
 
                         <BoxView HeightRequest="1"
-                                 WidthRequest="200"
-                                 BackgroundColor="#E0E0E0"
+                                 WidthRequest="180"
+                                 BackgroundColor="#ECEFF1"
                                  HorizontalOptions="Center"
-                                 Margin="0,10"/>
+                                 Margin="0,5"/>
 
                         <Button Text="⚙️ Einstellungen"
-                                BackgroundColor="#E3F2FD"
-                                TextColor="#0D47A1"
-                                CornerRadius="12"
-                                HeightRequest="48"
+                                BackgroundColor="#E0F7FA"
+                                TextColor="#00796B"
+                                CornerRadius="20"
+                                HeightRequest="50"
                                 FontAttributes="Bold"
+                                FontFamily="Varela"
                                 Clicked="OpenSettings"
                                 HorizontalOptions="FillAndExpand"/>
 
                         <Button Text="Abmelden"
-                                BackgroundColor="#FFCDD2"
-                                TextColor="#B71C1C"
-                                CornerRadius="12"
-                                HeightRequest="48"
+                                BackgroundColor="#FFEBEE"
+                                TextColor="#C62828"
+                                CornerRadius="20"
+                                HeightRequest="50"
                                 FontAttributes="Bold"
+                                FontFamily="Varela"
                                 Clicked="Logout"
                                 HorizontalOptions="FillAndExpand"/>
                     </VerticalStackLayout>
@@ -68,6 +79,6 @@
             </VerticalStackLayout>
         </ScrollView>
 
-        <controls:CustomTabbar VerticalOptions="End" />
+        <controls:CustomTabbar VerticalOptions="End"/>
     </Grid>
 </ContentPage>

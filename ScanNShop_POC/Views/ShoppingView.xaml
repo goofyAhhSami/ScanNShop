@@ -14,9 +14,8 @@
 
     <VerticalStackLayout BackgroundColor="#F8FAFC">
 
-        <!-- Header -->
-        <Grid HeightRequest="60" VerticalOptions="Start" Margin="15,10,15,10">
-            <Border Background="White" Stroke="#2C3E50" StrokeShape="RoundRectangle 20,20,20,20" StrokeThickness="2" Padding="5">
+        <Grid HeightRequest="70" VerticalOptions="Start" Margin="15,10,15,10">
+            <Border Background="White"  StrokeShape="RoundRectangle 20,20,20,20" StrokeThickness="2" Padding="5">
                 <Grid ColumnDefinitions="50,*,50">
                     <ImageButton Grid.Column="0" Source="Resources/Images/back_arrow.png"
                                  VerticalOptions="Center" HorizontalOptions="Start"
@@ -25,7 +24,7 @@
                     <Label x:Name="shoppingStatusLabel"
                            Grid.Column="1" Text="Lade Einkaufsliste..."
                            FontSize="18" FontAttributes="Bold" TextColor="Black"
-                           HorizontalOptions="Center" VerticalOptions="Center"/>
+                           HorizontalOptions="End" VerticalOptions="Center"/>
                 </Grid>
             </Border>
         </Grid>

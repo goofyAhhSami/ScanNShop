@@ -1,58 +1,62 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:ScanNShop_POC.Views"
              x:Class="ScanNShop_POC.Views.ListsPage"
-             xmlns:controls ="clr-namespace:ScanNShop_POC.Views"
              BackgroundColor="#F5F5F5"
              Shell.NavBarIsVisible="False">
 
     <Grid>
-
-        <!-- Header-Design -->
-        <Grid HeightRequest="60" VerticalOptions="Start" Margin="15,10,15,0">
-            <Border BackgroundColor="White"
-                    Stroke="#2C3E50"
-                    StrokeShape="RoundRectangle 20,20,20,20"
-                    StrokeThickness="2"
-                    Padding="5">
-                <Grid ColumnDefinitions="50,*,50">
-                    <!-- Titel -->
+        <!-- Fancy Header -->
+        <Grid HeightRequest="70" VerticalOptions="Start" Margin="15,15,15,0">
+            <Frame BackgroundColor="White"
+                   CornerRadius="20"
+                   HasShadow="True"
+                   Padding="10"
+                   BorderColor="#D6E4E5">
+                <Grid ColumnDefinitions="*,Auto,*">
                     <Label Grid.Column="1"
                            Text="Deine Listen"
-                           FontSize="18"
+                           FontSize="20"
                            FontAttributes="Bold"
-                           TextColor="Black"
+                           TextColor="#2C3E50"
                            HorizontalOptions="Center"
-                           VerticalOptions="Center"/>
+                           VerticalOptions="Center"
+                           FontFamily="Varela"/>
                 </Grid>
-            </Border>
+            </Frame>
         </Grid>
 
-        <StackLayout Padding="15,80,15,0" x:Name="listContent" Opacity="0">
+        <!-- List Content -->
+        <StackLayout Padding="20,95,20,10" x:Name="listContent" Opacity="0">
             <ListView x:Name="listView"
                       HasUnevenRows="True"
                       SeparatorVisibility="None"
                       SelectionMode="None"
+                      BackgroundColor="Transparent"
                       ItemTapped="OnListTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <Frame BackgroundColor="White"
-                                   CornerRadius="15"
-                                   Padding="15"
-                                   Margin="0,5"
-                                   HasShadow="True">
-                                <Grid ColumnDefinitions="*, Auto">
+                                   CornerRadius="20"
+                                   Padding="20"
+                                   Margin="0,8"
+                                   HasShadow="True"
+                                   BorderColor="#E0E0E0">
+                                <Grid ColumnDefinitions="*, Auto" RowDefinitions="Auto">
                                     <Label Text="{Binding Name}"
                                            FontSize="18"
-                                           TextColor="Black"
-                                           VerticalOptions="Center"/>
+                                           FontAttributes="Bold"
+                                           TextColor="#37474F"
+                                           VerticalOptions="Center"
+                                           FontFamily="Varela"/>
                                     <Button Text="🗑"
                                             BackgroundColor="Transparent"
-                                            TextColor="Red"
+                                            TextColor="#D32F2F"
+                                            FontSize="22"
+                                            FontAttributes="Bold"
                                             HorizontalOptions="End"
                                             CommandParameter="{Binding .}"
-                                            FontSize="25"
                                             Clicked="DeleteList"/>
                                 </Grid>
                             </Frame>
@@ -61,6 +65,8 @@
                 </ListView.ItemTemplate>
             </ListView>
         </StackLayout>
+
+        <!-- Custom Tabbar -->
         <controls:CustomTabbar VerticalOptions="End" />
     </Grid>
 </ContentPage>

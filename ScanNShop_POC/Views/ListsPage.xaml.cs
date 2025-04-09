@@ -76,10 +76,8 @@ public partial class ListsPage : ContentPage
             bool confirm = await DisplayAlert("Löschen", $"Möchtest du die Liste '{list.Name}' wirklich löschen?", "Ja", "Nein");
             if (confirm)
             {
-                // 🛠️ Selektion aufheben bevor Daten geändert werden
                 listView.SelectedItem = null;
 
-                // 🌐 Wenn online → auch am Server löschen
                 if (Connectivity.Current.NetworkAccess == NetworkAccess.Internet)
                 {
                     var api = ApiService.Instance;
@@ -90,7 +88,7 @@ public partial class ListsPage : ContentPage
                     }
                 }
 
-                // 🔨 Lokal löschen
+                //aus SQLite löschen
                 await _dbService.Delete(list);
 
                 MessagingCenter.Send(this, "ListDeletedFromListsPage");

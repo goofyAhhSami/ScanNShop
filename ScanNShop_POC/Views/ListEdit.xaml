@@ -68,6 +68,14 @@
                LineBreakMode="WordWrap"
                HorizontalOptions="Start" />
 
+                <ImageButton Source="Resources/Images/share.png"
+ WidthRequest="30"
+ HeightRequest="30"
+ HorizontalOptions="End"
+ VerticalOptions="Center"
+ Clicked="OpenSharePopup"
+ Margin="0,-43,0,0"/>
+
                 <BoxView HeightRequest="1" BackgroundColor="#CCCCCC" />
 
                 <VerticalStackLayout Spacing="6">

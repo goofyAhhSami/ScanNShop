@@ -234,6 +234,25 @@ namespace ScanNShop_POC.Services
             return null;
         }
 
+        public async Task<List<User>> GetAllUsers()
+        {
+            var response = await _httpClient.GetAsync("Data/users");
+            var json = await response.Content.ReadAsStringAsync();
+            return JsonConvert.DeserializeObject<List<User>>(json);
+        }
+
+        public async Task<bool> ShareListWithUsers(int listId, List<int> userIds)
+        {
+            var dto = new
+            {
+                ListId = listId,
+                UserIds = userIds
+            };
+
+            var content = new StringContent(JsonConvert.SerializeObject(dto), Encoding.UTF8, "application/json");
+            var response = await _httpClient.PostAsync("Data/relat/add-users", content);
+            return response.IsSuccessStatusCode;
+        }
 
 
 

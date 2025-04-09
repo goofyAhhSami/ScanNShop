@@ -10,6 +10,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable\profile.png
 obj\Debug\net8.0-android\resizetizer\r\drawable\roboter.png
 obj\Debug\net8.0-android\resizetizer\r\drawable\scanner.png
 obj\Debug\net8.0-android\resizetizer\r\drawable\send.png
+obj\Debug\net8.0-android\resizetizer\r\drawable\share.png
 obj\Debug\net8.0-android\resizetizer\r\drawable\shopping.jpg
 obj\Debug\net8.0-android\resizetizer\r\drawable\trash.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\dotnet_bot.png

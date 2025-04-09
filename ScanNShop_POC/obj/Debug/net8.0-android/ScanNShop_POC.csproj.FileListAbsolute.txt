@@ -13490,3 +13490,4 @@ C:\Users\User\source\repos\ScanNShop_SYNC\ScanNShop_POC\obj\Debug\net8.0-android
 C:\Users\User\source\repos\ScanNShop_SYNC\ScanNShop_POC\obj\Debug\net8.0-android\android\marshal_methods.x86_64.o
 C:\Users\User\source\repos\ScanNShop_SYNC\ScanNShop_POC\obj\Debug\net8.0-android\android\jni_remap.x86_64.o
 C:\Users\User\source\repos\ScanNShop_SYNC\ScanNShop_POC\obj\Debug\net8.0-android\app_shared_libraries\x86_64\libxamarin-app.so
+C:\SCHULE\5AHIT\ITP\ScanNShop\ScanNShop_POC\obj\Debug\net8.0-android\resizetizer\r\drawable\share.png

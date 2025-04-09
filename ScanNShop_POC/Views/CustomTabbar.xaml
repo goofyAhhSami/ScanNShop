@@ -8,12 +8,12 @@
 
                 <ImageButton Grid.Column="0" Source="home.png" HeightRequest="25" WidthRequest="25"
                              Clicked="NavigateHome" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,20,0,0"/>
-                <Label Grid.Row="1" Grid.Column="0" Text="Home" FontSize="10" FontAttributes="Bold" TextColor="Black"
+                <Label Grid.Row="1" Grid.Column="0" Text="Startseite" FontSize="10" FontAttributes="Bold" TextColor="Black"
                        HorizontalOptions="Center" Margin="0,5,0,0"/>
 
                 <ImageButton x:Name="AiButton" Grid.Column="1" Source="roboter.png" HeightRequest="25" WidthRequest="25"
              Clicked="NavigateAiPage" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,20,0,0"/>
-                <Label x:Name="AiLabel" Grid.Row="1" Grid.Column="1" Text="Chat with AI" FontSize="10" FontAttributes="Bold" TextColor="Black"
+                <Label x:Name="AiLabel" Grid.Row="1" Grid.Column="1" Text="Mit KI chatten" FontSize="10" FontAttributes="Bold" TextColor="Black"
        HorizontalOptions="Center" Margin="0,5,0,0"/>
 
 
@@ -23,13 +23,13 @@
               HorizontalOptions="Center" VerticalOptions="Center" Margin="0,20,0,0"/>
 
                 <Label x:Name="ListsLabel" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"
-       Text="Lists" FontSize="10" FontAttributes="Bold" TextColor="Black"
+       Text="Listen" FontSize="10" FontAttributes="Bold" TextColor="Black"
        HorizontalOptions="Center" Margin="0,5,0,0"/>
 
 
                 <ImageButton Grid.Column="3" Source="profile.png" HeightRequest="25" WidthRequest="25"
                              Clicked="NavigateProfilePage" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,20,0,0"/>
-                <Label Grid.Row="1" Grid.Column="3" Text="Profile" FontSize="10" FontAttributes="Bold" TextColor="Black"
+                <Label Grid.Row="1" Grid.Column="3" Text="Profil" FontSize="10" FontAttributes="Bold" TextColor="Black"
                        HorizontalOptions="Center" Margin="0,5,0,0"/>
 
             </Grid>

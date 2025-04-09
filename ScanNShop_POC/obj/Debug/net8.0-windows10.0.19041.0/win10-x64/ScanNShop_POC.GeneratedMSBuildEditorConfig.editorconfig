@@ -8,7 +8,7 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ScanNShop_POC
-build_property.ProjectDir = C:\Users\User\source\repos\ScanNShop_SYNC\ScanNShop_POC\
+build_property.ProjectDir = C:\SCHULE\5AHIT\ITP\ScanNShop\ScanNShop_POC\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.CsWinRTAotOptimizerEnabled = true
@@ -22,85 +22,91 @@ build_property.CsWinRTUseWindowsUIXamlProjections = false
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/User/source/repos/ScanNShop_SYNC/ScanNShop_POC/App.xaml]
+[C:/SCHULE/5AHIT/ITP/ScanNShop/ScanNShop_POC/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = ScanNShop_POC.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 
-[C:/Users/User/source/repos/ScanNShop_SYNC/ScanNShop_POC/AppShell.xaml]
+[C:/SCHULE/5AHIT/ITP/ScanNShop/ScanNShop_POC/AppShell.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = ScanNShop_POC.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
-[C:/Users/User/source/repos/ScanNShop_SYNC/ScanNShop_POC/Resources/Styles/Colors.xaml]
+[C:/SCHULE/5AHIT/ITP/ScanNShop/ScanNShop_POC/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = ScanNShop_POC.Resources.Styles.Colors.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
 
-[C:/Users/User/source/repos/ScanNShop_SYNC/ScanNShop_POC/Resources/Styles/Styles.xaml]
+[C:/SCHULE/5AHIT/ITP/ScanNShop/ScanNShop_POC/Resources/Styles/Styles.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = ScanNShop_POC.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
 
-[C:/Users/User/source/repos/ScanNShop_SYNC/ScanNShop_POC/Views/AiPage.xaml]
+[C:/SCHULE/5AHIT/ITP/ScanNShop/ScanNShop_POC/Views/AiPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = ScanNShop_POC.Views.AiPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\AiPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\AiPage.xaml
 
-[C:/Users/User/source/repos/ScanNShop_SYNC/ScanNShop_POC/Views/CustomTabbar.xaml]
+[C:/SCHULE/5AHIT/ITP/ScanNShop/ScanNShop_POC/Views/CustomTabbar.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = ScanNShop_POC.Views.CustomTabbar.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\CustomTabbar.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\CustomTabbar.xaml
 
-[C:/Users/User/source/repos/ScanNShop_SYNC/ScanNShop_POC/Views/ListEdit.xaml]
+[C:/SCHULE/5AHIT/ITP/ScanNShop/ScanNShop_POC/Views/ListEdit.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = ScanNShop_POC.Views.ListEdit.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\ListEdit.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\ListEdit.xaml
 
-[C:/Users/User/source/repos/ScanNShop_SYNC/ScanNShop_POC/Views/ListsPage.xaml]
+[C:/SCHULE/5AHIT/ITP/ScanNShop/ScanNShop_POC/Views/ListsPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = ScanNShop_POC.Views.ListsPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\ListsPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\ListsPage.xaml
 
-[C:/Users/User/source/repos/ScanNShop_SYNC/ScanNShop_POC/Views/LogInPage.xaml]
+[C:/SCHULE/5AHIT/ITP/ScanNShop/ScanNShop_POC/Views/LogInPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = ScanNShop_POC.Views.LogInPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\LogInPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\LogInPage.xaml
 
-[C:/Users/User/source/repos/ScanNShop_SYNC/ScanNShop_POC/Views/MainPage.xaml]
+[C:/SCHULE/5AHIT/ITP/ScanNShop/ScanNShop_POC/Views/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = ScanNShop_POC.Views.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\MainPage.xaml
 
-[C:/Users/User/source/repos/ScanNShop_SYNC/ScanNShop_POC/Views/NewList.xaml]
+[C:/SCHULE/5AHIT/ITP/ScanNShop/ScanNShop_POC/Views/NewList.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = ScanNShop_POC.Views.NewList.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\NewList.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\NewList.xaml
 
-[C:/Users/User/source/repos/ScanNShop_SYNC/ScanNShop_POC/Views/ProfilePage.xaml]
+[C:/SCHULE/5AHIT/ITP/ScanNShop/ScanNShop_POC/Views/ProfilePage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = ScanNShop_POC.Views.ProfilePage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\ProfilePage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\ProfilePage.xaml
 
-[C:/Users/User/source/repos/ScanNShop_SYNC/ScanNShop_POC/Views/ScannerPage.xaml]
+[C:/SCHULE/5AHIT/ITP/ScanNShop/ScanNShop_POC/Views/ScannerPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = ScanNShop_POC.Views.ScannerPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\ScannerPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\ScannerPage.xaml
 
-[C:/Users/User/source/repos/ScanNShop_SYNC/ScanNShop_POC/Views/ShoppingView.xaml]
+[C:/SCHULE/5AHIT/ITP/ScanNShop/ScanNShop_POC/Views/ShareListPopup.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ScanNShop_POC.Views.ShareListPopup.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\ShareListPopup.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\ShareListPopup.xaml
+
+[C:/SCHULE/5AHIT/ITP/ScanNShop/ScanNShop_POC/Views/ShoppingView.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = ScanNShop_POC.Views.ShoppingView.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\ShoppingView.xaml

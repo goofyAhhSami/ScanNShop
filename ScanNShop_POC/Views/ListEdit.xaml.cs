@@ -286,6 +286,9 @@ public partial class ListEdit : ContentPage
         }
     }
 
-
+    private async void OpenSharePopup(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new ShareListPopup(_listId));
+    }
 
 }

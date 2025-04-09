@@ -141,6 +141,9 @@
 	  <MauiXaml Update="Views\ScannerPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\ShareListPopup.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\ShoppingView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

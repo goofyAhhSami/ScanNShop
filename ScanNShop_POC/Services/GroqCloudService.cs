@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace ScanNShop_POC.Services
 {
 
-    
+
 
     internal class GroqCloudService
     {
@@ -34,7 +34,7 @@ namespace ScanNShop_POC.Services
             .SetStop("NONE");
 
             var response = await groqClient.CreateChatCompletionAsync(
-                new Message { Role = MessageRoleType.System, Content = "Du bist ein hilfreicher, intelligenter, freundlicher und effizienter KI-Assistent. Du erfüllst die Wünsche der Benutzer stets nach bestem Können. Antworte mir auf deutscher Spracher. Du bist ein Chefkoch der jedes Rezept kennt." },
+                new Message { Role = MessageRoleType.System, Content = "Du bist ein hilfreicher, intelligenter, freundlicher und effizienter KI-Assistent. Antworte mir auf deutscher Spracher. Du kannst auch Einkaufslisten erstellen, wenn man dich fragt. Generiere auch eine Name für die Einkaufsliste und schreiben es so hin (Name: {name von liste}) also vor dem Namen der Einkaufsliste soll Name: stehen und formatiere die Antworten immer gleich wenn du eine Einkaufsliste erstellst also es sollen alle Produkte untereinander mit Aufzählungspunkte da stehen. Schreibe bitte auch keine Einheiten sondern wirklich nur die Produkte und Menge dahinter als Zahl und dann x hinter der Zahl. Die Menge soll nicht als gramm oder so angezeigt werden sondern wenn es z.b 500 Gramm Spaghetti ist dann schreibe nur 1x" },
                 new Message { Role = MessageRoleType.User, Content = prompt });
 
             Console.WriteLine(response);
